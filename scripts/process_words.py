@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
- SCRIPT: Analise scientific words and counts
- AUTHOR: Ricardo Costa
- DATE: October 2025
+SCRIPT: Analise scientific words and counts
+AUTHOR: Ricardo Costa
+DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
@@ -36,6 +36,27 @@ NOTES:
 OUTPUT:
 -------
 - CSV file containing the words and their frequencies.
+
+AUTHOR:
+-------
+Ricardo Costa (rcosta@dep.uminho.pt)
+
+LICENSE:
+--------
+MIT License (see LICENSE file for details)
+
+REPOSITORY:
+-----------
+https://github.com/ricardodpcosta/SciWordCloud
+
+DEPENDENCIES:
+-------------
+Python (version >= 3.9)
+SymPy (version >= 1.6)
+
+USAGE:
+------
+python process_words.py [-h]
 
 ===========================================================
 """

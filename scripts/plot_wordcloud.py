@@ -2,28 +2,49 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
- SCRIPT: Word cloud plotter from words and counts
- AUTHOR: Ricardo Costa
- DATE: October 2025
+SCRIPT: Word cloud plotter from words and counts
+AUTHOR: Ricardo Costa
+DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
 ------------
 This script reads a CSV file containing extracted words
-(e.g., from researcher ORCID or CienciaViate profiles) and
-generates two word cloud images:
+(e.g., from researcher ORCID or CienciaViate profiles) with
+frequencies and generates two word cloud images:
 
-1. A standard word cloud (WordCloud 1).
-2. A recolored version of the same layout (WordCloud 2),
-   where specific words are highlighted with custom colors.
+1. A standard word cloud plot containing all words with
+   a gradient colour.
+2. A recolored version of the same layout, where special
+   words are highlighted with a custom colour.
 
 The word layout remains identical between both images to
 allow easy comparison — only the colors differ.
 
 OUTPUT:
 -------
-- WordCloud1: tema_wordcloud1.png (default colors)
-- WordCloud2: tema_wordcloud2.png (highlighted words)
+- PNG file containing the word cloud plots.
+
+AUTHOR:
+-------
+Ricardo Costa (rcosta@dep.uminho.pt)
+
+LICENSE:
+--------
+MIT License (see LICENSE file for details)
+
+REPOSITORY:
+-----------
+https://github.com/ricardodpcosta/SciWordCloud
+
+DEPENDENCIES:
+-------------
+Python (version >= 3.9)
+SymPy (version >= 1.6)
+
+USAGE:
+------
+python plot_wordcloud.py [-h]
 
 ===========================================================
 """

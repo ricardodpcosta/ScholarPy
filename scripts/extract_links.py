@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
- SCRIPT: Extract ORCID and CienciaVitae links
- AUTHOR: Ricardo Costa
- DATE: October 2025
+SCRIPT: Extract ORCID and CienciaVitae links
+AUTHOR: Ricardo Costa
+DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
@@ -35,6 +35,27 @@ OUTPUT:
 -------
 - TXT file containing the list of CV links (ORCID or CienciaVitae).
   Each line contains the format: <type>|<url>
+
+AUTHOR:
+-------
+Ricardo Costa (rcosta@dep.uminho.pt)
+
+LICENSE:
+--------
+MIT License (see LICENSE file for details)
+
+REPOSITORY:
+-----------
+https://github.com/ricardodpcosta/SciWordCloud
+
+DEPENDENCIES:
+-------------
+Python (version >= 3.9)
+SymPy (version >= 1.6)
+
+USAGE:
+------
+python extract_links.py [-h]
 
 ===========================================================
 """
