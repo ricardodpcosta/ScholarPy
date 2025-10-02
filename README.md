@@ -1,4 +1,4 @@
-# ScholarPy
+# PyScholar
 
 **Extract, analyse, and visualise research insights on scholarly profiles with web scraping and data mining in Python.**
 
