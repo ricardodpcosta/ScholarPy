@@ -1,0 +1,40 @@
+Matepro Optimizing Materials and Processes
+NANOCOMPOSITES THE CONTRIBUTION OF MULTISCALE MODELING TO THE IMPROVE THE DISPERSION LEVELS IN NANOCOMPOSITES
+Multihybrids European Project
+CEES nd International Conference on Construction Energy Environment Sustainability Funchal Portugal
+A Machine Learning and Computer Vision Framework for Real Time Control in DCP Layer Morphology as a Design Feature
+On the development of an ergonomic approach for the design of an industrial robotic coworker
+Experimental assessment of a numerical modelling code developed for the profile extrusion cooling stage
+Non equilibrium dissipative particle dynamics simulations of polymers the role of the friction coefficient on the time scalability
+On line rheometry A tool to monitor polymer nanocomposites production
+On line rheometry to monitor nanocomposites production
+The flow complex fluids a multiscale modeling approach
+On line rheometry to monitor nanocomposites production at the industrial scale
+First steps towards a multiscale model for fluid flow
+Using on line rheometry to monitor dispersion phenomena during the preparartion of nanocomposites
+A multiscale modelling approach to simulate complex fluids flows from atomistic towards continuum scales
+Recent developments on on line rheometry to monitor the extrusion process
+Polymers
+Smart Carbon Fiber Reinforced Polymer Composites for Damage Sensing and On Line Structural Health Monitoring Applications
+Inventions
+Real Time Precision in D Concrete Printing Controlling Layer Morphology via Machine Vision and Learning Algorithms
+Progress in Additive Manufacturing
+Cradle to gate life cycle assessment a comparison of polymer and metal based powder bed fusion for the production of a robot end effector with internal conformal channels
+Applied Sciences
+Designing a User Centered Inspection Device s Handle for the Aircraft Manufacturing Industry
+Rapid Prototyping Journal
+Study of the annealing influence on the mechanical performance of PA and PA fibre reinforced FFF printed specimens
+Fatigue Fracture of Engineering Materials Structures
+Multiscale carbon fibre reinforced polymer CFRP composites containing carbon nanotubes with tailored interfaces
+Profile extrusion experimental assessment of a numerical code to model the temperature evolution in the cooling calibration stage
+Effects of particle size and surface chemistry on the dispersion of graphite nanoplates in polypropylene composites
+International Polymer Processing
+Preparation of polymer clay nanocomposites by melt mixing in a twin screw extruder Using on line SAOS rheometry to assess the level of dispersion
+International Polymer Processing
+Monitoring the production of polymer nanocomposites by melt compounding with on line rheometry
+Polymer Testing
+Measuring the rheological properties of polymer melts with on line rotational rheometry
+Human Centered Design Approach to the Development of a Graphical User Interface for Visual Inspection Task A Use Case in the Aircraft Manufacturing
+Towards the Digital Transformation of Inspection Tasks in Aircraft Manufacturing Through a Human Centric Design
+Rheological characterization of polymer graphene nanocomposites
+Nanocomposites the contribution of multiscale modelling to improve the dispersion levels

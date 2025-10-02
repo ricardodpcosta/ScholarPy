@@ -2,22 +2,20 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
-SCRIPT: Extract ORCID and CienciaVitae links
+SCRIPT: Search ORCID and CienciaVitae links
 AUTHOR: Ricardo Costa
 DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
 ------------
-This script extracts ORCID or CienciaVitae links from HTML pages.
-or from researchers' personal pages or directly from the team page.
+This script searches ORCID or CienciaVitae links from HTML pages.
+Requires a input HTML file or URL. It has two modes of operation:
 
-Two modes of operation:
-
-1. If BASE_URL (option --base) is set, extract researcher profile
+1. If BASE_URL (option --base) is set, search researcher profile
    links from the provided HTML page(s) (option --html) matching the
    BASE_URL pattern and then visit each researcher profile page
-   to extract ORCID/CienciaVitae links. Useful when the provided HTML
+   to search ORCID/CienciaVitae links. Useful when the provided HTML
    page(s) correspond(s) to a list of researchers with links to
    individual pages, where ORCID/CienciaVitae links are contained.
 2. If BASE_URL is empty, directly search ORCID/CienciaVitae links
@@ -25,11 +23,11 @@ Two modes of operation:
 
 ARGUMENTS:
 ----------
---html   : Local HTML file(s) or URL(s), separated by commas
+--html   : Input HTML file(s) or URL(s), separated by commas
 --base   : Base URL for individual pages (leave empty for direct mode)
 --out    : Output file with ORCID/CienciaVitae links
---limit  : Limit number of researchers to analyse (default=50)
---pause  : Delay in seconds after loading each page (default=2)
+--limit  : Limit number of links to search (default=200)
+--pause  : Delay in seconds after loading each page (default=3)
 
 OUTPUT:
 -------
@@ -50,12 +48,10 @@ https://github.com/ricardodpcosta/SciWordCloud
 
 DEPENDENCIES:
 -------------
-Python (version >= 3.9)
-SymPy (version >= 1.6)
 
 USAGE:
 ------
-python extract_links.py [-h]
+python search_links.py [-h]
 
 ===========================================================
 """
@@ -75,12 +71,12 @@ from bs4 import BeautifulSoup
 # PARSE ARGUMENTS
 # ================================================
 
-parser = argparse.ArgumentParser(description="Extract ORCID and CienciaVitae links")
-parser.add_argument("--html", required=True, help="Local file(s) or URL(s), separated by commas")
+parser = argparse.ArgumentParser(description="Search ORCID and CienciaVitae links")
+parser.add_argument("--html", required=True, help="Input HMTL file(s) or URL(s), separated by commas")
 parser.add_argument("--base", default="", help="Base URL for researcher profile pages (empty for direct mode)")
-parser.add_argument("--out", default="links.txt", help="Output file (default: links.txt)")
-parser.add_argument("--limit", type=int, default=50, help="Limit number of researchers (default: 50)")
-parser.add_argument("--pause", type=int, default=2, help="Delay in seconds between requests (default: 2)")
+parser.add_argument("--out", default="links.txt", help="Output file with links (default: links.txt)")
+parser.add_argument("--limit", type=int, default=200, help="Limit number of links to search (default: 200)")
+parser.add_argument("--pause", type=int, default=3, help="Delay in seconds between requests (default: 3)")
 args = parser.parse_args()
 
 HTML_SOURCES = args.html.strip()
@@ -111,8 +107,10 @@ sources = [src.strip() for src in HTML_SOURCES.split(",") if src.strip()]
 
 # Search links in each source
 for source in sources:
+    # Limit number of links
+    if len(cv_links)==TEAM_LIMIT:
+        break
     print(f"Processing source: {source}")
-
     # Load HTML (remote or local)
     if source.startswith("http://") or source.startswith("https://"):
         try:
@@ -120,27 +118,21 @@ for source in sources:
             time.sleep(PAGE_PAUSE)
             html = driver.page_source
         except:
-            print(f"\033[33m  Could not load URL: {source}\033[0m")
+            print(f"\033[33m  Unable to load page\033[0m")
             continue
     else:
         try:
             with open(source, "r", encoding="utf-8") as f:
                 html = f.read()
         except:
-            print(f"\033[33m  Could not open local file: {source}\033[0m")
+            print(f"\033[33m  Unable to load page\033[0m")
             continue
-
     # Process HTML page
     soup = BeautifulSoup(html, "lxml")
-
+    # Search links on personal pages
     if BASE_URL:
-        # Search links on researcher profile pages
         pattern = re.compile(rf"^{BASE_URL}")
         profile_links = [a["href"] for a in soup.find_all("a", href=pattern)]
-
-        # Limit number of researchers
-        if TEAM_LIMIT:
-            profile_links = profile_links[:TEAM_LIMIT]
         print(f"  Found {len(profile_links)} researcher profile pages")
 
         # Load researcher profile
@@ -150,41 +142,49 @@ for source in sources:
                 driver.get(link)
                 time.sleep(PAGE_PAUSE)
             except:
-                print(f"\033[33m  Could not load: {link}\033[0m")
+                print(f"\033[33m  Unable to load page\033[0m")
                 continue
-
             # Process HTML page
             bs_soup = BeautifulSoup(driver.page_source, "lxml")
-
             # Try ORCID first
             orcid_tag = bs_soup.find("a", href=lambda x: x and "orcid.org" in x)
             if orcid_tag:
                 cv_links.append(f"{orcid_tag['href']}")
                 print(f"\033[32m  ORCID found: {orcid_tag['href']}\033[0m")
-                continue
+                # Limit number of links
+                if len(cv_links)==TEAM_LIMIT:
+                    break
+            # Try CienciaVitae otherwise
             else:
-                # Try CienciaVitae otherwise
                 cienciavitae_tag = bs_soup.find("a", href=lambda x: x and "cienciavitae.pt" in x)
                 if cienciavitae_tag:
                     cv_links.append(f"{cienciavitae_tag['href']}")
                     print(f"\033[32m  CienciaVitae found: {cienciavitae_tag['href']}\033[0m")
+                    # Limit number of links
+                    if len(cv_links)==TEAM_LIMIT:
+                        break
                 else:
                     print("\033[33m  No ORCID or CienciaVitae found\033[0m")
-
+    # Search links directly in HTML
     else:
-        # Search links directly in HTML
+        # Try ORCID first
         orcid_tags = soup.find_all("a", href=lambda x: x and "orcid.org" in x)
-        cienciavitae_tags = soup.find_all("a", href=lambda x: x and "cienciavitae.pt" in x)
-
-        # ORCID links
-        for tag in orcid_tags:
-            cv_links.append(f"{tag['href']}")
-            print(f"\033[32m  ORCID found: {tag['href']}\033[0m")
-
-        # CienciaVitae links
-        for tag in cienciavitae_tags:
-            cv_links.append(f"{tag['href']}")
-            print(f"\033[32m  CienciaVitae found: {tag['href']}\033[0m")
+        if orcid_tags:
+            for tag in orcid_tags:
+                cv_links.append(f"{tag['href']}")
+                print(f"\033[32m  ORCID found: {tag['href']}\033[0m")
+                # Limit number of links
+                if len(cv_links)==TEAM_LIMIT:
+                    break
+        # Try CienciaVitae otherwise
+        else:
+            cienciavitae_tags = soup.find_all("a", href=lambda x: x and "cienciavitae.pt" in x)
+            for tag in cienciavitae_tags:
+                cv_links.append(f"{tag['href']}")
+                print(f"\033[32m  CienciaVitae found: {tag['href']}\033[0m")
+                # Limit number of links
+                if len(cv_links)==TEAM_LIMIT:
+                    break
 
 # Close driver
 driver.quit()

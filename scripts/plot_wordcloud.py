@@ -9,17 +9,18 @@ DATE: October 2025
 
 DESCRIPTION:
 ------------
-This script reads a CSV file containing extracted words
-(e.g., from researcher ORCID or CienciaViate profiles) with
-frequencies and generates two word cloud images:
+This script plots word clouds from a list of words and associated
+counts. It generated two images:
 
 1. A standard word cloud plot containing all words with
    a gradient colour.
 2. A recolored version of the same layout, where special
    words are highlighted with a custom colour.
 
-The word layout remains identical between both images to
-allow easy comparison — only the colors differ.
+NOTES:
+------
+- The word layout remains identical between both images to
+  allow easy comparison and only the colors differ.
 
 OUTPUT:
 -------
@@ -39,8 +40,6 @@ https://github.com/ricardodpcosta/SciWordCloud
 
 DEPENDENCIES:
 -------------
-Python (version >= 3.9)
-SymPy (version >= 1.6)
 
 USAGE:
 ------
