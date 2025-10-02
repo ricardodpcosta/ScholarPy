@@ -13,7 +13,7 @@ The toolkit offers a collection of tools to:
 * Discover public scholarly profiles on institutional webpages.
 * Extract data from public scholarly profiles (currently supporting ORCID and CienciaVitae).
 * Analyse textual data using **natural language processing (NLP)**.
-* Visualise research insights through infographic representations."
+* Visualise research insights through infographic representations.
 
 ---
 
