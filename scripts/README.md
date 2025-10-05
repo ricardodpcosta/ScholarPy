@@ -54,12 +54,12 @@ python extract_data.py --links <INPUT_LINKS_FILE> [--out <OUTPUT_FILE>] [--pause
 
 ---
 
-## 3. `process_words.py`
+## 3. `analise_words.py`
 
 **Description:** Analyse relevant scientific words from extracted data. The process is divided into two steps:
 
 1. Read an input file containing data.
-2. Lemmatise, filter and count words.
+2. Lemmatise, filter, and count words.
 
 Words are lemmatised (normalised) and filtered to remove common English and Portuguese stopwords, as well as domain-generic words.
 
