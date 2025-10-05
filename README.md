@@ -163,7 +163,7 @@ The word layout remains identical between both images, allowing for easy compari
 
 **Usage:**
 ```bash
-python plot_wordcloud.py --words <WORDS_CSV_FILE> [--colormap <COLORMAP>] [--special <WORDS>] [--highlight <COLOR>] [--out <OUTPUT_FILE>]
+python plot_wordcloud.py --words <WORDS_CSV_FILE> [--colormap <COLORMAP>] [--maxwords <MAXWORDS>] [--special <WORDS>] [--highlight <COLOR>] [--out <OUTPUT_FILE>]
 ```
 
 **Arguments:**
