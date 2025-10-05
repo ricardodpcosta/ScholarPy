@@ -100,7 +100,7 @@ To avoid server overload and subsequent client IP blocking, a delay is applied b
 
 **Usage:**
 ```bash
-python search_links.py --html <HTML_FILE_OR_URL> [--base <BASE_URL>] [--out <OUTPUT_FILE>] [--limit <N>] [--pause <SECONDS>]
+python search_links.py --html <INPUT_HTML_FILE_OR_URL> [--base <BASE_URL>] [--out <OUTPUT_FILE>] [--limit <N>] [--pause <SECONDS>]
 ```
 
 **Arguments:**
@@ -171,7 +171,7 @@ The word layout remains identical between both images, allowing for easy compari
 
 **Usage:**
 ```bash
-python plot_wordcloud.py --words <WORDS_CSV_FILE> [--colormap <COLORMAP>] [--maxwords <MAXWORDS>] [--special <WORDS>] [--highlight <COLOR>] [--out <OUTPUT_FILE>]
+python plot_wordcloud.py --words <INPUT_WORDS_FILE> [--colormap <COLORMAP>] [--maxwords <MAXWORDS>] [--special <WORDS>] [--highlight <COLOR>] [--out <OUTPUT_FILE>]
 ```
 
 **Arguments:**
