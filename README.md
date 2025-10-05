@@ -24,7 +24,7 @@ The toolkit offers a collection of tools to:
 * **Word Cloud Generation**: Visualize frequent terms with customizable colors and colormaps.
 * **Modular Workflow**: Separate scripts for data extraction and analysis.
 
-![ScholarPy pipeline](images/pipeline.png)
+<img src="images/pipeline.png" alt="ScholarPy pipeline" width="90%"/>
 
 ---
 
