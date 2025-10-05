@@ -21,7 +21,7 @@ The toolkit offers a collection of modular tools to:
 
 ---
 
-### Concepts
+## Concepts
 
 ScholarPy is built upon two core concepts:
 
