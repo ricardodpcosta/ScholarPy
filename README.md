@@ -114,9 +114,9 @@ ScholarPy/
 
 2. Run `extract_data.py` to scrape relevant textual data from the retrieved scholarly CV pages.
 
-3. Analise the extracted text data using the available tools (currently `analyse_words.py`).
+3. Perform various analyses of the extracted text data using the available tools (currently `analyse_words.py`).
 
-4. Generate data visualisations using the available tools (currently `plot_wordcloud.py`).
+4. Generate various data visualisations using the available tools (currently `plot_wordcloud.py`).
 
 ---
 
