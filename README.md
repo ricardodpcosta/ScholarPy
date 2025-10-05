@@ -92,8 +92,10 @@ ScholarPy provides various scripts, each with a specific purpose. Below are inst
 ### 1. `search_links.py`
 
 **Description:** Search public scholarly CV links from HTML pages. It has two modes of operation:
+
 1. If BASE_URL (option --base) is set, search researcher profile pages from the provided HTML page(s) (option --html) matching the BASE_URL pattern and then visit each researcher profile page to search public scholarly CV links. Useful when the provided HTML page(s) correspond(s) to a list of researchers with links to individual pages, where public scholarly CV links are contained.
 2. If BASE_URL is empty, directly search public scholarly CV links inside the provided HTML page(s).
+
 To avoid server overload and subsequent client IP blocking, a delay is applied between HTTP/HTTPS requests.
 
 **Usage:**
@@ -115,9 +117,11 @@ python search_links.py --html <HTML_FILE_OR_URL> [--base <BASE_URL>] [--out <OUT
 ### 2. `extract_data.py`
 
 **Description:** Extract relevant textual data from public scholarly CV links. The process is divided into three steps:
+
 1. Read an input file containing a list of public scholarly CV links.
 2. Visit each link and scrape the data on relevant fields, such as titles of fundings, projects, works, outcomes, and journals/conferences.
 3. Clean and condense the data, keeping only alphabetic characters and spaces without repetition.
+
 Scraping is performed with Selenium instead of Requests because some public scholarly CV pages may load dynamically and are not fully accessible via static HTML parsing. To avoid server overload and subsequent client IP blocking, a delay is applied between HTTP/HTTPS requests.
 
 **Usage:**
@@ -137,8 +141,10 @@ python extract_data.py --links <INPUT_LINKS_FILE> [--out <OUTPUT_FILE>] [--pause
 ### 3. `process_words.py`
 
 **Description:** Analyse relevant scientific words from extracted data. The process is divided into two steps:
+
 1. Read an input file containing data.
 2. Lemmatise, filter and count words.
+
 Words are lemmatised (normalised) and filtered to remove common English and Portuguese stopwords, as well as domain-generic words.
 
 **Usage:**
@@ -157,8 +163,10 @@ python process_words.py --data <INPUT_DATA_FILE> [--out <OUTPUT_FILE>]
 ### 4. `plot_wordcloud.py`
 
 **Description:** Generate word cloud visualisations from word frequency data. It generated two images:
+
 1. A standard word cloud plot containing all words with a gradient colour.
 2. A recoloured version of the same layout, where special words are highlighted with a custom colour.
+
 The word layout remains identical between both images, allowing for easy comparison, while only the colours differ.
 
 **Usage:**
