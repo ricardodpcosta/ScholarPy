@@ -2,17 +2,18 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
-SCRIPT: Analise scientific words and counts
+SCRIPT: Analise words from data
 AUTHOR: Ricardo Costa
 DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
 ------------
-This script processes relevant scientific words from text.
-It requires an input file text. The process is divided into two steps:
+This script analises relevant scientific words from extracted data.
+It requires an input file data. The process is divided into
+two steps:
 
-1. Read an input file containing text.
+1. Read an input file containing data.
 2. Lemmatise, filter and count words.
 
 NOTES:
@@ -65,7 +66,7 @@ from spacy.lang.en.stop_words import STOP_WORDS as STOPWORDS_EN
 # ================================================
 
 parser = argparse.ArgumentParser(description="Analise scientific words counts")
-parser.add_argument("--text", required=True, help="Input file with text to analise")
+parser.add_argument("--data", required=True, help="Input file with data to analise")
 parser.add_argument("--out", default="words.csv", help="Output file with processed words (default: words.csv)")
 args = parser.parse_args()
 
@@ -76,8 +77,8 @@ OUTPUT_WORDS = args.out.strip()
 extra_stopwords = set([
     "abstract", "académico", "academic", "acta", "anual", "approach", "apply", "artigo", "article",
     "base", "case", "center", "centre", "centro", "change", "congresso", "conference", "contributor",
-    "decrease", "education", "effect", "estrangeiro", "european", "europeu", "high", "increase",
-    "instituição", "instituto", "internacional", "international", "journal", "jornal", "load", "low",
+    "decrease", "education", "effect", "estrangeiro", "european", "europeu", "high", "increase", "portuguesa", "portuguese",
+    "instituição", "instituto", "internacional", "international", "journal", "jornal", "load", "low", "report",
     "national", "nacional", "path", "portugal", "proceeding", "profile", "property", "publications",
     "reduce", "research", "review", "self", "simpósio", "study", "strategy", "student", "symposium",
     "tipo", "university", "universidade", "user", "works", "workshop"
@@ -88,9 +89,9 @@ stopwords = STOPWORDS_PT.union(STOPWORDS_EN).union(extra_stopwords)
 # STEP 1: READ DATA
 # ================================================
 
-# Read text
+# Read data
 with open(INPUT_DATA, "r", encoding="utf-8") as f:
-    text = f.read()
+    data = f.read()
 
 # ================================================
 # STEP 2: INITIALISE MODULES
@@ -107,17 +108,14 @@ nlp = spacy.load("en_core_web_sm")
 words = {}
 
 # Lemmatisation and stopword filtering
-doc = nlp(text.lower())
+doc = nlp(data.lower())
 for token in doc:
     lemma = token.lemma_.strip()
     if len(lemma) > 3 and lemma not in stopwords:
         words[lemma] = words.get(lemma, 0) + 1
 
-# Close Selenium browser
-driver.quit()
-
 # ================================================
-# STEP 4: SAVE CSV
+# STEP 4: SAVE WORDS
 # ================================================
 
 # Save words and counts to file

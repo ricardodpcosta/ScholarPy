@@ -1,40 +1,530 @@
-Matepro Optimizing Materials and Processes
-NANOCOMPOSITES THE CONTRIBUTION OF MULTISCALE MODELING TO THE IMPROVE THE DISPERSION LEVELS IN NANOCOMPOSITES
-Multihybrids European Project
-CEES nd International Conference on Construction Energy Environment Sustainability Funchal Portugal
-A Machine Learning and Computer Vision Framework for Real Time Control in DCP Layer Morphology as a Design Feature
-On the development of an ergonomic approach for the design of an industrial robotic coworker
-Experimental assessment of a numerical modelling code developed for the profile extrusion cooling stage
-Non equilibrium dissipative particle dynamics simulations of polymers the role of the friction coefficient on the time scalability
+Laboratório Associado de Sistemas Inteligentes
+DEVELOPMENT OF SUSTAINABLE POLYMERS
+BIODEGRADABLE COPOLYMERS SYNTHESISED BY REACTIVE EXTRUSION
+Better Plastics
+S Plast Sustainable Plastics Advanced Solutions
+GreenShoes Calçado Marroquinaria e Tecnologias Avançadas de Materiais Equipamentos e Software
+ECOBiB Eco Innovative Bag In Box Solutions
+MOBFOOD Mobilização de Conhecimento Científico e Tecnológico em Resposta aos Desafios do Mercado Agroalimentar
+FAMEST Footwear Advanced Materials Equipment s and Software Technologies
+Extrasliced Aumento do tempo de vida útil de produtos de charcutaria fatiados por incoporação de nanopartículas na embalagem
+Innovative sensor based processing technology of nanostructured multifunctional hybrids and composites
+Institute of Nanostructures Nanomodelling and Nanofabrication
+Technologies for Sustainable and Smart Innovative
+Incentive LA
+Incentive LA
+PLASTIROADS Development of multifunctional materials with plastic wastes for road paving
+Rose Pack Biodegradable active packaging with rosemary extract Rosmarinus officinalis L to improve food shelf life
+WICKEEG A NOVEL POLYMER WICK BASED ELECTRODE FOR EEG MONITORING FROM MATERIALS DEVELOPMENT TO IN VIVO TESTING
+Strategic Project LA
+Strategic Project LA
+n STeP Nanostructured systems for Tailored Performance
+Incentive LA
+Incentive LA
+Projecto Estratégico LA
+Strategic Project LA
+Strategic Project LA
+ATLANTA TPV Desenvolvimento de materiais termoplásticos vulcanizados para aplicação em solados
+Multiferroic magnetoelectric and metallic micro and nanocomposites based on electroactive polymers for advanced applications
+Nova geração de suportes com libertação controlada de carbono para formação de biofilmes
+Shear induced solidification studies on polymers and polymer clay nanocomposites
+BIOPACK In situ biopolymers nanocomposites high performance packaging materials for a clean environment
+POLIFILM Multifunctional films for flexible and plastic material applications
+Microfibrillar Composites Based on Blends of Virgin or Recycled Thermoplastic Polymers
+REACTIVENANO EXFOLIATION AND INTERFACIAL CHEMISTRY TWO COMPLEMENTARY WAYS TO IMPROVE THE PERFORMANCE OF NANOCOMPOSITES
+A biofilm based strategy for wwtp upgrade for nitrogen removal
+Understanding the physical and chemical phenomena during manufacture of thermoplastics vulcanizates TPVs via on line monitoring
+RECPET Source based pollution prevention thorugh continuous depolymerisation of poly ethylene therephtalate
+OLI PUSH ILLIANCE energy efficiency
+The morphology during extrusion of PA PP blends in the presence of nanoclays
+Role of ultraviolet absorbers UVA and hindered amine light stabilizers HALS in ABS stabilization
+Development of permeable reactive barrier for phosphorus removal
+Synthesis of biodegradable copolymers based on ethylene vinyl acetate and polylactic acid
+Influence of the crystallization kinetics on the microstructural properties of PVDF
+Preparation of biodegradable materials by reactive extrusion
+Thermogravimetric study of polyethylene catalytic degradation by zeolites
+Transient rheological behaviour of PA EPM EPM g MA blends
+Dynamic vulcanisation of EPDM based thermoplastic vulcanisates during extrusion Effect of processing conditions
+Effect of experimental conditions on the grafting of maleic anhydride onto polyethylene in extruders
+Modelling of the grafting of maleic anhydride onto polyethylene in an extruder
+Water Purification
+Polymeric materials for metal sorption from hydric resources
+Polymeric materials for metal sorption from hydric resources
+Assessment of polymer based nanocomposites biodegradability
+Near IR spectroscopy for the characterization of dispersion in polymer clay nanocomposites
+Modification of biodegradable polymers through rreactive extrusion I
+Reactive polymer processing and design of stable micro and nanostructures
+Reactive polymer processing and design of stable micro and nanostructures
+Circul a bility Conference
+Impact of different packaging strategies on the shelf life of semi hard cheese
+Advances in electrochemical reduction of CO in ionic liquid based electrolytes Resumo
+Aerogel cathodes for electrochemical CO reduction Comunicação oral
+Agroindustrial residues as cellulose source for food packaging applications
+Suitability of agroindustrial residues for cellulose based materials production
+Magnetic liposomes containing calcium ferrite nanoparticles for breast cancer therapy
+CFRP bioinspirados para melhoria da resistência ao impacto e autossensorização
+VHC performance evaluation at constant flow L MIN
+Can oil plastic and RAP wastes have a new life in novel asphalt mixtures
+Entrapment of CdTe quantum dots in polymeric micelles
+Development of cellulose acetate membranes containing nanoparticles for water applications
+Influence of polymeric matrix on structural and photoluminescent properties of polymer quantum dot nano composites
+Potential contribution of common aromatic plants for vitamin C dietary intake
+Recent Advances in Antioxidant Active Food Packaging
+The potential of fresh versus dried aromatic herbs as source of antioxidant compounds
+Antioxidantes naturales aplicados a envases activos alimentarios evolución reciente
+Recombination of asphalt with bio asphalt Binder formulation and asphalt mixes application
+Experimental assessment of Emitted Dose from Valved Holding Chamber devices
+Development of silver and clay starch bio nanocomposites
+Multiresponsive spiropyran based copolymer synthesis and characterization
+Eco friendly polymeric material for horticulture application
+Synthesis of functional block copolymers by controled radical polymerization techniques
+Development of silver and clay starch bio nanocomposites
+Rheology as a tool to follow hybrid nanocomposites preparation
 On line rheometry A tool to monitor polymer nanocomposites production
-On line rheometry to monitor nanocomposites production
-The flow complex fluids a multiscale modeling approach
-On line rheometry to monitor nanocomposites production at the industrial scale
-First steps towards a multiscale model for fluid flow
-Using on line rheometry to monitor dispersion phenomena during the preparartion of nanocomposites
-A multiscale modelling approach to simulate complex fluids flows from atomistic towards continuum scales
+Phase inversion of EPDM PP blends Effect of viscosity ratio
 Recent developments on on line rheometry to monitor the extrusion process
+Applied rheology for polymer modification
+Deformation and relaxation of PMMA PS and PMMA PSOX blends
+Morphology development of sub micrometer thermoplastic vulcanisates
+Proceedings of the MATERIAIS Conferencero
+Dynamic Vulcanisation of PP EPDM Blends Influence of PP viscosity in the crosslink reaction
+PPS Polymer processing Society Annual Meeting
+Phase Inversion during Dynamic Vulcanisation of PP EPDM blends
+Influence of the crystallisation kinetics on the microstructural properties of a PVDF
+Dynamic vulcanisation of EPDM HDPE based thermoplastic vulcanisates studied along the extruder axis
+MoDeSt th International Conference on Polymer Modification Degradation and Stabilization
+Dynamic Crosslinking of PP EPDM Blends Blend Phase Morphology and Crosslinking Reaction
+Polychar
+Modeling of Grafting Reactions During Extrusion
+Interfacial chemistry and morphology of blends of polybutyleneterephthalate and epoxide containing rubber
+Materiais XXI Congresso da Sociedade Portuguesa de Materiais and XII International Symposium on Materials
+Application of Adiabatic Temperature Rise Method for Fast Kinetics TPUs Formulation Development
+Polímeros Ciência Tecnologia e Inovação
+Development of polymeric films with improved barrier properties for packaging
+Microbial Ecology
+Microplastics Biodegradation by Estuarine and Landfill Microbiomes
+Journal of Applied Polymer Science
+Toward mechanical recyclability of high barrier food packaging films through filler incorporation on the EVOH layer
+Food Packaging and Shelf Life
+Blown film of PLA for packaging with green tea and fish industrial residues An insight on their properties
+Polymer Engineering Science
+Feasibility of incorporating recycled multilayer LDPE EVOH films into flexible packaging
+Polymer Engineering Science
+Macromol
+Development of a Polyethylene Breathable Packaging Film with Modified Microcrystalline Cellulose for Fresh Products
+Micro
+Piezoelectric and Pyroelectric Properties of Organic MDABCO NH Cl Perovskite for Flexible Energy Harvesting
+Active low density Polyethylene Based films by incorporating in the free state and loaded in PLA nanoparticles a comparative study
+Development of a polyethylene breathable packaging film with modified microcrystalline cellulose for fresh products
+Materials
+Nanostructured Electrospun Fibers with Self Assembled Cyclo L Tryptophan L Tyrosine Dipeptide as Piezoelectric Materials and Optical Second Harmonic Generators
+Materials
+Bioinspired Cyclic Dipeptide Functionalized Nanofibers for Thermal Sensing and Energy Harvesting
+Materials
+A Polymorph of Dipeptide Halide Glycyl L Alanine Hydroiodide Monohydrate Crystal Structure Optical Second Harmonic Generation Piezoelectricity and Pyroelectricity
 Polymers
-Smart Carbon Fiber Reinforced Polymer Composites for Damage Sensing and On Line Structural Health Monitoring Applications
-Inventions
-Real Time Precision in D Concrete Printing Controlling Layer Morphology via Machine Vision and Learning Algorithms
-Progress in Additive Manufacturing
-Cradle to gate life cycle assessment a comparison of polymer and metal based powder bed fusion for the production of a robot end effector with internal conformal channels
-Applied Sciences
-Designing a User Centered Inspection Device s Handle for the Aircraft Manufacturing Industry
-Rapid Prototyping Journal
-Study of the annealing influence on the mechanical performance of PA and PA fibre reinforced FFF printed specimens
-Fatigue Fracture of Engineering Materials Structures
-Multiscale carbon fibre reinforced polymer CFRP composites containing carbon nanotubes with tailored interfaces
-Profile extrusion experimental assessment of a numerical code to model the temperature evolution in the cooling calibration stage
-Effects of particle size and surface chemistry on the dispersion of graphite nanoplates in polypropylene composites
+Evaluation of Active LDPE Films for Packaging of Fresh Orange Juice
+Journal of Plastic Film and Sheeting
+LDPE Nanoclay films for food packaging with improved barrier properties
+Food Packaging and Shelf Life
+PLA films loaded with green tea and rosemary polyphenolic extracts as an active packaging for almond and beef
+A Polymorph of Dipeptide Halide Glycyl L Alanine Hydroiodide Monohydrate
+Coatings
+Extending high fatty foods shelf life protecting from lipid oxidation and microbiological contamination an approach using active packaging with pomegranate extract
+Polymers
+Enhancing the interface behavior on polycarbonate elastomeric blends morphological structural and thermal characterization
+Enhancing the interface behavior on polycarbonate elastomeric blends morphological structural and thermal characterization
+A Polymorph of Dipeptide Halide Glycyl L Alanine Hydroiodide Monohydrate
+Bioinspired cyclic dipeptide functionalized nanofibers for thermal sensing and energy harvesting
+Double active thermographic inspection of additive manufacturing composites
+Extending High Fatty Foods Shelf Life Protecting from Lipid Oxidation and Microbiological Contamination An Approach Using Active Packaging with Pomegranate Extract
+PLA films loaded with green tea and rosemary polyphenolic extracts as an active packaging for almond and beef
+Extending high fatty foods shelf life protecting from lipid oxidation and microbiological contamination an approach using active packaging with pomegranate extract
+Toxicity assessment of binary mixtures of BP with MBC UV filters and BP with DEET insect repellent using the aquatic midge Chironomus riparius
+Global variation in diabetes diagnosis and prevalence based on fasting glucose and hemoglobin A c
+Pervasive gaps in Amazonian ecological research
+Extending High Fatty Foods Shelf Life Protecting from Lipid Oxidation and Microbiological Contamination
+Polymer Engineering Science
+Effect of starch nanocrystals addition on the physicochemical thermal and optical properties of low density polyethylene LDPE films
+Journal of Applied Polymer Science
+Enhancement of polylactic acid films properties by incorporation of starch nanocrystals
+Materials
+Food Frontiers
+Evaluation of plant extracts as an efficient source of additives for active food packaging
+Sensors
+Optimization of Au CuO Thin Films by Plasma Surface Modification for High Resolution LSPR Gas Sensing at Room Temperature
+Materials
+High Piezoelectric Output Voltage from Blue Fluorescent N N Dimethyl nitroaniline Nano Crystals in Poly L Lactic Acid Electrospun Fibers
+Polymers
+Active Flexible Films for Food Packaging A Review
+Food Packaging and Shelf Life
+Mono and multilayer active films containing green tea to extend food shelf life
+Nanomaterials
+Immobilization of Streptavidin on a Plasmonic Au TiO Thin Film towards an LSPR Biosensing Platform
+Preprints org
+Pyroelectric and Piezoelectric Voltage Coefficients of Blue Luminescent Organic Lead Free Perovskite MDABCO NH I Electrospun Nanofibers
+Active flexible films for food packaging a review
+Separation of lepidolite from hard rock pegmatite ore via dry processing and flotation
+Mono and multilayer active films containing green tea to extend food shelf life
+Active flexible films for food packaging a review
+Immobilization of Streptavidin on a Plasmonic Au TiO Thin Film towards an LSPR Biosensing Platform
+Extended Spectrum Lactamase Producing Bacteria Reality in a Tertiary Hospital
+Erythrocyte derived liposomes for the treatment of inflammatory diseases
+Evaluation of plant extracts as an efficient source of additives for active food packaging
+Impact of COVID lockdown in eating disorders a multicentre collaborative international study
+Resuscitation fluid practices in Brazilian intensive care units A secondary analysis of Fluid TRIPS
+Environmental and societal factors associated with COVID related death in people with rheumatic disease an observational study
+Trends in cardiometabolic risk factors in the Americas between and A pooled analysis of population based surveys
+Worldwide trends in hypertension prevalence and progress in treatment and control from to a pooled analysis of population representative studies with million participants
+Heterogeneous contributions of change in population distribution of body mass index to change in obesity and underweight
+Immobilization of streptavidin on a plasmonic Au TiO thin film towards an LSPR biosensing platform
+Correlations between Web Searches and COVID Epidemiological Indicators in Brazil
+Therapeutic versus prophylactic anticoagulation for patients admitted to hospital with COVID and elevated D dimer concentration ACTION an open label multicentre randomised controlled trial
+Short chain fatty acid acetate triggers antiviral response mediated by RIG I in cells from infants with respiratory syncytial virus bronchiolitis
+Toxicity of spike fragments SARS CoV S protein for zebrafish A tool to study its hazardous for human health
+Genomic analyses show extremely perilous conservation status of African and Asiatic cheetahs Acinonyx jubatus
+Polymers
+Assessing the compressive and impact behavior of plastic safety toe caps through computational modelling
+The crab heparin like compound exhibits a strong inhibitory effect on infections by dengue virus
+Modelo de obesidade induzida por dieta hiperlipídica e associada à resistência à ação da insulina e intolerância à glicose
+Organic solvents alter photophysiological and oxidative stress profiles of the coral Zoanthus sp towards an optimization of ecotoxicological protocols
+March dependent modulation of donor MHC II on CD dendritic cells mitigates alloimmunity
+The crown pearl a draft genome assembly of the European freshwater pearl mussel Margaritifera margaritifera Linnaeus
+Journal of Cleaner Production
+Green synthesis of cellulose acetate from corncob Physicochemical properties and assessment of environmental impacts
+Spectrochimica Acta Part A Molecular and Biomolecular Spectroscopy
+Iridium III porphyrin arrays with tuneable photophysical properties
+Polymer Testing
+Surface functionalization of polypropylene PP by chitosan immobilization to enhance human fibroblasts viability
+Journal of Applied Polymer Science
+Optimization of hybrid oil water swelling ethylene propylene diene monomer compounds
+Oncology Letters
+Upper aerodigestive tract carcinoma Development of a epi genomic predictive model for recurrence and metastasis
+Industrial Crops and Products
+Effect of combined dilute alkaline and green pretreatments on corncob fractionation Pretreated biomass characterization and regenerated cellulose film production
+Waste and Biomass Valorization
+Availability and Suitability of Agroindustrial Residues as Feedstock for Cellulose Based Materials Brazil Case Study
+Amino Acids
+Non isocyanate urethane linkage formation using l lysine residues as amine sources
+Discrimination based on sexual orientation against MSM in Brazil a latent class analysis
+Discrimination based on sexual orientation against MSM in Brazil a latent class analysis
+Surgical Repair of an Occipital Meningocele in a Foal
+Polyhedron
+Development of iridium porphyrin arrays by axial coordination through N bidentate ligand Synthesis and evaluation of the optical electrochemical and thermal properties
+Journal of Renewable Materials
+Sustainable materials based on cellulose from food sector agro wastes
+Polymer Composites
+Biocompatible reinforcement of poly Lactic acid with graphene nanoplatelets
+Biomacromolecules
+Engineering Elastin Like Polypeptide Poly ethylene glycol Multiblock Physical Networks
+Journal of Membrane Science
+Silica poly vinylidene fluoride porous composite membranes for lithium ion battery separators
+Food Hydrocolloids
+Effects of pH modification in proteins from fish Whitemouth croaker and their application in food packaging films
+Industrial Crops and Products
+Active polylactic acid film incorporated with green tea extract Development characterization and effectiveness
+Active polylactic acid film incorporated with green tea extract Development characterization and effectiveness
+Genetic sequence characterization and naturally acquired immune response to Plasmodium vivax Rhoptry Neck Protein PvRON
+Synthesis and evaluation of alpha Ag WO as novel antifungal agent
+Estirpes Produtoras de Beta Lactamases de Espectro Alargado A Realidade num Hospital Central
+Contributions of mean and shape of blood pressure distribution to worldwide trends and variations in raised blood pressure a pooled analysis of population based measurement studies with million participants
+Worldwide trends in body mass index underweight overweight and obesity from to a pooled analysis of population based measurement studies in million children adolescents and adults
+Whey protein active films incorporated with a blend of essential oils Characterization and effectiveness
+Brazilian Flora Innovation and collaboration to meet Target of the Global Strategy for Plant Conservation GSPC
+Journal of Renewable Materials
+Cellulose acetate carbon nanotube composites by melt mixing
+Journal of Nanoparticle Research
+High fluorescent water soluble CdTe quantum dots a promising system for light harvesting applications
+Dyes and Pigments
+Hybrid nanocomposites of a fluorescent block copolymer and quantum dots An efficient way for energy transfer
+Colloids and Surfaces B Biointerfaces
+Solid and aqueous magnetoliposomes as nanocarriers for a new potential drug active against breast cancer
+Materials Letters
+Novel iridium pentafluorophenyl porphyrin complex
+Journal of Rheumatology
+Evidence for a derangement of the microvascular system in patients with a very early diagnosis of systemic sclerosis
+ChemistrySelect
+Preparation of Poly vinylidene fluoride Lithium Ion Battery Separators and Their Compatibilization with Ionic Liquid A Green Solvent Approach
+Food Packaging
+BIODEGRADABLE POLYMERNANOCOMPOSITES FOR PACKAGING APPLICATIONS
+Food Packaging
+BIOPLASTICS FROM AGRO WASTES FOR FOOD PACKAGING APPLICATIONS
+Materials Today Communications
+Fluorescent and conductive cellulose acetate based membranes with porphyrins
+Efficiency of RAFT synthesized PDMAEMA in gene transfer to the retina
+Cellulose acetate carbon nanotube composites by melt mixing
+Hybrid nanocomposites of a fluorescent block copolymer and quantum dots an efficient way for energy transfer
+Novel iridium pentafluorophenyl porphyrin complex
+Efficiency of RAFT synthesized PDMAEMA in gene transfer to the retina
+Fluorescent and conductive cellulose acetate based membranes with porphyrins
+Polymer Testing
+The role of shear and stabilizer on PLA degradation
+Journal of Polymer Science Part B Polymer Physics
+From superhydrophobic to superhydrophilic patterned poly vinylidene fluoride co chlorotrifluoroethylene architectures as a novel platform for biotechnological applications
+Journal of Cellular Biochemistry
+Anti Angiogenic Properties of Cafestol and Kahweol Palmitate Diterpene Esters
+Journal of Cellular Biochemistry
+Red Raspberry Phenols Inhibit Angiogenesis A Morphological and Subcellular Analysis Upon Human Endothelial Cells
+Journal of Materials Science
+Morphology optical and electric properties of polymer quantum dots nanocomposites effect of polymeric matrix
+Journal of Cellular Biochemistry
+Antiangiogenic Aryl thieno b pyridin ylthio phenyl ureas Inhibit MCF and MDA MB Human Breast Cancer Cell Lines Through PI K Akt and MAPK Erk Pathways
+Plasma Processes and Polymers
+Ag TiN Coated Polyurethane for Dry Biopotential Electrodes From Polymer Plasma Interface Activation to the First EEG Measurements
+Journal of Renewable Materials
+Editorial
+Journal of Applied Polymer Science
+Influence of dynamic crosslinking on the morphology crystallization and dynamic mechanical properties of PA EVA blends
+Applied Surface Science
+Superhydrophilic poly l lactic acid electrospun membranes for biomedical applications obtained by argon and oxygen plasma treatment
+Journal of Polymer Engineering
+The influence of melt mixing on the stability of cellulose acetate and its carbon nanotube composites
+Materials Science and Engineering C
+Development of polymer wicks for the fabrication of bio medical sensors
+Organic Electronics
+Degradation of all inkjet printed organic thin film transistors with TIPS pentacene under processes applied in textile manufacturing
+Journal of Polymer Science Part B Polymer Physics
+Tailoring poly vinylidene fluoride co chlorotrifluoroethylene microstructure and physicochemical properties by exploring its binary phase diagram with dimethylformamide
+Polymer Testing
+Effect of butadiene styrene ratio block structure and carbon nanotube content on the mechanical and electrical properties of thermoplastic elastomers after UV ageing
+Journal of Non Crystalline Solids
+Variation of the physicochemical and morphological characteristics of solvent casted poly vinylidene fluoride along its binary phase diagram with dimethylformamide
+Journal of Materials Science
+Synthesis and characterization of polystyrene block poly vinylbenzoic acid a promising compound for manipulating photoresponsive properties at the nanoscale
+Carbohydrate Polymers
+Antimicrobial nanostructured starch based films for packaging
+Electroanalysis
+Effect of Ionic Liquid Anion Type in the Performance of Solid Polymer Electrolytes Based on Poly Vinylidene fluoride trifluoroethylene
+Bioorganic and Medicinal Chemistry
+Synthesis antiangiogenesis evaluation and molecular docking studies of aryl thieno b pyridin ylthio phenyl ureas Discovery of a new substitution pattern for type II VEGFR Tyr kinase inhibitors
+Ecological Engineering
+Kinetic and equilibrium studies of phosphorous adsorption Effect of physical and chemical properties of adsorption agent
+Applied Clay Science
+Effect of clay mineral addition on properties of bio based polymer blends
+Abstracts of Papers of the American Chemical Society
+Poly hydroxyethyl methacrylate A new star polymer
+Abstracts of Papers of the American Chemical Society
+Design of assemblies based on polymer coated quantum dots and organic dye
+Abstracts of Papers of the American Chemical Society
+New active packaging film from natural resources
+Abstracts of Papers of the American Chemical Society
+New polyurethane like material based on proteins
+Synthesis and characterization of polystyrene blockpoly vinylbenzoic acid a promising compound for manipulating photoresponsive properties at the nanoscale
+Development of polymer wicks for the fabrication of bio medical sensors
+Antimicrobial nanostructured starch based films for packaging
+Journal of Materials Science
+Development of acrylonitrile butadiene styrene composites with enhanced UV stability
 International Polymer Processing
 Preparation of polymer clay nanocomposites by melt mixing in a twin screw extruder Using on line SAOS rheometry to assess the level of dispersion
+Soft Materials
+Effect of PCL and EVA molar mass on the development of sustainable polymers
+Environmental Science and Pollution Research
+Biodegradation assessment of PLA and its nanocomposites
+Electrochimica Acta
+Li ion battery separator membranes based on barium titanate and poly vinylidene fluoride co trifluoroethylene Filler size and concentration effects
+Journal of Polymers and the Environment
+Characterization of EVA PLA Blends When Exposed to Different Environments
+Applied Clay Science
+Influence of clay organic modifier on the thermal stability of PLA based nanocomposites
+Polymer Testing
+Microstructural variations of poly vinylidene fluoride co hexafluoropropylene and their influence on the thermal dielectric and piezoelectric properties
+Chemistry and Ecology
+Phosphorus removal by a fixed bed hybrid polymer nanocomposite biofilm reactor
+Chemical Engineering and Technology
+Processing Conditions Effect on Dispersion Evolution in a Twin Screw Extruder Polypropylene Clay Nanocomposites
+Macromolecular Reaction Engineering
+Nanocomposites prepared by reactive extrusion Effect of the polymer reactive groups
+International Journal of Environmental Science and Technology
+A poly e caprolactone based biofilm carrier for nitrate removal from water
+Food Additives and Contaminants Part A Chemistry Analysis Control Exposure and Risk Assessment
+Trends in the use of natural antioxidants in active food packaging a review
+Trends in the use of natural antioxidants in active food packaging a review
+Polymer Testing
+Thermal stability of P HT and P HT PCBM blends in the molten state
+Journal of Polymers and the Environment
+Durability of PCL Nanocomposites Under Different Environments
+International Journal of Pavement Research and Technology
+Development of an innovative bio binder using Asphalt rubber technology
+Solid State Ionics
+Polymer Degradation and Stability
+Outdoor and accelerated weathering of acrylonitrile butadiene styrene A correlation study
+Journal of Materials Science
+Nanocomposites of poly e caprolactone doped with titanium species
+Journal of Applied Polymer Science
+In line near infrared spectroscopy A tool to monitor the preparation of polymer clay nanocomposites in extruders
+Polymer International
+Preparation and characterization of ethylene vinyl acetate nanocomposites Enhanced flame retardant
+Advances in Polymer Technology
+Hybrid nanocomposite preparation in a batch mixer and a twin screw extruder
+Environmental Technology Reviews
+The role of phosphorus on eutrophication a historical review and future perspectives
+Sensors and Actuators A Physical
+Development of a quasi dry electrode for EEG recording
+Chemical Engineering Science
+Evolution of dispersion along the extruder during the manufacture of polymer organoclay nanocomposites
+Polymer Testing
+Influence of the testing conditions on the efficiency and durability of stabilizers against ABS photo oxidation
+Rheologica Acta
+Rheological changes in the bitumen caused by heating and interaction with rubber during asphalt rubber production
+Water Air and Soil Pollution
+Phosphorus removal from eutrophic waters with an aluminium hybrid nanocomposite
+Polymer Testing
+In line near infrared spectroscopy for the characterization of dispersion in polymer clay nanocomposites
+Materials Chemistry and Physics
+Synthesis of EVA g PLA copolymers using transesterification reactions
+Materials Chemistry and Physics
+Effect of crosslinking on morphology and phase inversion of EPDM PP blends
 International Polymer Processing
 Monitoring the production of polymer nanocomposites by melt compounding with on line rheometry
+Construction and Building Materials
+Mutual changes in bitumen and rubber related to the production of asphalt rubber binders
+Reactive and Functional Polymers
+Synthesis of aluminium nanoparticles in a PP matrix during melt processing Effect of the alkoxide organic chain
+Water Science and Technology
+Use of biopolymers as solid substrates for denitrification
+Macromolecular Symposia
+Nanoclays dispersion in a PA PP blend by twin screw compounding
+Reactive and Functional Polymers
+Biobased grafted polyesters prepared by in situ ring opening polymerization
+Applied Surface Science
+Functionalization of PET and PA woven fabrics
+European Polymer Journal
+Morphology development and phase inversion during dynamic vulcanisation of EPDM PP blends
+Journal of Applied Polymer Science
+Biodegradability assessment of aliphatic polyesters based blends using standard methods
 Polymer Testing
 Measuring the rheological properties of polymer melts with on line rotational rheometry
-Human Centered Design Approach to the Development of a Graphical User Interface for Visual Inspection Task A Use Case in the Aircraft Manufacturing
-Towards the Digital Transformation of Inspection Tasks in Aircraft Manufacturing Through a Human Centric Design
-Rheological characterization of polymer graphene nanocomposites
-Nanocomposites the contribution of multiscale modelling to improve the dispersion levels
+Environmental Technology
+Plasma Processes and Polymers
+Plasma surface activation and TiN coating of a TPV substrate for biomedical applications
+Polymer Testing
+Morphology and phase inversion of EPDM PP blends Effect of viscosity and elasticity
+Journal of Polymer Research
+Stability of nanocomposites of poly e caprolactone with tungsten trioxide
+Applied Rheology
+Rheological quantification of bitumen aging Definition of a new sensitive parameter
+Road Materials and Pavement Design
+Changes in rubber due to its interaction with bitumen when producing asphalt rubber
+Plasma Processes and Polymers
+Plasma surface modification of polycarbonate and poly propylene substrates for biomedical electrodes
+Journal of Applied Polymer Science
+Artificial and natural weathering of ABS
+Drug discoveries therapeutics
+Di hetero arylamines in the benzo b thiophene series as novel potent antioxidants
+Journal of Optoelectronics and Advanced Materials
+Activation of polyethylene terephthalate using different plasma treatments
+Journal of Rheology
+The effect of interfacial properties on the deformation and relaxation behavior of PMMA PS blends
+Materials Chemistry and Physics
+a and PVDF Crystallization kinetics microstructural variations and thermal behaviour
+Korea Australia Rheology Journal
+The role of interfacial elasticity on the rheological behavior of polymer blends
+Rubber Chemistry and Technology
+Degradation of the rubber network during dynamic vulcanization of EPDM PP blends using phenolic resol
+Journal of Applied Polymer Science
+Contribution of the melting stage to the evolution of the morphology and chemical conversion of immiscible polyamide polyethylene blends in twin screw extruders
+Advances in Polymer Processing From Macro to Nano Scales
+Reactive polymer processing and design of stable micro and nanostructures
+Journal of Applied Polymer Science
+Effect of antistatic additives on mechanical and electrical properties of polyethylene foams
+Advanced Testing and Characterisation of Bituminous Materials Vols and
+Rheological and functional evaluation of the interactions between bitumen and rubber
+Rubber Chemistry and Technology
+DEGRADATION OF THE RUBBER NETWORK DURING DYNAMIC VULCANIZATION OF EPDM PP BLENDS USING PHENOLIC RESOL
+Advances in Polymer Processing from Macro to Nano Scales
+Reactive polymer processing and design of stable micro and nanostructures
+Journal of Applied Polymer Science
+Continuous polymerization of e caprolactone initiated by titanium phenoxide in a twin screw extruder
+Surface and Coatings Technology
+Journal of Non Newtonian Fluid Mechanics
+On line rotational rheometry for extrusion and compounding operations
+Journal of Industrial Microbiology and Biotechnology
+Characterization of biofilm formation on a humic material
+Nuclear Instruments and Methods in Physics Research Section B Beam Interactions with Materials and Atoms
+Thermec International Conference on Processing and Manufacturing of Advanced Materials
+Preparation of Biodegradable Materials by Reactive Extrusion
+Thermec International Conference on Processing and Manufacturing of Advanced Materials
+Influence of the Crystallization Kinetics on the Microstructural Properties of gamma PVDF
+Materials Chemistry and Physics
+Catalytic degradation of polyethylene An evaluation of the effect of dealuminated Y zeolites using thermal analysis
+International Polymer Processing
+Evaluation of properties and biodeterioration potential of polyethylene and aliphatic polyester blends
+Rheologica Acta
+Rheological behavior of compatibilized and non compatibilized PA EPM blends
+Journal of Applied Polymer Science
+Photochemical aging and processability of life time controlled polystyrene high impact polystyrene blends
+Polymer Degradation and Stability
+Feedstock recycling of polyethylene over AlTUD mesoporous catalyst
+Journal of Applied Polymer Science
+Evolution of the peroxide induced degradation of polypropylene along a twin screw extruder Experimental data and theoretical predictions
+Polymer Testing
+Photo degradability of ketone modified PS HIPS blends
+Thin Solid Films
+European Polymer Journal
+The effect of acidity behaviour of Y zeolites on the catalytic degradation of polyethylene
+Thermec International Conference on Processing and Manufacturing of Advanced Materials
+Transient rheological behaviour of PA EPM EPM g MA blends
+Macromolecular Symposia
+The effect of the compatibilization route of PA PO blends on the physico chemical phenomena developing along a twin screw extruder
+Thermec International Conference on Processing and Manufacturing of Advanced Materials
+Dynamic vulcanisation of EPDM based thermoplastic vulcanisates during extrusion Effect of processing conditions
+MRS Proceedings
+Influence of the Crystallisation Kinetics on the Microstructural Properties of a PVDF
+Thermec International Conference on Processing and Manufacturing of Advanced Materials
+Thermogravimetric study of polyethylene catalytic degradation by zeolites
+Property change in multifunctional TiCxOy thin films effect of the O Ti ratio
+Property change in multifunctional TiCxOy thin films effect of the O Ti ratio
+Polymer Degradation and Stability
+EPDM based thermoplastic vulcanisates Crosslinking chemistry and dynamic vulcanisation along the extruder axis
+Polymer
+Dynamic vulcanisation of EPDM PE based thermoplastic vulcanisates studied along the extruder axis
+International Polymer Processing
+Monitoring reactive processes along the extruder
+Evolução da morfologia de fases de blendas PA AES em extrusora de dupla rosca e moldagem por injeção
+Evolução da morfologia de fases de blendas PA AES em extrusora de dupla rosca e moldagem por injeção
+Advances in Polymer Technology
+A study of grafting reactions during processing of polyolefins
+Plastics Rubber and Composites
+Online monitoring techniques for studying evolution of physical rheological and chemical effects along the extruder
+Polymer Degradation and Stability
+Enhancement of the thermooxidative degradability of polystyrene by chemical modification
+Polymer Degradation and Stability
+Laurolactam as a stabilizer against the thermo oxidative degradation of poly ether esters
+Journal of Applied Polymer Science
+Evolution of peroxide induced thermomechanical degradation of polypropylene along the extruder
+Thermec International Conference on Processing and Manufacturing of Advanced Materials
+Modelling of the grafting of maleic anhydride onto polyethylene in an extruder
+Thermec International Conference on Processing and Manufacturing of Advanced Materials
+Effect of experimental conditions on the grafting of maleic anhydride onto polyethylene in extruders
+Macromolecular Symposia
+Interfacial chemistry and morphology of in situ compatibilised PA and PBT based blends
+Polymer Engineering and Science
+Monitoring the evolution of the properties of PA EPM g MA blends in a twin screw extruder
+The Canadian Journal of Chemical Engineering
+Evolution of chemistry morphology and rheology of various polymer systems along a twin screw extruder
+Applied Rheology
+On Line Rheometry for Twin Screw Extrusion Along the Extruder and its Applications
+Macromolecular Symposia
+A look inside the extruder Evolution of chemistry morphology and rheology along the extruder axis during reactive processing and blending
+Journal of Applied Polymer Science
+Monitoring polyolefin modification along the axis of a twin screw extruder I Effect of peroxide concentration
+Journal of Applied Polymer Science
+Effect of composition and processing conditions on the chemical and morphological evolution of PA EPM EPM g MA blends in a corotating twin screw extruder
+Polymer
+Effect of polyolefin structure on maleic anhydride grafting
+Advances in Polymer Technology
+Rheology of PA EPM EPM g MA blends along a twin screw extruder
+Journal of Polymer Science Part A Polymer Chemistry
+Monitoring polyolefin modification along the axis of a twin screw extruder II Maleic anhydride grafting
+Antec Society of Plastics Engineers Technical Papers Conference Proceedings Vols I iii
+Effect of polyolefin structrure on grafting of maleic anhydride
+Journal of Applied Polymer Science
+Evolution of morphology and of chemical conversion along the screw in a corotating twin screw extruder
+Journal of Polymer Science Part A Polymer Chemistry
+Chemical and morphological evolution of PA EPM EPM g MA blends in a twin screw extruder
+Revista brasileira de cirurgia
+Pre and post operative management latest concepts presented in specialized literature Pré e pós operatório conceitos emitidos nos últimos tempos pelos estudiosos no assunto em revistas e livros especializados
+Novel photo conductive organic fibers for flexible optoelectronics
+Análise de causas de quebra de garrafas de vidro e otimização da estabilidade de paletização
+Desenvolvimento de membranas de acetato de celulose contendo nanopartículas de prata alumínio
+Desenvolvimento de membranas de acetato de celulose contendo nanopartículas de prata alumínio

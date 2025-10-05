@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
-SCRIPT: Word cloud plotter from words and counts
+SCRIPT: Plot word cloulds from words
 AUTHOR: Ricardo Costa
 DATE: October 2025
 ===========================================================
@@ -62,7 +62,7 @@ from matplotlib import pyplot as plt
 # PARSE ARGUMENTS
 # ================================================
 
-parser = argparse.ArgumentParser(description="Word cloud plotter from words and counts")
+parser = argparse.ArgumentParser(description="Plot word cloulds from words")
 parser.add_argument("--words", required=True, help="Local CSV file with words and counts")
 parser.add_argument("--colormap", default="viridis", help="Word cloud plot colormap (any from Matplotlib, default: viridis)")
 parser.add_argument("--special", default="", help="Special words to highlight (default: '')")
@@ -114,7 +114,7 @@ wordcloud1 = WordCloud(
     height=600,
     background_color="white",
     color_func=gradient_color_func,
-    max_words=200
+    max_words=100
 ).generate_from_frequencies(words)
 
 # Display and save word cloud plot
@@ -136,16 +136,13 @@ if SPECIAL_WORDS:
     # Recolor wordcloud1 (keeps the same layout, only changes colors)
     wordcloud2 = wordcloud1.recolor(color_func=special_color_func)
 
-    # Rename output name
-    OUTPUT_WORDCLOUD = "special_"+OUTPUT_WORDCLOUD
-
     # Display and save word cloud plot
     plt.figure(figsize=(15, 7.5))
     plt.imshow(wordcloud2, interpolation="bilinear")
     plt.axis("off")
     plt.tight_layout()
-    plt.savefig(OUTPUT_WORDCLOUD)
+    plt.savefig("special_"+OUTPUT_WORDCLOUD)
     plt.show()
-    print(f"Word cloud plot saved at: {OUTPUT_WORDCLOUD}")
+    print(f"Word cloud plot saved at: special_{OUTPUT_WORDCLOUD}")
 
 # End of file

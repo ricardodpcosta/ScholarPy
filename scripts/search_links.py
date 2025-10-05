@@ -99,8 +99,8 @@ driver = webdriver.Chrome(options=options)
 # STEP 2: PROCESS EACH SOURCE
 # ================================================
 
-# Array storing CV links
-cv_links = []
+# Array storing links
+links = []
 
 # Split multiple sources
 sources = [src.strip() for src in HTML_SOURCES.split(",") if src.strip()]
@@ -108,7 +108,7 @@ sources = [src.strip() for src in HTML_SOURCES.split(",") if src.strip()]
 # Search links in each source
 for source in sources:
     # Limit number of links
-    if len(cv_links)==TEAM_LIMIT:
+    if len(links)==TEAM_LIMIT:
         break
     print(f"Processing source: {source}")
     # Load HTML (remote or local)
@@ -149,19 +149,19 @@ for source in sources:
             # Try ORCID first
             orcid_tag = bs_soup.find("a", href=lambda x: x and "orcid.org" in x)
             if orcid_tag:
-                cv_links.append(f"{orcid_tag['href']}")
+                links.append(f"{orcid_tag['href']}")
                 print(f"\033[32m  ORCID found: {orcid_tag['href']}\033[0m")
                 # Limit number of links
-                if len(cv_links)==TEAM_LIMIT:
+                if len(links)==TEAM_LIMIT:
                     break
             # Try CienciaVitae otherwise
             else:
                 cienciavitae_tag = bs_soup.find("a", href=lambda x: x and "cienciavitae.pt" in x)
                 if cienciavitae_tag:
-                    cv_links.append(f"{cienciavitae_tag['href']}")
+                    links.append(f"{cienciavitae_tag['href']}")
                     print(f"\033[32m  CienciaVitae found: {cienciavitae_tag['href']}\033[0m")
                     # Limit number of links
-                    if len(cv_links)==TEAM_LIMIT:
+                    if len(links)==TEAM_LIMIT:
                         break
                 else:
                     print("\033[33m  No ORCID or CienciaVitae found\033[0m")
@@ -171,19 +171,19 @@ for source in sources:
         orcid_tags = soup.find_all("a", href=lambda x: x and "orcid.org" in x)
         if orcid_tags:
             for tag in orcid_tags:
-                cv_links.append(f"{tag['href']}")
+                links.append(f"{tag['href']}")
                 print(f"\033[32m  ORCID found: {tag['href']}\033[0m")
                 # Limit number of links
-                if len(cv_links)==TEAM_LIMIT:
+                if len(links)==TEAM_LIMIT:
                     break
         # Try CienciaVitae otherwise
         else:
             cienciavitae_tags = soup.find_all("a", href=lambda x: x and "cienciavitae.pt" in x)
             for tag in cienciavitae_tags:
-                cv_links.append(f"{tag['href']}")
+                links.append(f"{tag['href']}")
                 print(f"\033[32m  CienciaVitae found: {tag['href']}\033[0m")
                 # Limit number of links
-                if len(cv_links)==TEAM_LIMIT:
+                if len(links)==TEAM_LIMIT:
                     break
 
 # Close driver
@@ -195,7 +195,7 @@ driver.quit()
 
 # Save links to file
 with open(OUTPUT_LINKS, "w", encoding="utf-8") as f:
-    for line in cv_links:
+    for line in links:
         f.write(line + "\n")
 print(f"Links saved at: {OUTPUT_LINKS}")
 

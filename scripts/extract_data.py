@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
-SCRIPT: Analise scientific words and counts
+SCRIPT: Extract data from research profiles
 AUTHOR: Ricardo Costa
 DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
 ------------
-This script performs web scraping from public researcher CVs (ORCID
+This script extracts relevant data from public research profiles (ORCID
 or CienciaVitae). It requires an input file with links to ORCID
 (https://orcid.org/) or CienciaVitae (https://www.cienciavitae.pt/).
 The process is divided into three steps:
@@ -17,9 +17,8 @@ The process is divided into three steps:
 1. Read an input file containing ORCID or CienciaVitae links.
 2. Visit each link and scrape the data on relevant fields, such as titles
    of fundings, projects, works, outcomes, and journals/conferences.
-3. Clean and condense the text, keeping only alphabetic characters and spaces
+3. Clean and condense the data, keeping only alphabetic characters and spaces
    wihtout repetition.
-
 
 NOTES:
 ------
@@ -31,7 +30,7 @@ NOTES:
 
 OUTPUT:
 -------
-- TXT file containing the extracted text.
+- TXT file containing the extracted data.
 
 AUTHOR:
 -------
@@ -50,7 +49,7 @@ DEPENDENCIES:
 
 USAGE:
 ------
-python extract_text.py [-h]
+python extract_data.py [-h]
 
 ===========================================================
 """
@@ -71,27 +70,27 @@ from bs4 import BeautifulSoup
 # PARSE ARGUMENTS
 # ================================================
 
-parser = argparse.ArgumentParser(description="Analise scientific words counts")
+parser = argparse.ArgumentParser(description="Extract data from research profiles")
 parser.add_argument("--links", required=True, help="Input file with ORCID or CienciaVitae links")
-parser.add_argument("--out", default="text.txt", help="Output file with extracted text (default: text.txt)")
+parser.add_argument("--out", default="data.txt", help="Output file with extracted data (default: data.txt)")
 parser.add_argument("--pause", type=int, default=3, help="Delay in seconds between requests (default: 2)")
 args = parser.parse_args()
 
 INPUT_LINKS = args.links.strip()
-OUTPUT_TEXT = args.out.strip()
+OUTPUT_DATA = args.out.strip()
 PAGE_PAUSE = args.pause
 
 # ================================================
-# STEP 1: READ CV LINKS
+# STEP 1: READ LINKS
 # ================================================
 
 # Read input links
 with open(INPUT_LINKS, "r", encoding="utf-8") as f:
-    cv_links = [line.strip() for line in f if line]
-if len(cv_links)==1:
-    print(f"Loaded {len(cv_links)} link")
+    links = [line.strip() for line in f if line]
+if len(links)==1:
+    print(f"Loaded {len(links)} link")
 else:
-    print(f"Loaded {len(cv_links)} links")
+    print(f"Loaded {len(links)} links")
 
 # ================================================
 # STEP 2: INITIALISE MODULES
@@ -105,36 +104,36 @@ options.add_argument("--no-sandbox")
 driver = webdriver.Chrome(options=options)
 
 # ================================================
-# STEP 3: SCRAPE CVs
+# STEP 3: SCRAPE PROFILES
 # ================================================
 
 # Dictionary to store word frequencies
 words = {}
 
 # Process words in each link
-for i, cv_link in enumerate(cv_links, start=1):
+for i, link in enumerate(links, start=1):
     # Check link type
-    if "orcid.org" in cv_link:
-        cv_type = "orcid"
-        print(f"[{i}/{len(cv_links)}] Loading ORCID: {cv_link}")
-    elif "cienciavitae.pt" in cv_link:
-        cv_type = "cienciavitae"
-        print(f"[{i}/{len(cv_links)}] Loading CienciaVitae: {cv_link}")
+    if "orcid.org" in link:
+        type = "orcid"
+        print(f"[{i}/{len(links)}] Loading ORCID: {link}")
+    elif "cienciavitae.pt" in link:
+        type = "cienciavitae"
+        print(f"[{i}/{len(links)}] Loading CienciaVitae: {link}")
     else:
-        print(f"\033[33m[{i}/{len(cv_links)}] Unknown CV type: {cv_link}CV\033[0m")
+        print(f"\033[33m[{i}/{len(links)}] Unknown profile type: {link}\033[0m")
         continue
     # Load HTML page
     try:
-        driver.get(cv_link)
+        driver.get(link)
     except:
         print(f"\033[33m  Unable to load page\033[0m")
         continue
     time.sleep(PAGE_PAUSE)
     # Process HTML page
-    cv_soup = BeautifulSoup(driver.page_source, "lxml")
+    soup = BeautifulSoup(driver.page_source, "lxml")
     # Check if page is found
-    if cv_type == "orcid":
-        title_tag = cv_soup.select_one("title")
+    if type == "orcid":
+        title_tag = soup.select_one("title")
         if title_tag and title_tag.get_text(strip=True) != "ORCID":
             user_name = title_tag.get_text(strip=True)
             match = re.match(r"^(.*?)\s*\(", user_name)
@@ -147,60 +146,60 @@ for i, cv_link in enumerate(cv_links, start=1):
             print(f"\033[33m  Unable to load page, possibly page not found\033[0m")
             continue
     else:
-        user_name_tag = cv_soup.select_one("div.user-name")
+        user_name_tag = soup.select_one("div.user-name")
         if user_name_tag:
             user_name = user_name_tag.get_text(strip=True)
             print(f"\033[32m  Successfully loaded page\033[0m")
         else:
             print(f"\033[33m  Unable to load page, possibly page not found\033[0m")
             continue
-    # Array to store extrated text
-    text = []
+    # Array to store extrated data
+    data = []
     # ORCID scraping
-    if cv_type == "orcid":
+    if type == "orcid":
         # Extract funding titles
-        for h4 in cv_soup.select("h4.funding-title"):
-            text.append(h4.find(string=True, recursive=False).replace("\n", " ").strip())
+        for h4 in soup.select("h4.funding-title"):
+            data.append(h4.find(string=True, recursive=False).replace("\n", " ").strip())
         # Extract work titles
-        for h4 in cv_soup.select("h4.work-title"):
-            text.append(h4.find(string=True, recursive=False).replace("\n", " ").strip())
-        for work in cv_soup.select("app-work"):
+        for h4 in soup.select("h4.work-title"):
+            data.append(h4.find(string=True, recursive=False).replace("\n", " ").strip())
+        for work in soup.select("app-work"):
             data = work.select_one("div.general-data")
             if data:
-                text.append(data.find(string=True, recursive=False).replace("\n", " ").strip())
+                data.append(data.find(string=True, recursive=False).replace("\n", " ").strip())
     # CienciaVitae scraping
-    elif cv_type == "cienciavitae":
+    elif type == "cienciavitae":
         # Extract project titles
-        for td in cv_soup.select("#proj table td:nth-of-type(2)"):
-            text.append(td.find(string=True, recursive=False).replace("\n", " ").strip())
+        for td in soup.select("#proj table td:nth-of-type(2)"):
+            data.append(td.find(string=True, recursive=False).replace("\n", " ").strip())
         # Extract production titles
-        for li in cv_soup.select("#prod li"):
+        for li in soup.select("#prod li"):
             # Extract titles between <i>
             title_tag = li.select_one("i")
             if title_tag:
-                text.append(title_tag.find(string=True, recursive=False).replace("\n", " ").strip())
+                data.append(title_tag.find(string=True, recursive=False).replace("\n", " ").strip())
             # Extract titles between quotation marks
             string = li.find(string=True, recursive=False).replace("\n", " ").strip()
             match = re.search(r'"(.*?)"', string)
             if match:
-                text.append(match.group(1))
+                data.append(match.group(1))
 
-# Clean and condense text
-for i, string in enumerate(text):
+# Clean and condense data
+for i, string in enumerate(data):
     string = re.sub(r"[^a-zA-ZáéíóúàãõâêîôûçÁÉÍÓÚÀÃÕÂÊÎÔÛÇ\s]", " ", string)
     string = re.sub(r"\s+", " ", string)
-    text[i] = string.strip()
+    data[i] = string.strip()
 
 # Close Selenium browser
 driver.quit()
 
 # ================================================
-# STEP 4: SAVE TXT
+# STEP 4: SAVE DATA
 # ================================================
 
-# Save text to file
-with open(OUTPUT_TEXT, "w", encoding="utf-8") as f:
-    f.write("\n".join(text))
-print(f"Text saved at: {OUTPUT_TEXT}")
+# Save data to file
+with open(OUTPUT_DATA, "w", encoding="utf-8") as f:
+    f.write("\n".join(data))
+print(f"Data saved at: {OUTPUT_DATA}")
 
 # End of file
