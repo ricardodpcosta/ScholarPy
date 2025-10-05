@@ -136,4 +136,4 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) for de
 ## Contact
 
 📧 [Ricardo Costa](mailto:rcosta\@dep.uminho.pt)  
-🌐 [https://ricardodpcosta.github.io/](https://ricardodpcosta.github.io/)
+🌐 [Academic page](https://ricardodpcosta.github.io/)
