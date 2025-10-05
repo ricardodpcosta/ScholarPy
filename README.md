@@ -21,7 +21,7 @@ The toolkit offers a collection of modular tools to:
 
 ---
 
-### Concepts used
+### Concepts
 
 ScholarPy is built upon two core concepts:
 
@@ -33,7 +33,7 @@ ScholarPy is built upon two core concepts:
 
 ## Features
 
-This Python toolkit is based on advanced data processing and artificial intelligence packages:
+This Python toolkit is based on advanced data processing and artificial intelligence modules:
 
 * **Selenium**: Automates web browsing tasks, allowing the script to interact with dynamically generated content and enabling the extraction of data even when the content is loaded asynchronously with JavaScript. Essential for accessing ORCID and CiênciaVitae profiles.
 
@@ -48,12 +48,16 @@ This Python toolkit is based on advanced data processing and artificial intellig
 
 ## Requirements
 
-* Python 3.10+
-* [Selenium](https://pypi.org/project/selenium/)
-* [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/)
-* [spaCy](https://spacy.io/) (`en_core_web_sm` model required)
-* [WordCloud](https://pypi.org/project/wordcloud/)
-* [Matplotlib](https://pypi.org/project/matplotlib/)
+ScholarPy requires **Python 3.10+** and the following modules:
+
+* [Selenium](https://pypi.org/project/selenium/).
+* [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/). 
+* [lxml](https://pypi.org/project/lxml/).
+* [spaCy](https://spacy.io/).
+  * (Required) English model (`en_core_web_sm`).
+  * (Optional) Portuguese model (`pt_core_news_sm`).  
+* [Matplotlib](https://pypi.org/project/matplotlib/). 
+* [WordCloud](https://pypi.org/project/wordcloud/).
 
 ---
 
@@ -62,16 +66,23 @@ This Python toolkit is based on advanced data processing and artificial intellig
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/ScholarPy.git
+git clone https://github.com/ricardodpcosta/ScholarPy.git
 cd ScholarPy
-```
+````
 
-2. Install required packages:
+2. Install required packages via [pip](https://pypi.org/project/pip/):
 
 ```bash
 pip install -r requirements.txt
-python -m spacy download en_core_web_sm
 ```
+
+3. Download the spaCy language models (English required, Portuguese optional):
+
+```bash
+python -m spacy download en_core_web_sm
+python -m spacy download pt_core_news_sm
+```
+
 
 ---
 
