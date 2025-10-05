@@ -1,19 +1,19 @@
 # ScholarPy
 
-**Extract, analyze, and visualize insights on scholarly profiles with web scraping and data mining in Python**
+**Extract, analyse, and visualise research insights from scholarly profiles with web scraping and data mining in Python.**
 
 ---
 
 ## Overview
 
-ScholarPy is a Python toolkit to extract, process, and visualize data from public scholarly profiles, such as ORCID and CienciaVitae. It combines **web scraping**, **text mining**, and **data visualization** to generate meaningful insights on researchers’ publications, projects, and outputs.
+PyScholar is a Python toolkit for extracting data, analysing information, and visualising research insights from public scholarly profiles, such as ORCID and CienciaVitae. It integrates **web scraping**, **text mining**, and **data visualisation** to provide meaningful insights into the research activities and outputs of individual researchers or entire teams.
 
-The toolkit allows you to:
+The toolkit offers a collection of tools to:
 
-* Extract CVs from ORCID or CienciaVitae profiles.
-* Analyze textual data using **lemmatization** and **stopword filtering**.
-* Generate **word clouds** and frequency counts of scientific terms.
-* Highlight specific keywords for tailored visualization.
+* Discover public scholarly profiles on institutional webpages.
+* Extract data from public scholarly profiles (currently supporting ORCID and CienciaVitae).
+* Analyse textual data using **natural language processing (NLP)**.
+* Visualise research insights through infographic representations.
 
 ---
 
