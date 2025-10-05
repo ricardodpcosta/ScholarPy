@@ -13,7 +13,7 @@ Analyse relevant scientific words from extracted data.
 The process is divided into two steps:
 
 1. Read an input file containing data.
-2. Lemmatise, filter and count words.
+2. Lemmatise, filter, and count words.
 
 Words are lemmatised (normalized) and filtered to remove common
 English and Portuguese stopwords, as well as domain-generic words.
