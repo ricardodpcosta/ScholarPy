@@ -6,25 +6,43 @@
 
 ## Overview
 
-PyScholar is a Python toolkit for extracting data, analysing information, and visualising research insights from public scholarly profiles, such as ORCID and CienciaVitae. It integrates **web scraping**, **text mining**, and **data visualisation** to provide meaningful insights into the research activities and outputs of individual researchers or entire teams.
+ScholarPy is a Python toolkit for extracting relevant data, analysing textual information, and visualising research insights from public scholarly profiles, such as ORCID and CienciaVitae. It integrates **web browsing**, **web scraping**, **data mining**, and **data visualisation** using various Python libraries to provide meaningful insights into the research activities and outputs of individual researchers or research teams.
 
-The toolkit offers a collection of tools to:
+The toolkit offers a collection of modular tools to:
 
 * Discover public scholarly profiles on institutional webpages.
-* Extract data from public scholarly profiles (currently supporting ORCID and CienciaVitae).
-* Analyse textual data using **natural language processing (NLP)**.
-* Visualise research insights through infographic representations.
+* Extract relevant data from public scholarly profiles (currently supporting ORCID and CienciaVitae).
+* Analyse textual information using **natural language processing (NLP)**.
+* Visualise research insights through meaningful infographic representations.
+
+<br>
+
+<img src="images/pipeline.png" alt="ScholarPy pipeline" width="90%"/>
+
+---
+
+### Concepts used
+
+ScholarPy is built upon two core concepts:
+
+- **Web scraping**: The process of automatically extracting data from websites. ScholarPy uses scraping to collect scholarly information from dynamic sources such as ORCID and CiênciaVitae profiles.  
+
+- **Data mining**: The practice of analysing large sets of text or structured data to uncover patterns, trends, and insights. In ScholarPy, it transforms raw profile data into meaningful research indicators. 
 
 ---
 
 ## Features
 
-* **Web Scraping**: Automatically retrieve data from ORCID and CienciaVitae profiles using Selenium and BeautifulSoup.
-* **Text Mining**: Clean, lemmatize, and filter scientific terms.
-* **Word Cloud Generation**: Visualize frequent terms with customizable colors and colormaps.
-* **Modular Workflow**: Separate scripts for data extraction and analysis.
+This Python toolkit is based on advanced data processing and artificial intelligence packages:
 
-<img src="images/pipeline.png" alt="ScholarPy pipeline" width="90%"/>
+* **Selenium**: Automates web browsing tasks, allowing the script to interact with dynamically generated content and enabling the extraction of data even when the content is loaded asynchronously with JavaScript. Essential for accessing ORCID and CiênciaVitae profiles.
+
+* **BeautifulSoup**: Parses and navigates the HTML/XML content retrieved from webpages. It converts raw HTML/XML into a tree structure, allowing selective extraction of tags, attributes, and text with high precision.
+
+* **SpaCy**: A state-of-the-art natural language processing (NLP) library. It supports tokenisation, lemmatisation, part-of-speech tagging, and stopword filtering in multiple languages (including English and Portuguese), making it ideal for processing scholarly texts.
+
+* **Matplotlib**: A comprehensive data visualisation library. It provides tools to generate static and interactive plots, enabling the creation of custom graphs, trend plots, and word clouds that highlight the most relevant research insights from research profiles.
+
 
 ---
 
