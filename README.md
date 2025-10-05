@@ -35,14 +35,13 @@ ScholarPy is built upon two core concepts:
 
 This Python toolkit is based on advanced data processing and artificial intelligence modules:
 
-* **Selenium**: Automates web browsing tasks, allowing the script to interact with dynamically generated content and enabling the extraction of data even when the content is loaded asynchronously with JavaScript. Essential for accessing ORCID and CiênciaVitae profiles.
+* **Selenium**: Automates web browsing tasks, allowing scripts to interact with dynamically generated content and enabling the extraction of data even when the content is loaded asynchronously with JavaScript. Essential for accessing public scholarly CV pages.
 
-* **BeautifulSoup**: Parses and navigates the HTML/XML content retrieved from webpages. It converts raw HTML/XML into a tree structure, allowing selective extraction of tags, attributes, and text with high precision.
+* **BeautifulSoup**: Parses and navigates the HTML/XML content retrieved from webpages. It converts raw HTML/XML into a tree structure, allowing selective extraction of data of interest, such as tags, attributes, and text with high precision and efficiency.
 
 * **SpaCy**: A state-of-the-art natural language processing (NLP) library. It supports tokenisation, lemmatisation, part-of-speech tagging, and stopword filtering in multiple languages (including English and Portuguese), making it ideal for processing scholarly texts.
 
 * **Matplotlib**: A comprehensive data visualisation library. It provides tools to generate static and interactive plots, enabling the creation of custom graphs, trend plots, and word clouds that highlight the most relevant research insights from research profiles.
-
 
 ---
 
@@ -108,11 +107,20 @@ ScholarPy/
 
 ## Workflow
 
+1. Run `search_links.py` to collect public scholarly CV links (currently supporting **ORCID** and **CienciaVitae**).
 
+   * If you already have a prepared list of links, skip this step and proceed directly to **Step 2**.
+   * The input can be a single link (for individual analysis) or a list of links (for group/collective analysis).
+
+2. Run `extract_data.py` to scrape relevant textual data from the retrieved scholarly CV pages.
+
+3. Analise the extracted text data using the available tools (currently `analyse_words.py`).
+
+4. Generate data visualisations using the available tools (currently `plot_wordcloud.py`).
 
 ---
 
-## Contribution
+## Contributing
 
 Contributions are encouraged in all forms, including the addition of new tools, refinement of existing scripts, enhancement of documentation, and resolution of issues.
 For detailed guidelines, refer to [CONTRIBUTING.md](CONTRIBUTING.md).
