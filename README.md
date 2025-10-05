@@ -130,7 +130,7 @@ python extract_data.py --links <INPUT_LINKS_FILE> [--out <OUTPUT_FILE>] [--pause
 ```
 
 **Arguments:**
-* `--links`  : Input TXT file containing a list of public scholarly CV links (one per line).
+* `--links`  : Input TXT file containing a list of public scholarly CV links (required, one per line).
 * `--pause`  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
 * `--out`    : Output TXT file containing the extracted textual data (optional, default: `data.txt`).
 
