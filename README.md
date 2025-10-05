@@ -83,50 +83,98 @@ python -m spacy download en_core_web_sm
 python -m spacy download pt_core_news_sm
 ```
 
-
 ---
 
 ## Usage
 
-### 1. Extract CVs
+ScholarPy provides various scripts, each with a specific purpose. Below are instructions for running each of them.
 
+### 1. `search_links.py`
+
+**Description:** Search public scholarly CV links from HTML pages. It has two modes of operation:
+1. If BASE_URL (option --base) is set, search researcher profile pages from the provided HTML page(s) (option --html) matching the BASE_URL pattern and then visit each researcher profile page to search public scholarly CV links. Useful when the provided HTML page(s) correspond(s) to a list of researchers with links to individual pages, where public scholarly CV links are contained.
+2. If BASE_URL is empty, directly search public scholarly CV links inside the provided HTML page(s).
+To avoid server overload and subsequent client IP blocking, a delay is applied between HTTP/HTTPS requests.
+
+**Usage:**
 ```bash
-python extract_profiles.py --html urls.txt --base "https://www.cienciavitae.pt" --out links.txt
+python search_links.py --html <HTML_FILE_OR_URL> [--base <BASE_URL>] [--out <OUTPUT_FILE>] [--limit <N>] [--pause <SECONDS>]
 ```
 
-* `--html` : File or URL containing profile links.
-* `--base` : Base URL for individual researcher pages (optional).
-* `--out` : Output file for extracted profile links.
+**Arguments:**
+* `--html`   : Input HTML file(s) or URL(s), separated by commas (required).
+* `--base`   : Base URL for researcher profile pages (optional, leave empty for direct mode).
+* `--limit`  : Limit number of links to retrieve (optional, default=200).
+* `--pause`  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
+* `--out`    : Output TXT file containing the found links (optional, default: `links.txt`).
 
-### 2. Extract Text
+**Output:** A TXT file containing a list of links (one per line).
 
+---
+
+### 2. `extract_data.py`
+
+**Description:** Extract relevant textual data from public scholarly CV links. The process is divided into three steps:
+1. Read an input file containing a list of public scholarly CV links.
+2. Visit each link and scrape the data on relevant fields, such as titles of fundings, projects, works, outcomes, and journals/conferences.
+3. Clean and condense the data, keeping only alphabetic characters and spaces without repetition.
+Scraping is performed with Selenium instead of Requests because some public scholarly CV pages may load dynamically and are not fully accessible via static HTML parsing. To avoid server overload and subsequent client IP blocking, a delay is applied between HTTP/HTTPS requests.
+
+**Usage:**
 ```bash
-python extract_text.py --links links.txt --out data.txt
+python extract_data.py --links <INPUT_LINKS_FILE> [--out <OUTPUT_FILE>] [--pause <SECONDS>]
 ```
 
-* `--links` : Input file with profile URLs.
-* `--out` : Output file containing raw text from profiles.
+**Arguments:**
+* `--links`  : Input TXT file containing a list of public scholarly CV links (one per line).
+* `--pause`  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
+* `--out`    : Output TXT file containing the extracted textual data (optional, default: `data.txt`).
 
-### 3. Analyze Words
+**Output:** A TXT file containing all extracted text from the profiles, cleaned and normalised.
 
+---
+
+### 3. `process_words.py`
+
+**Description:** Analyse relevant scientific words from extracted data. The process is divided into two steps:
+1. Read an input file containing data.
+2. Lemmatise, filter and count words.
+Words are lemmatised (normalised) and filtered to remove common English and Portuguese stopwords, as well as domain-generic words.
+
+**Usage:**
 ```bash
-python analyze_words.py --input data.txt --out words.csv
+python process_words.py --data <INPUT_DATA_FILE> [--out <OUTPUT_FILE>]
 ```
 
-* `--input` : Text file with extracted profile content.
-* `--out` : Output CSV file with word counts.
+**Arguments:**
+* `--data`  : Input TXT file containing extracted text (required).
+* `--out`   : Output CSV file containing words and their counts (optional, default: `words.csv`).
 
-### 4. Generate Word Cloud
+**Output:** A CSV file with columns `word` and `count`, containing processed and filtered words.
 
+---
+
+### 4. `plot_wordcloud.py`
+
+**Description:** Generate word cloud visualisations from word frequency data. It generated two images:
+1. A standard word cloud plot containing all words with a gradient colour.
+2. A recoloured version of the same layout, where special words are highlighted with a custom colour.
+The word layout remains identical between both images, allowing for easy comparison, while only the colours differ.
+
+**Usage:**
 ```bash
-python generate_wordcloud.py --words words.csv --colormap viridis --special "AI,Machine Learning" --highlight green --out wordcloud.png
+python plot_wordcloud.py --words <WORDS_CSV_FILE> [--colormap <COLORMAP>] [--special <WORDS>] [--highlight <COLOR>] [--out <OUTPUT_FILE>]
 ```
 
-* `--words` : CSV file with word counts.
-* `--colormap` : Colormap for word cloud (default: `viridis`).
-* `--special` : Comma-separated words to highlight.
-* `--highlight` : Highlight color for special words.
-* `--out` : Output image file.
+**Arguments:**
+* `--words`       : Input CSV file with words and counts (required).
+* `--colormap`    : Matplotlib colourmap for gradient colouring (optional, default: `viridis`).
+* `--maxwords`    : Limit number of words to plot (optional, default: 200).
+* `--special`     : Comma-separated list of words to highlight in the word cloud (optional, default: none).
+* `--highlight`   : Colour to highlight special words (optional, default: `green`).
+* `--out`         : Output PNG file containing the word cloud (optional, default: `wordcloud.png`).
+
+**Output:** A PNG image of the generated word cloud. If `--special` is provided, a second image is generated with highlighted words.
 
 ---
 
@@ -135,12 +183,18 @@ python generate_wordcloud.py --words words.csv --colormap viridis --special "AI,
 ```
 ScholarPy/
 │
-├─ extract_profiles.py      # Scrapes ORCID/CienciaVitae links
-├─ extract_text.py          # Extracts text from profiles
-├─ analyze_words.py         # Cleans, lemmatizes, and counts words
-├─ generate_wordcloud.py    # Creates word cloud visualizations
-├─ requirements.txt         # Required Python packages
-└─ README.md                # Project documentation
+├─ scripts/                 # Python scripts included in the toolkit
+│   ├─ search_links.py      # Search public scholarly CV links from HTML or URLs
+│   ├─ extract_data.py      # Scrape data from public scholarly CV pages
+│   ├─ process_words.py     # Process text, lemmatise, filter stopwords, count words
+│   └─ plot_wordcloud.py    # Generate word cloud visualisations from processed words
+│
+├─ examples/                # Example cases with running scripts
+│
+├─ requirements.txt         # Python dependencies for installation
+├─ README.md                # Project overview, installation, usage instructions
+└─ LICENSE                  # License file (MIT)
+
 ```
 
 ---
@@ -155,6 +209,3 @@ MIT License – see [LICENSE](LICENSE) for details.
 
 **Ricardo Costa** – [rcosta@dep.uminho.pt](mailto:rcosta@dep.uminho.pt)
 
----
-
-Se quiseres, posso criar **uma versão ainda mais curta e “GitHub ready”** com badges, highlights e links diretos para instalação e exemplos, que fica ótima na primeira página do repositório. Queres que eu faça?
