@@ -70,7 +70,7 @@ git clone https://github.com/ricardodpcosta/ScholarPy.git
 cd ScholarPy
 ````
 
-2. Install required packages via [pip](https://pypi.org/project/pip/):
+2. Install required packages via [pip](https://pypi.org/project/pip/) (package installer for Python):
 
 ```bash
 pip install -r requirements.txt
