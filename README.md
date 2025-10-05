@@ -85,7 +85,7 @@ python -m spacy download pt_core_news_sm
 
 ---
 
-## Project Structure
+## Structure
 
 ```
 ScholarPy/
@@ -106,13 +106,26 @@ ScholarPy/
 
 ---
 
-## License
+## Workflow
 
-MIT License – see [LICENSE](LICENSE) for details.
+
 
 ---
 
-## Author
+## Contribution
 
-**Ricardo Costa** – [rcosta@dep.uminho.pt](mailto:rcosta@dep.uminho.pt)
+Contributions are encouraged in all forms, including the addition of new tools, refinement of existing scripts, enhancement of documentation, and resolution of issues.
+For detailed guidelines, refer to [CONTRIBUTING.md](CONTRIBUTING.md).
 
+---
+
+## License
+
+This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
+
+---
+
+## Contact
+
+📧 [Ricardo Costa](mailto:rcosta\@dep.uminho.pt)  
+🌐 [https://ricardodpcosta.github.io/](https://ricardodpcosta.github.io/)
