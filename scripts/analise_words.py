@@ -2,29 +2,35 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
-SCRIPT: Analise words from data
+SCRIPT: analise_words.py
 AUTHOR: Ricardo Costa
 DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
 ------------
-This script analises relevant scientific words from extracted data.
-It requires an input file data. The process is divided into
-two steps:
+Analyse relevant scientific words from extracted data.
+The process is divided into two steps:
 
 1. Read an input file containing data.
 2. Lemmatise, filter and count words.
 
-NOTES:
+Words are lemmatised (normalized) and filtered to remove common
+English and Portuguese stopwords, as well as domain-generic words.
+
+USAGE:
 ------
-- Words are lemmatised (normalized) and filtered to
-  remove common English and Portuguese stopwords, as well as
-  domain-generic words.
+python process_words.py --data <INPUT_DATA_FILE> [--out <OUTPUT_FILE>]
+
+ARGUMENTS:
+----------
+--data   : Input TXT file containing extracted text (required).
+--out    : Output CSV file containing words and their counts (optional, default: `words.csv`).
 
 OUTPUT:
 -------
-- CSV file containing the processed words.
+A CSV file with columns `word` and `count`, containing processed and
+filtered words.
 
 AUTHOR:
 -------
@@ -53,21 +59,28 @@ python process_words.py [-h]
 # ================================================
 
 import argparse
-import re
-import time
 import csv
-from bs4 import BeautifulSoup
 import spacy
-from spacy.lang.pt.stop_words import STOP_WORDS as STOPWORDS_PT
-from spacy.lang.en.stop_words import STOP_WORDS as STOPWORDS_EN
+try:
+    from spacy.lang.en.stop_words import STOP_WORDS as STOPWORDS_EN
+except ImportError as e:
+    print("\033[31mEnglish model 'en_core_web_sm' not found\033[0m")
+    print("Download it with: python -m spacy download en_core_web_sm")
+    sys.exit(1)
+try:
+    from spacy.lang.pt.stop_words import STOP_WORDS as STOPWORDS_PT
+except ImportError as e:
+    print("\033[33mPortuguese model 'pt_core_news_sm' not found\033[0m ")
+    print("Download it with: python -m spacy download pt_core_news_sm")
+    STOPWORDS_PT = set()
 
 # ================================================
 # PARSE ARGUMENTS
 # ================================================
 
-parser = argparse.ArgumentParser(description="Analise scientific words counts")
-parser.add_argument("--data", required=True, help="Input file with data to analise")
-parser.add_argument("--out", default="words.csv", help="Output file with processed words (default: words.csv)")
+parser = argparse.ArgumentParser(description="Analyse relevant scientific words from extracted data.")
+parser.add_argument("--data", required=True, help="Input TXT file containing extracted text (required).")
+parser.add_argument("--out", default="words.csv", help="Output CSV file containing words and their counts (optional, default: `words.csv`).")
 args = parser.parse_args()
 
 INPUT_DATA = args.data.strip()
@@ -97,8 +110,13 @@ with open(INPUT_DATA, "r", encoding="utf-8") as f:
 # STEP 2: INITIALISE MODULES
 # ================================================
 
-# Load spaCy language model for lemmatisation
-nlp = spacy.load("en_core_web_sm")
+# Load spaCy language model
+try:
+    nlp_ = spacy.load("en_core_web_sm")
+except OSError:
+    print("\033[31mEnglish model 'en_core_web_sm' not found\033[0m")
+    print("Download it with: python -m spacy download en_core_web_sm")
+    sys.exit(1)
 
 # ================================================
 # STEP 3: ANALISE DATA

@@ -2,29 +2,43 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
-SCRIPT: Plot word cloulds from words
+SCRIPT: plot_wordcloud.py
 AUTHOR: Ricardo Costa
 DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
 ------------
-This script plots word clouds from a list of words and associated
-counts. It generated two images:
+Generate word cloud visualisations from word frequency data.
+It generated two images:
 
 1. A standard word cloud plot containing all words with
    a gradient colour.
-2. A recolored version of the same layout, where special
+2. A recoloured version of the same layout, where special
    words are highlighted with a custom colour.
 
-NOTES:
+The word layout remains identical between both images, allowing for
+easy comparison, while only the colours differ.
+
+USAGE:
 ------
-- The word layout remains identical between both images to
-  allow easy comparison and only the colors differ.
+python plot_wordcloud.py --words <INPUT_WORDS_FILE> [--colormap <COLORMAP>]
+[--maxwords <MAXWORDS>] [--special <WORDS>] [--highlight <COLOR>] [--out <OUTPUT_FILE>]
+
+ARGUMENTS:
+----------
+
+--words       : Input CSV file with words and counts (required).
+--colormap    : Matplotlib colourmap for gradient colouring (optional, default: `viridis`).
+--maxwords    : Limit number of words to plot (optional, default: 200).
+--special     : Comma-separated list of words to highlight in the word cloud (optional, default: none).
+--highlight   : Colour to highlight special words (optional, default: `green`).
+--out         : Output PNG file containing the word cloud (optional, default: `wordcloud.png`).
 
 OUTPUT:
 -------
-- PNG file containing the word cloud plots.
+A PNG image of the generated word cloud. If `--special` is provided,
+a second image is generated with highlighted words.
 
 AUTHOR:
 -------
@@ -54,24 +68,26 @@ python plot_wordcloud.py [-h]
 
 import argparse
 import csv
-from wordcloud import WordCloud
 import matplotlib
 from matplotlib import pyplot as plt
+from wordcloud import WordCloud
 
 # ================================================
 # PARSE ARGUMENTS
 # ================================================
 
-parser = argparse.ArgumentParser(description="Plot word cloulds from words")
-parser.add_argument("--words", required=True, help="Local CSV file with words and counts")
-parser.add_argument("--colormap", default="viridis", help="Word cloud plot colormap (any from Matplotlib, default: viridis)")
-parser.add_argument("--special", default="", help="Special words to highlight (default: '')")
-parser.add_argument("--highlight", default="green", help="Colour to highlight special words (any from Matplotlib, default: green)")
-parser.add_argument("--out", default="wordcloud.png", help="Output file (default: wordcloud.png)")
+parser = argparse.ArgumentParser(description="Generate word cloud visualisations from word frequency data.")
+parser.add_argument("--words", required=True, help="Input CSV file with words and counts (required).")
+parser.add_argument("--colormap", default="viridis", help="Matplotlib colourmap for gradient colouring (optional, default: `viridis`).")
+parser.add_argument("--maxwords", type=int, default=200, help="Limit number of words to plot (optional, default: 200).")
+parser.add_argument("--special", default="", help="Comma-separated list of words to highlight in the word cloud (optional, default: none).")
+parser.add_argument("--highlight", default="green", help="Colour to highlight special words (optional, default: `green`).")
+parser.add_argument("--out", default="wordcloud.png", help="Output PNG file containing the word cloud (optional, default: `wordcloud.png`).")
 args = parser.parse_args()
 
 INPUT_WORDS = args.words.strip()
 PLOT_COLORMAP = args.colormap.strip()
+PLOT_MAXWORDS = args.maxwords
 SPECIAL_WORDS = args.special.strip()
 SPECIAL_HIGHLIGHT = args.highlight.strip()
 OUTPUT_WORDCLOUD = args.out.strip()
@@ -97,10 +113,10 @@ max_freq = max(words.values())
 # STEP 2: GENERATE WORDCLOUD
 # ================================================
 
-# Get colormap from Matplotlib
+# Get colourmap from Matplotlib
 cmap = plt.get_cmap(PLOT_COLORMAP)
 
-# Custom color function to color words according to their size
+# Custom colour function to colour words according to their size
 def gradient_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
     # Normalise font size
     norm_size = (words[word] - min_freq) / (max_freq - min_freq)
@@ -114,7 +130,7 @@ wordcloud1 = WordCloud(
     height=600,
     background_color="white",
     color_func=gradient_color_func,
-    max_words=100
+    max_words=PLOT_MAXWORDS
 ).generate_from_frequencies(words)
 
 # Display and save word cloud plot
@@ -128,12 +144,12 @@ print(f"Word cloud plot saved at: {OUTPUT_WORDCLOUD}")
 
 # IF there are any special words
 if SPECIAL_WORDS:
-    # Custom color function to highlight certain words
+    # Custom colour function to highlight certain words
     def special_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
         if word in SPECIAL_WORDS:
             return SPECIAL_HIGHLIGHT
         return "gray"
-    # Recolor wordcloud1 (keeps the same layout, only changes colors)
+    # Recolour wordcloud1 (keeps the same layout, only changes colours)
     wordcloud2 = wordcloud1.recolor(color_func=special_color_func)
 
     # Display and save word cloud plot

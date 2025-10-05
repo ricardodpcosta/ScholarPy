@@ -2,35 +2,42 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
-SCRIPT: Extract data from research profiles
+SCRIPT: extract_data.py
 AUTHOR: Ricardo Costa
 DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
 ------------
-This script extracts relevant data from public research profiles (ORCID
-or CienciaVitae). It requires an input file with links to ORCID
-(https://orcid.org/) or CienciaVitae (https://www.cienciavitae.pt/).
+Extract relevant textual data from public scholarly CV links.
 The process is divided into three steps:
 
-1. Read an input file containing ORCID or CienciaVitae links.
+1. Read an input file containing a list of public scholarly CV links.
 2. Visit each link and scrape the data on relevant fields, such as titles
    of fundings, projects, works, outcomes, and journals/conferences.
 3. Clean and condense the data, keeping only alphabetic characters and spaces
-   wihtout repetition.
+   without repetition.
 
-NOTES:
+Scraping is performed with Selenium instead of Requests because some public
+scholarly CV pages may load dynamically and are not fully accessible via static
+HTML parsing. To avoid server overload and subsequent client IP blocking,
+a delay is applied between HTTP/HTTPS requests.
+
+USAGE:
 ------
-- Scraping is performed with Selenium because ORCID/CienciaVitae
-  pages may load dynamically and are not fully accessible via
-  static HTML parsing.
-- To avoid server overload and subsequent client IP blocking,
-  a delay is applied between page requests.
+python extract_data.py --links <INPUT_LINKS_FILE> [--out <OUTPUT_FILE>]
+[--pause <SECONDS>]
+
+ARGUMENTS:
+----------
+--links  : Input TXT file containing a list of public scholarly CV links (one per line).
+--pause  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
+--out    : Output TXT file containing the extracted textual data (optional, default: `data.txt`).
 
 OUTPUT:
 -------
-- TXT file containing the extracted data.
+A TXT file containing all extracted text from the profiles, cleaned
+and normalised.
 
 AUTHOR:
 -------
@@ -44,13 +51,6 @@ REPOSITORY:
 -----------
 https://github.com/ricardodpcosta/SciWordCloud
 
-DEPENDENCIES:
--------------
-
-USAGE:
-------
-python extract_data.py [-h]
-
 ===========================================================
 """
 
@@ -61,7 +61,6 @@ python extract_data.py [-h]
 import argparse
 import re
 import time
-import csv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
@@ -70,15 +69,15 @@ from bs4 import BeautifulSoup
 # PARSE ARGUMENTS
 # ================================================
 
-parser = argparse.ArgumentParser(description="Extract data from research profiles")
-parser.add_argument("--links", required=True, help="Input file with ORCID or CienciaVitae links")
-parser.add_argument("--out", default="data.txt", help="Output file with extracted data (default: data.txt)")
-parser.add_argument("--pause", type=int, default=3, help="Delay in seconds between requests (default: 2)")
+parser = argparse.ArgumentParser(description="Extract relevant textual data from public scholarly CV links.")
+parser.add_argument("--links", required=True, help="Input TXT file containing a list of public scholarly CV links (one per line).")
+parser.add_argument("--pause", type=int, default=3, help="Delay in seconds between HTTP/HTTPS requests (optional, default=3).")
+parser.add_argument("--out", default="data.txt", help="Output TXT file containing the extracted textual data (optional, default: `data.txt`).")
 args = parser.parse_args()
 
 INPUT_LINKS = args.links.strip()
-OUTPUT_DATA = args.out.strip()
 PAGE_PAUSE = args.pause
+OUTPUT_DATA = args.out.strip()
 
 # ================================================
 # STEP 1: READ LINKS

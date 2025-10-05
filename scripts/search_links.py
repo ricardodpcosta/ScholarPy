@@ -2,37 +2,44 @@
 # -*- coding: utf-8 -*-
 """
 ===========================================================
-SCRIPT: Search ORCID and CienciaVitae links
+SCRIPT: search_links.py
 AUTHOR: Ricardo Costa
 DATE: October 2025
 ===========================================================
 
 DESCRIPTION:
 ------------
-This script searches ORCID or CienciaVitae links from HTML pages.
-Requires a input HTML file or URL. It has two modes of operation:
+Search public scholarly CV links from HTML pages.
+It has two modes of operation:
 
 1. If BASE_URL (option --base) is set, search researcher profile
-   links from the provided HTML page(s) (option --html) matching the
+   pages from the provided HTML page(s) (option --html) matching the
    BASE_URL pattern and then visit each researcher profile page
-   to search ORCID/CienciaVitae links. Useful when the provided HTML
+   to search public scholarly CV links. Useful when the provided HTML
    page(s) correspond(s) to a list of researchers with links to
-   individual pages, where ORCID/CienciaVitae links are contained.
-2. If BASE_URL is empty, directly search ORCID/CienciaVitae links
+   individual pages, where public scholarly CV links are contained.
+2. If BASE_URL is empty, directly search public scholarly CV links
    inside the provided HTML page(s).
+
+To avoid server overload and subsequent client IP blocking, a delay is
+applied between HTTP/HTTPS requests.
+
+USAGE:
+------
+python search_links.py --html <INPUT_HTML_FILE_OR_URL> [--base <BASE_URL>]
+[--out <OUTPUT_FILE>] [--limit <N>] [--pause <SECONDS>]
 
 ARGUMENTS:
 ----------
---html   : Input HTML file(s) or URL(s), separated by commas
---base   : Base URL for individual pages (leave empty for direct mode)
---out    : Output file with ORCID/CienciaVitae links
---limit  : Limit number of links to search (default=200)
---pause  : Delay in seconds after loading each page (default=3)
+--html   : Input HTML file(s) or URL(s), separated by commas (required).
+--base   : Base URL for researcher profile pages (optional, leave empty for direct mode).
+--limit  : Limit number of links to retrieve (optional, default=200).
+--pause  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
+--out    : Output TXT file containing the found links (optional, default: `links.txt`).
 
 OUTPUT:
 -------
-- TXT file containing the list of CV links (ORCID or CienciaVitae).
-  Each line contains the format: <type>|<url>
+A TXT file containing a list of links (one per line).
 
 AUTHOR:
 -------
@@ -46,13 +53,6 @@ REPOSITORY:
 -----------
 https://github.com/ricardodpcosta/SciWordCloud
 
-DEPENDENCIES:
--------------
-
-USAGE:
-------
-python search_links.py [-h]
-
 ===========================================================
 """
 
@@ -62,7 +62,6 @@ python search_links.py [-h]
 
 import argparse
 import re
-import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
@@ -71,22 +70,22 @@ from bs4 import BeautifulSoup
 # PARSE ARGUMENTS
 # ================================================
 
-parser = argparse.ArgumentParser(description="Search ORCID and CienciaVitae links")
-parser.add_argument("--html", required=True, help="Input HMTL file(s) or URL(s), separated by commas")
-parser.add_argument("--base", default="", help="Base URL for researcher profile pages (empty for direct mode)")
-parser.add_argument("--out", default="links.txt", help="Output file with links (default: links.txt)")
-parser.add_argument("--limit", type=int, default=200, help="Limit number of links to search (default: 200)")
-parser.add_argument("--pause", type=int, default=3, help="Delay in seconds between requests (default: 3)")
+parser = argparse.ArgumentParser(description="Search public scholarly CV links from HTML pages.")
+parser.add_argument("--html", required=True, help="Input HTML file(s) or URL(s), separated by commas (required).")
+parser.add_argument("--base", default="", help="Base URL for researcher profile pages (optional, leave empty for direct mode).")
+parser.add_argument("--limit", type=int, default=200, help="Limit number of links to retrieve (optional, default=200).")
+parser.add_argument("--pause", type=int, default=3, help="Delay in seconds between HTTP/HTTPS requests (optional, default=3).")
+parser.add_argument("--out", default="links.txt", help="Output TXT file containing the found CV links (optional, default: `links.txt`).")
 args = parser.parse_args()
 
 HTML_SOURCES = args.html.strip()
 BASE_URL = args.base.strip()
-OUTPUT_LINKS = args.out.strip()
 TEAM_LIMIT = args.limit
 PAGE_PAUSE = args.pause
+OUTPUT_LINKS = args.out.strip()
 
 # ================================================
-# STEP 1: INITIALISE MODULES
+# STEP 1: INITIALISE WEB DRIVER
 # ================================================
 
 options = Options()
