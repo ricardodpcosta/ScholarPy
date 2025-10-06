@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to the repository. All types of contributions are welcome, including:
 
-* Adding tools.
+* Addition of tools.
 * Refinement of scripts.
 * Enhancement of documentation.
 * Resolution of issues.
@@ -11,7 +11,7 @@ The simplest route is to check the contact details in the `README.md` file and *
 
 ---
 
-### 1. Adding tools
+### 1. Addition of tools
 
 Each tool should reside in the `scripts/` folder and be accompanied by clear usage instructions in the `README.md` file.
 
