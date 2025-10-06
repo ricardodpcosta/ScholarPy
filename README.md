@@ -93,13 +93,15 @@ ScholarPy/
 │   ├─ search_links.py      # Search public scholarly CV links from HTML or URLs
 │   ├─ extract_data.py      # Scrape data from public scholarly CV pages
 │   ├─ process_words.py     # Process text, lemmatise, filter stopwords, count words
-│   └─ plot_wordcloud.py    # Generate word cloud visualisations from processed words
+│   ├─ plot_wordcloud.py    # Generate word cloud visualisations from processed words
+|   └─ README.md            # Tools description and usage instructions
 │
 ├─ examples/                # Example cases with running scripts
 │
 ├─ requirements.txt         # Python dependencies for installation
-├─ README.md                # Project overview, installation, usage instructions
-└─ LICENSE                  # License file (MIT)
+├─ README.md                # Project overview, installation, and workflow
+├─ CONTRIBUTING.md          # Contributing guidelines
+└─ LICENSE                  # License clauses
 
 ```
 
