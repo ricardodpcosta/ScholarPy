@@ -7,13 +7,13 @@ Thank you for your interest in contributing to the repository. All types of cont
 * Enhancement of documentation.
 * Resolution of issues.
 
-The simplest route is to check the contact details in the `README.md` file and **send an email with your suggestions and proposals**. Alternatively, you can always follow the usual GitHub route described below.
+The simplest route is to check the contact details in the `README.md` file and **send an email with your ideas and suggestions**. Alternatively, you can always follow the usual GitHub route described below.
 
 ---
 
 ### 1. Addition of tools
 
-Each tool should reside in the `scripts/` folder and be accompanied by clear usage instructions in the `README.md` file.
+Each tool must be located within the `scripts/` directory and include comprehensive usage instructions clearly documented in the `README.md` file.
 
 Follow these style guidelines:
 
