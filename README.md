@@ -122,7 +122,7 @@ ScholarPy/
 
 ## Contributing
 
-Contributions are encouraged in all forms, including the addition of tools, refinement of scripts, enhancement of documentation, and resolution of issues.
+Contributions are encouraged in all forms, including the adding tools, refinement of scripts, enhancement of documentation, and resolution of issues.
 For detailed guidelines, refer to [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
