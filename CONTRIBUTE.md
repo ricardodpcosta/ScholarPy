@@ -11,26 +11,9 @@ The simplest route is to check the contact details in the `README.md` file and *
 
 ---
 
-### 1. Adding a benchmark case
+### 1. Adding tools
 
-Each benchmark case should follow the existing folder structure.
-
-Include a `README.md` with these sections:
-
-* **Summary** – problem description.
-* **Domain and meshes** – description and parameterisation (if applicable).
-* **Model problem** – governing equations and parameters
-* **Analytical/manufactured solution** – source terms, boundary conditions, and analytical parameters.
-* **Case parameters** – user-defined parameters and suggested values.
-* **Scripts and files** – description, usage (if applicable), requirements, and dependencies.
-* **How to cite** – references where the benchmark case was originally published.
-
-Organise your files in these folders:
-
-* `codes/`
-* `images/`
-* `meshes/`
-* `scripts/`
+Each tool should reside in the `scripts/` folder and be accompanied by clear usage instructions in the `README.md` file.
 
 Follow these style guidelines:
 
@@ -43,9 +26,9 @@ Follow these style guidelines:
 
 ### 2. Refinement of scripts/enhancement of documentation
 
-* Submit changes via a **pull request**.
-* Clearly explain **what** you changed and **why**.
-* Keep documentation clear, consistent, and aligned with existing cases.
+* Submit changes via a **pull request** in GitHub.
+* Explain **what** you changed and **why**.
+* Keep it clear and consistent with the repository.
 
 ---
 
