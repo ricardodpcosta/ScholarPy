@@ -1,41 +1,39 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-===============================================================
-ScholarPy - collect-data wrapper script
-===============================================================
-Author: Ricardo Costa (rcosta@dep.uminho.pt)
-License: MIT License (see LICENSE file for details)
-Repository: https://github.com/ricardodpcosta/ScholarPy
-===============================================================
-Description:
-------------
-Collect relevant textual data from public scholarly CV links.
-The process is divided into three steps:
-
-1. Read an input file containing a list of public scholarly CV links.
-2. Visit each link and scrape the data on relevant fields, such as titles
-   of fundings, projects, works, outcomes, and journals/conferences.
-3. Clean and condense the data, keeping only alphabetic characters and spaces
-   without repetition.
-
-Scraping is performed with Selenium instead of Requests because some public
-scholarly CV pages may load dynamically and are not fully accessible via static
-HTML parsing. To avoid server overload and subsequent client IP blocking,
-a delay is applied between HTTP/HTTPS requests.
-
-Arguments:
-----------
---links_file  : Input TXT file containing a list of public scholarly CV links (required).
---page_pause  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
---output_file : Output TXT file containing the collected data (optional, default: 'data.txt').
-
-Output:
--------
-A TXT file containing all collected text from the public scholarly CV links
-is saved to disk.
-===============================================================
-"""
+# ===============================================================
+# ScholarPy - scholarpy-collect-data wrapper script
+# ===============================================================
+# Author: Ricardo Costa (rcosta@dep.uminho.pt)
+# License: MIT License (see LICENSE file for details)
+# Repository: https://github.com/ricardodpcosta/ScholarPy
+# ===============================================================
+# Description:
+# ------------
+# Collect relevant textual data from public scholarly CV links.
+# The process is divided into three steps:
+#
+# 1. Read an input file containing a list of public scholarly CV links.
+# 2. Visit each link and scrape the data on relevant fields, such as titles
+#    of fundings, projects, works, outcomes, and journals/conferences.
+# 3. Clean and condense the data, keeping only alphabetic characters and spaces
+#    without repetition.
+#
+# Scraping is performed with Selenium instead of Requests because some public
+# scholarly CV pages may load dynamically and are not fully accessible via static
+# HTML parsing. To avoid server overload and subsequent client IP blocking,
+# a delay is applied between HTTP/HTTPS requests.
+#
+# Arguments:
+# ----------
+# --links_file  : Input TXT file containing a list of public scholarly CV links (required).
+# --page_pause  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
+# --output_file : Output TXT file containing the collected data (optional, default: 'data.txt').
+#
+# Output:
+# -------
+# A TXT file containing all collected text from the public scholarly CV links
+# is saved to disk.
+# ===============================================================
 
 # ===============================================================
 # IMPORT MODULES
