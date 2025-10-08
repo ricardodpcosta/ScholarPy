@@ -90,6 +90,8 @@ python -m spacy download en_core_web_sm
 python -m spacy download pt_core_news_sm
 ```
 
+4. **Installation completed**
+
 Once installed, the tools can be executed directly from a command line, for example:
 
 ```bash
@@ -125,20 +127,7 @@ python -m spacy download en_core_web_sm
 python -m spacy download pt_core_news_sm
 ```
 
-Once installed, you can import ScholarPy in any Python script:
-
-```python
-from scholarpy import core
-core.analyse_words(data_file="data.txt", output_file="words.csv")
-```
-
-Or execute the tools directly from a command line, for example:
-
-```bash
-scholarpy-collect-data --links_file="links.txt" --output_file="data.txt"
-```
-
-### Verify the installation
+4. **Verify the installation:**
 
 To confirm that **ScholarPy** is correctly installed:
 
@@ -156,6 +145,21 @@ print("ScholarPy successfully installed!")
 ```
 
 If no errors are displayed, the installation is complete and ready to use.
+
+5. **Installation completed**
+
+Once installed, you can import ScholarPy in any Python script:
+
+```python
+from scholarpy import core
+core.analyse_words(data_file="data.txt", output_file="words.csv")
+```
+
+Or execute the tools directly from a command line, for example:
+
+```bash
+scholarpy-collect-data --links_file="links.txt" --output_file="data.txt"
+```
 
 ---
 
