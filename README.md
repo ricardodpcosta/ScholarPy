@@ -132,7 +132,7 @@ core.analyse_words(data_file="data.txt", output_file="words.csv")
 Or execute the tools directly from a command line, for example:
 
 ```bash
-collect-data --links_file="links.txt" --output_file="data.txt"
+scholarpy-collect-data --links_file="links.txt" --output_file="data.txt"
 ```
 
 ### Verify the installation
