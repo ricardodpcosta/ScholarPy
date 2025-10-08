@@ -56,8 +56,8 @@ ScholarPy requires **Python 3.10+** and the following modules:
 * [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/).
 * [lxml](https://pypi.org/project/lxml/).
 * [spaCy](https://spacy.io/).
-  * (Required) English model (`en_core_web_sm`).
-  * (Optional) Portuguese model (`pt_core_news_sm`).  
+  * (Required) English model (`en_core_web_md`).
+  * (Optional) Portuguese model (`pt_core_news_md`).  
 * [Matplotlib](https://pypi.org/project/matplotlib/).
 * [WordCloud](https://pypi.org/project/wordcloud/).
 
@@ -86,8 +86,8 @@ pip install -r requirements.txt
    *(English required, Portuguese optional)*:
 
 ```bash
-python -m spacy download en_core_web_sm
-python -m spacy download pt_core_news_sm
+python -m spacy download en_core_web_md
+python -m spacy download pt_core_news_md
 ```
 
 **4. Installation completed:**
@@ -129,8 +129,8 @@ pip install -e .
    *(English required, Portuguese optional)*:
 
 ```bash
-python -m spacy download en_core_web_sm
-python -m spacy download pt_core_news_sm
+python -m spacy download en_core_web_md
+python -m spacy download pt_core_news_md
 ```
 
 **5. Verify the installation:**
