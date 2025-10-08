@@ -164,9 +164,8 @@ def search_links(html_urls, base_url="", links_limit=200, page_pause=3, output_f
         if base_url:
             pattern = re.compile(rf"^{base_url}")
             profile_links = [a["href"] for a in soup.find_all("a", href=pattern)]
-            print_info(f"  Found {len(profile_links)} researcher profile pages")
-
-            # Load researcher profile
+            print_info(f"  Found {len(profile_links)} institutional profile pages")
+            # Load institutional profile
             for i, link in enumerate(profile_links, start=1):
                 print_info(f"[{i}/{len(profile_links)}] Loading profile: {link}")
                 try:
