@@ -60,10 +60,6 @@ ScholarPy requires **Python 3.10+** and the following modules:
 
 ---
 
-Aqui está a versão atualizada e clara da secção **Installation**, organizada nas duas opções conforme combinámos — mantendo um tom profissional e consistente com o estilo do teu `README.md`:
-
----
-
 ## Installation
 
 There are two routes to install and use **ScholarPy**:
