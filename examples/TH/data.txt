@@ -1,0 +1,184 @@
+center for mathematics fundamental applications and operations research
+center for mathematics fundamental applications and operations research
+center for mathematics fundamental applications and operations research
+strategic project ui
+on the singular p laplacian system under navier slip type boundary conditions the gradient symmetric case
+on the global integrability for any finite power of the full gradient for a class of generalized power law models p
+on the global integrability for any finite power of the full gradient for a class of generalized power law models p
+journal of mathematical physics
+fully developed doubly periodic viscous flows in infinite space periodic pipes under general time periodic total fluxes
+advances in nonlinear analysis
+a survey on some vanishing viscosity limit results
+science china mathematics
+chinese annals of mathematics series b
+on mixed pressure velocity regularity criteria to the navier stokes equations in lorentz spaces part ii the non slip boundary value problem
+nonlinearity
+on the partial regularity of suitable weak solutions in the non newtonian shear thinning case
+chinese annals of mathematics series b
+on mixed pressure velocity regularity criteria to the navier stokes equations in lorentz spaces
+journal of mathematical fluid mechanics
+onsager s conjecture for the incompressible euler equations in the h log spaces c a o
+nonlinear analysis theory methods and applications
+on the shinbrot s criteria for energy equality to newtonian fluids a simplified proof and an extension of the range of application
+advances in nonlinear analysis
+regularity criteria for navier stokes equations with slip boundary conditions on non flat boundaries via two velocity components
+mathematical annals
+on a two components condition for regularity of the d navier stokes equations under physical slip boundary conditions on non flat boundaries
+discrete and continuous dynamical systems series s
+professor vicent iu radulescu celebrates his sixtieth anniversary
+nonlinear analysis theory methods and applications
+on the energy equality for solutions to newtonian and non newtonian fluids
+discrete and continuous dynamical systems series s
+navier stokes equations some questions related to the direction of the vorticity
+journal of mathematical fluid mechanics
+advances in nonlinear analysis
+journal of mathematical analysis and applications
+on the extension to slip boundary conditions of a bae and choe regularity criterion for the navier stokes equations the half space case
+discrete and continuous dynamical systems series s
+the research of paolo secchi
+discrete and continuous dynamical systems series s
+elliptic boundary value problems in spaces of continuous functions
+discrete and continuous dynamical systems series s
+the research of alberto valli
+portugaliae mathematica
+on some regularity results for the stationary stokes system and the d euler equations
+advances in nonlinear analysis
+on nonlinear potential theory and regular boundary points for the p laplacian in n space variables
+journal of mathematical fluid mechanics
+concerning the existence of classical solutions to the stokes system on the minimal assumptions problem
+acta applicandae mathematicae
+direction of vorticity and smoothness of viscous fluid flows subjected to boundary constraints
+annals of the university of ferrara
+on a family of results concerning direction of vorticity and regularity for the navier stokes equations
+journal of mathematical analysis and applications
+on the global regularity for singular p systems under non homogeneous dirichlet boundary conditions
+discrete and continuous dynamical systems series s
+on the global regularity for nonlinear systems of the p laplacian type
+bulletin of the italian mathematical union
+erratum viscous incrompressible flows under stress free boundary conditions the smoothness effect of near orthogonality or near parallelism between velocity bolletino dell unione matematica italiana
+journal of mathematical fluid mechanics
+direction of vorticity and regularity up to the boundary on the lipschitz continuous case
+nonlinearity
+a missed persistence property for the euler equations and its effect on inviscid limits
+journal of mathematical fluid mechanics
+the d inviscid limit result under slip boundary conditions a negative answer
+nonlinear analysis theory methods and applications
+on the global w q regularity for nonlinear n systems of the p laplacian type in n space variables
+journal of mathematical fluid mechanics
+boundary regularity of shear thickening flows
+journal of mathematical fluid mechanics
+journal of mathematical analysis and applications
+reducing slip boundary value problems from the half to the whole space applications to inviscid limits and to non newtonian fluids
+journal of mathematical fluid mechanics
+mathematics reports
+regularity theorems up to the boundary for shear thickening flows
+discrete and continuous dynamical systems series s
+a challenging open problem the inviscid limit under slip type boundary conditions
+archive for rational mechanics and analysis
+erratum to time periodic solutions of the navier stokes equations in unbounded cylindrical domains leray s problem for periodic flows rational mech anal s
+journal of mathematical fluid mechanics
+navier stokes equations with shear thinning viscosity regularity up to the boundary
+journal of mathematical analysis and applications
+on the global regularity of shear thinning flows in smooth domains
+communications on pure and applied analysis
+journal of the european mathematical society
+on the ladyzhenskaya smagorinsky turbulence model of the navier stokes equations in smooth domains the regularity problem
+journal of mathematical fluid mechanics
+navier stokes equations with shear thickening viscosity regularity up to the boundary
+journal of mathematical analysis and applications
+a review on some contributions to perturbation theory singular limits and well posedness
+journal of differential equations
+navier stokes equations green s matrices vorticity direction and regularity up to the boundary
+journal of mathematical analysis and applications
+on non newtonian p fluids the pseudo plastic case
+journal of mathematical fluid mechanics
+vorticity and regularity for viscous incompressible flows under the dirichlet boundary condition results and related open problems
+mathematics reports
+concerning the ladyzhenskaya smagorinsky turbulence model of the navier stokes equations
+communications on pure and applied analysis
+vorticity and regularity for flows under the navier boundary condition
+mathematical annals
+archive for rational mechanics and analysis
+time periodic solutions of the navier stokes equations in unbounded cylindrical domains leray s problem for periodic flows
+communications on pure and applied mathematics
+on the regularity of flows with ladyzhenskaya shear dependent viscosity and slip or nonslip boundary conditions
+journal of mathematical fluid mechanics
+developable surfaces as generators of the
+journal of mathematical fluid mechanics
+on the existence of strong solutions to a coupled fluid structure evolution problem
+advances in differential equations
+regularity for stokes and generalized stokes systems under nonhomogeneous slip type boundary conditions
+nonlinear analysis theory methods and applications
+long time behaviour of the solutions to the navier stokes equations with diffusion
+mathematical methods in the applied sciences
+on the sharp singular limit for slightly compressible fluids
+archive for rational mechanics and analysis
+singular limits in compressible fluid dynamics
+calculus of variations and partial differential equations
+on the singular limit for slightly compressible fluids
+nonlinear differential equations and applications nodea
+on the existence of branches of time periodic solutions to the nonlinear vibrating string equations
+nonlinear analysis
+perturbation theory and well posedness in hadamard s sense of hyperbolic initial boundary value problems
+annales de l institut henri poincare c analyze non lineaire
+the initial boundary value problem for the non barotropic compressible euler equations structural stability and data dependence
+annals of pure and applied mathematics
+on the existence theorem for the barotronic motion of a compressible inviscid fluid in the half space
+communications on pure and applied mathematics
+perturbation theorems for linear hyperbolic mixed problems and applications to the compressible euler equations
+archive for rational mechanics and analysis
+structural stability and data dependence for fully nonlinear hyperbolic mixed problems
+annals of pure and applied mathematics
+attracting properties for one dimensional flows of a general barotropic viscous fluid periodic flows
+archive for rational mechanics and analysis
+data dependence in the mathematical theory of compressible inviscid fluids
+annales de l institut henri poincare c analyze non lineaire
+the stability of one dimensional stationary flows of compressible viscous fluids
+journal of differential equations
+a well posedness theorem for non homogeneous inviscid fluids via a perturbation theorem
+archive for rational mechanics and analysis
+long time behavior for one dimensional motion of a general barotropic viscous fluid
+archive for rational mechanics and analysis
+kato s perturbation theory and well posedness for the euler equations in bounded domains
+communications in mathematical physics
+archive for rational mechanics and analysis
+reports of the mathematical and physical seminar of milan
+on a linear non elliptic system concerning the dynamic of stationary motions
+annals of the university of ferrara
+on a stationary transport equation
+journal of differential equations
+on the solutions in the large of the two dimensional flow of a nonviscous incompressible fluid
+diffusion on viscous fluids existence and asymptotic properties of solutions
+diffusion on viscous fluids existence and asymptotic properties of solutions
+communications in partial differential equations
+homogeneous and non homogeneous boundary value problems for first order linear hyperbolic systems arising in fluid mechanics
+communications in partial differential equations
+homogeneous and non homogeneous boundary value problems for first order linear hyperbolic systems arising in fluid mechanics part i
+journal of mathematical analysis and applications
+on the motion of non homogeneous fluids in the presence of diffusion
+journal of mathematical analysis and applications
+on the euler equations for nonhomogeneous fluids ii
+communications in partial differential equations
+existence of c solutions of the euler equations for non homogeneous fluids
+annals of pure and applied mathematics
+on an euler type equation in hydrodynamics
+annals of pure and applied mathematics series
+existence and determination of the first bifurcation point for pairs of potential operators not initially differentiable
+journal of functional analysis
+differentiability for green s operators of variational inequalities and applications to the determination of bifurcation points
+nonlinear analysis
+inhomogeneous evolution equations in banach spaces with a bounded variation data
+annals of pure and applied mathematics series
+differentiability and bifurcation points for a class of monotone nonlinear operators
+archive for rational mechanics and analysis
+a maximum principle for solutions of a class of quasi linear parabolic inequalities
+journal of mathematical analysis and applications
+on some parabolic inequalities
+journal for pure and applied mathematics
+on the existence and regularity of weak solutions of a nonlinear parabolic inequality
+annals of pure and applied mathematics series
+on the regularity of the solutions of the equation div a x u u b x u u with one sided and mixed boundary conditions
+annals of pure and applied mathematics series
+on the h lderianity of the solutions of some variational inequalities with unilateral boundary conditions
+vorticity direction and regularity of solutions to the navier stokes equations
+preface

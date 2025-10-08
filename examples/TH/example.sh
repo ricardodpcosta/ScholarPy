@@ -32,7 +32,7 @@ scholarpy plot_wordcloud \
     --plot_colourmap="viridis" \
     --plot_fontpath=None \
     --plot_maxwords=100 \
-    --special_words="engineering,technology" \
+    --special_words="analysis,boundary,equation,fluid,flow,mathematical,mechanic" \
     --special_colour="green" \
     --output_file="wordcloud.png"
 

@@ -26,8 +26,8 @@ from scholarpy.core import (
 def main():
     # Step 1: Search public scholarly CV links
     search_links(
-        html_urls="https://ipc.uminho.pt/en/team, \
-            https://ipc.uminho.pt/en/team?page=2, \
+        html_urls="https://ipc.uminho.pt/en/team,\
+            https://ipc.uminho.pt/en/team?page=2,\
             https://ipc.uminho.pt/en/team?page=3",
         links_limit=200,
         output_file="links.txt"
@@ -48,7 +48,9 @@ def main():
         plot_colourmap="copper",
         plot_fontpath=None,
         plot_maxwords=100,
-        special_words="polymer,composite,material",
+        special_words="additive manufacturing,composite,computational,design,efficiency,\
+            finite element,flow,fluid,heat,intelligent,manufacturing,modelling,numerical,\
+            optimisation,plastic,polymer,processing,process,simulation,sustainability,thermal",
         special_colour="orange",
         output_file="wordcloud.png"
     )

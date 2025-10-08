@@ -24,23 +24,23 @@ from scholarpy.core import (
 )
 
 def main():
-    # Step 1: Collect data from public scholarly CVs
-    collect_data(
-        links_file="links.txt",
-        output_file="data.txt"
-    )
-    # Step 2: Analyse and process words
-    analyse_words(
-        data_file="data.txt",
-        output_file="words.csv"
-    )
+    # # Step 1: Collect data from public scholarly CVs
+    # collect_data(
+    #     links_file="links.txt",
+    #     output_file="data.txt"
+    # )
+    # # Step 2: Analyse and process words
+    # analyse_words(
+    #     data_file="data.txt",
+    #     output_file="words.csv"
+    # )
     # Step 3: Generate wordcloud visualisation
     plot_wordcloud(
         words_file="words.csv",
         plot_colourmap="copper",
         plot_fontpath=None,
         plot_maxwords=100,
-        special_words="engineering,technology",
+        special_words="analysis,boundary,equation,fluid,flow,mathematical,mechanic",
         special_colour="orange",
         output_file="wordcloud.png"
     )

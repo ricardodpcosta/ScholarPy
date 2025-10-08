@@ -39,7 +39,9 @@ scholarpy plot_wordcloud \
     --plot_colourmap="copper" \
     --plot_fontpath=None \
     --plot_maxwords=100 \
-    --special_words="engineering,technology" \
+    --special_words="additive manufacturing,composite,computational,design,efficiency,\
+         finite element,flow,fluid,heat,intelligent,manufacturing,modelling,numerical,\
+         optimisation,plastic,polymer,processing,process,simulation,sustainability,thermal" \
     --special_colour="orange" \
     --output_file="wordcloud.png"
 
