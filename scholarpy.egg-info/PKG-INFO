@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: scholarpy
-Version: 0.1.0
-Summary: A Python toolkit for collecting, analysing, and visualising research                     insights from public scholarly CVs with web scraping and data mining.
-Author: Ricardo Costa
-Author-email: rcosta@dep.uminho.pt
-License-File: LICENSE
