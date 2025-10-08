@@ -1,23 +1,23 @@
 # ScholarPy
 
-**Extract, analyse, and visualise research insights from scholarly profiles with web scraping and data mining in Python.**
+**A Python toolkit for collecting, analysing, and visualising research insights from public scholarly CVs with web scraping and data mining.**
 
 ---
 
 ## Overview
 
-ScholarPy is a Python toolkit for extracting relevant data, analysing textual information, and visualising research insights from public scholarly profiles, such as ORCID and CienciaVitae. It integrates **web browsing**, **web scraping**, **data mining**, and **data visualisation** using various Python libraries to provide meaningful insights into the research activities and outputs of individual researchers or research teams.
+ScholarPy is a Python toolkit for collecting relevant data, analysing textual information, and visualising research insights from public scholarly CVs, such as ORCID and CienciaVitae. It integrates **web browsing**, **web scraping**, **data mining**, and **data visualisation** using various Python libraries to provide meaningful insights into the research activities and outputs of individual researchers or research teams.
 
 The toolkit offers a collection of modular tools to:
 
-* Discover public scholarly profiles on institutional webpages.
-* Extract relevant data from public scholarly profiles (currently supporting ORCID and CienciaVitae).
+* Discover public scholarly CVs on institutional webpages.
+* Collect relevant data from public scholarly CVs (currently supporting ORCID and CienciaVitae).
 * Analyse textual information using **natural language processing (NLP)**.
 * Visualise research insights through meaningful infographic representations.
 
 <br>
 
-<img src="images/pipeline.png" alt="ScholarPy pipeline" width="100%"/>
+<img src="gallery/pipeline.png" alt="ScholarPy pipeline" width="100%"/>
 
 ---
 
@@ -25,9 +25,9 @@ The toolkit offers a collection of modular tools to:
 
 ScholarPy is built upon two core concepts:
 
-- **Web scraping**: The process of automatically extracting data from websites. ScholarPy uses scraping to collect scholarly information from dynamic sources such as ORCID and CiênciaVitae profiles.  
+- **Web scraping**: The process of automatically extracting data from websites. ScholarPy implements web scraping to collect public scholarly CV information from online sources, such as ORCID and CiênciaVitae.  
 
-- **Data mining**: The practice of analysing large sets of text or structured data to uncover patterns, trends, and insights. In ScholarPy, it transforms raw profile data into meaningful research indicators. 
+- **Data mining**: The practice of analysing large sets of text or structured data to uncover patterns, trends, and insights. In ScholarPy, it transforms plain scholarly data into meaningful research indicators. 
 
 ---
 
@@ -62,25 +62,97 @@ ScholarPy requires **Python 3.10+** and the following modules:
 
 ## Installation
 
-1. Clone the repository:
+There are two methods to install and use **ScholarPy**:
+
+### A. Manual installation (quick local setup)
+
+1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/ricardodpcosta/ScholarPy.git
 cd ScholarPy
-````
+```
 
-2. Install required packages via [pip](https://pypi.org/project/pip/) (package installer for Python):
+2. **Install required dependencies** via [pip](https://pypi.org/project/pip/):
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Download the spaCy language models (English required, Portuguese optional):
+3. **Download the spaCy language models**
+   *(English required, Portuguese optional)*:
 
 ```bash
 python -m spacy download en_core_web_sm
 python -m spacy download pt_core_news_sm
 ```
+
+Once installed, the tools can be executed directly from a command line, for example:
+
+```bash
+python scholarpy/collect_data.py --links_file="links.txt" --output_file="data.txt"
+```
+
+### B. Package installation (recommended)
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/ricardodpcosta/ScholarPy.git
+cd ScholarPy
+```
+
+2. **Install directly from the cloned repository:**
+
+```bash
+pip install .
+```
+
+or, to install in editable/development mode:
+
+```bash
+pip install -e .
+```
+
+3. **Download the spaCy language models**
+   *(English required, Portuguese optional)*:
+
+```bash
+python -m spacy download en_core_web_sm
+python -m spacy download pt_core_news_sm
+```
+
+Once installed, you can import ScholarPy in any Python script:
+
+```python
+from scholarpy import core
+core.analyse_words(data_file="data.txt", output_file="words.csv")
+```
+
+Or execute the tools directly from a command line, for example:
+
+```bash
+collect-data --links_file="links.txt" --output_file="data.txt"
+```
+
+### Verify the installation
+
+To confirm that **ScholarPy** is correctly installed:
+
+* From a terminal or shell:
+
+```bash
+python -m scholarpy --help
+```
+
+* Or from within Python:
+
+```python
+import scholarpy
+print("ScholarPy successfully installed!")
+```
+
+If no errors are displayed, the installation is complete and ready to use.
 
 ---
 
@@ -89,20 +161,19 @@ python -m spacy download pt_core_news_sm
 ```
 ScholarPy/
 │
-├─ scripts/                 # Python scripts included in the toolkit
-│   ├─ search_links.py      # Search public scholarly CV links from HTML or URLs
-│   ├─ extract_data.py      # Scrape data from public scholarly CV pages
-│   ├─ process_words.py     # Process text, lemmatise, filter stopwords, count words
-│   ├─ plot_wordcloud.py    # Generate word cloud visualisations from processed words
-|   └─ README.md            # Tools description and usage instructions
+├─ scholarpy/               # Main source package
+│   ├─ __init__.py          # Package initializer
+│   ├─ core.py              # Core functions and shared utilities
+│   ├─ ...                  # Additional functional modules and tool wrappers
+│   └─ README.md            # Package-level documentation and usage details
 │
-├─ examples/                # Example cases with running scripts
+├─ examples/                # Example workflows and demonstration scripts
 │
-├─ requirements.txt         # Python dependencies for installation
-├─ README.md                # Project overview, installation, and workflow
-├─ CONTRIBUTING.md          # Contributing guidelines
-└─ LICENSE                  # License clauses
-
+├─ setup.py                 # Package configuration and installation script
+├─ requirements.txt         # Python dependency list for installation
+├─ README.md                # Project overview, installation, and usage guide
+├─ CONTRIBUTING.md          # Contribution guidelines and best practices
+└─ LICENSE                  # Software license information
 ```
 
 ---
