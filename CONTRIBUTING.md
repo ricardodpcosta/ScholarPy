@@ -11,7 +11,7 @@ The simplest route is to check the contact details in the `README.md` file and *
 
 1. **Fork the repository** and create a new branch for your feature or fix.
    ```bash
-   git checkout -b feature/new-tool
+   git checkout -b my_branch
    ```
 2. **Implement your changes** following the contributing guidelines.
 3. **Test your code** to ensure it runs correctly and does not break existing functionality.
