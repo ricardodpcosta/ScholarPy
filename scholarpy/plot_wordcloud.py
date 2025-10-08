@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 ===============================================================
-ScholarPy - plot-wordcloud command line interface
+ScholarPy - plot-wordcloud wrapper script
 ===============================================================
 Author: Ricardo Costa (rcosta@dep.uminho.pt)
 License: MIT License (see LICENSE file for details)
@@ -23,30 +23,30 @@ easy comparison, while only the colours differ.
 
 Arguments:
 ----------
---words_file          : Input CSV file with words and counts (required).
---plot_colormap       : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
---plot_maxwords       : Limit number of words to plot (optional, default: 200).
---special_words       : Comma-separated list of words to highlight in the wordcloud (optional, default: none).
---special_color       : Colour to highlight special words (optional, default: 'green').
---output_file         : Output PNG file containing the wordcloud (optional, default: 'wordcloud.png').
+--words_file      : Input CSV file with words and counts (required).
+--plot_colormap   : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
+--plot_maxwords   : Limit number of words to plot (optional, default: 200).
+--special_words   : Comma-separated list of words to highlight in the wordcloud (optional, default: none).
+--special_color   : Colour to highlight special words (optional, default: 'green').
+--output_file     : Output PNG file containing the wordcloud (optional, default: 'wordcloud.png').
 
 Output:
 -------
 A PNG image of the generated wordcloud is saved to disk. If special words are provided,
 a second image is saved to disk.
-===========================================================
+===============================================================
 """
 
-# ================================================
+# ===============================================================
 # IMPORT MODULES
-# ================================================
+# ===============================================================
 
 import argparse
 from scholarpy.core import plot_wordcloud
 
-# ================================================
+# ===============================================================
 # DEFINE FUNCTIONS
-# ================================================
+# ===============================================================
 
 def main():
     # Parse arguments
@@ -61,10 +61,11 @@ def main():
     # Call function
     plot_wordcloud(args.words_file.strip(), args.plot_colormap.strip(), args.plot_maxwords, args.special_words.strip(), args.special_color.strip(), args.output_file.strip())
 
-# ================================================
+# ===============================================================
 # RUN FUNCTIONS
-# ================================================
+# ===============================================================
 
 if __name__ == "__main__":
-main()
+    main()
+
 # End of file

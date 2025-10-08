@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 ===============================================================
-ScholarPy - extract-data command line interface
+ScholarPy - collect-data wrapper script
 ===============================================================
 Author: Ricardo Costa (rcosta@dep.uminho.pt)
 License: MIT License (see LICENSE file for details)
@@ -10,7 +10,7 @@ Repository: https://github.com/ricardodpcosta/ScholarPy
 ===============================================================
 Description:
 ------------
-Extract relevant textual data from public scholarly CV links.
+Collect relevant textual data from public scholarly CV links.
 The process is divided into three steps:
 
 1. Read an input file containing a list of public scholarly CV links.
@@ -28,39 +28,39 @@ Arguments:
 ----------
 --links_file  : Input TXT file containing a list of public scholarly CV links (required).
 --page_pause  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
---output_file : Output TXT file containing the extracted data (optional, default: 'data.txt').
+--output_file : Output TXT file containing the collected data (optional, default: 'data.txt').
 
 Output:
 -------
-A TXT file containing all extracted text from the public scholarly CV links
+A TXT file containing all collected text from the public scholarly CV links
 is saved to disk.
 ===============================================================
 """
 
-# ================================================
+# ===============================================================
 # IMPORT MODULES
-# ================================================
+# ===============================================================
 
 import argparse
-from scholarpy.core import extract_data
+from scholarpy.core import collect_data
 
-# ================================================
+# ===============================================================
 # DEFINE FUNCTIONS
-# ================================================
+# ===============================================================
 
 def main():
     # Parse arguments
-    parser = argparse.ArgumentParser(description="Extract relevant textual data from public scholarly CV links.")
+    parser = argparse.ArgumentParser(description="Collect relevant textual data from public scholarly CV links.")
     parser.add_argument("--links_file", required=True, help="Input TXT file containing a list of public scholarly CV links (required).")
     parser.add_argument("--page_pause", type=int, default=3, help="Delay in seconds between HTTP/HTTPS requests (optional, default: 3).")
-    parser.add_argument("--output_file", default="data.txt", help="Output TXT file containing the extracted data (optional, default: `data.txt`).")
+    parser.add_argument("--output_file", default="data.txt", help="Output TXT file containing the collected data (optional, default: `data.txt`).")
     args = parser.parse_args()
     # Call function
-    extract_data(args.links_file.strip(), args.page_pause, args.output_file.strip())
+    collect_data(args.links_file.strip(), args.page_pause, args.output_file.strip())
 
-# ================================================
+# ===============================================================
 # RUN FUNCTIONS
-# ================================================
+# ===============================================================
 
 if __name__ == "__main__":
     main()

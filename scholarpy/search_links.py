@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 ===============================================================
-ScholarPy - search-links command line interface
+ScholarPy - search-links wrapper script
 ===============================================================
 Author: Ricardo Costa (rcosta@dep.uminho.pt)
 License: MIT License (see LICENSE file for details)
@@ -39,16 +39,16 @@ A TXT file containing a list of links is saved to disk.
 ===============================================================
 """
 
-# ================================================
+# ===============================================================
 # IMPORT MODULES
-# ================================================
+# ===============================================================
 
 import argparse
 from scholarpy.core import search_links
 
-# ================================================
+# ===============================================================
 # DEFINE FUNCTIONS
-# ================================================
+# ===============================================================
 
 def main():
     # Parse arguments
@@ -62,9 +62,9 @@ def main():
     # Call function
     search_links(args.html_urls.strip(), args.base_url.strip(), args.links_limit, args.page_pause, args.output_file.strip())
 
-# ================================================
+# ===============================================================
 # RUN FUNCTIONS
-# ================================================
+# ===============================================================
 
 if __name__ == "__main__":
     main()

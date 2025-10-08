@@ -7,9 +7,9 @@
 # Description: Core functionalities for ScholarPy.
 # ===============================================================
 
-# ================================================
+# ===============================================================
 # IMPORT MODULES
-# ================================================
+# ===============================================================
 
 import os
 import sys
@@ -36,9 +36,9 @@ import matplotlib
 from matplotlib import pyplot as plt
 from wordcloud import WordCloud
 
-# ================================================
+# ===============================================================
 # GLOBAL VARIABLES
-# ================================================
+# ===============================================================
 
 # Additional specific stopwords to be excluded
 extra_stopwords = set([
@@ -60,9 +60,9 @@ RED = "\033[31m"
 GREEN = "\033[32m"
 YELLOW = "\033[33m"
 
-# ================================================
+# ===============================================================
 # HELPER FUNCTIONS
-# ================================================
+# ===============================================================
 
 def print_info(message):
     """Prints an info message in default."""
@@ -83,9 +83,9 @@ def print_error(message):
 if __name__ == "__main__":
     print_warning("This module is intended to be imported, not run directly.")
 
-# ================================================
+# ===============================================================
 # SEARCH LINKS
-# ================================================
+# ===============================================================
 
 def search_links(html_urls, base_url="", links_limit=200, page_pause=3, output_file="links.txt"):
     """
@@ -225,15 +225,15 @@ def search_links(html_urls, base_url="", links_limit=200, page_pause=3, output_f
             f.write(line + "\n")
     print_info(f"Links saved at: {output_file}.")
 
-# ================================================
+# ===============================================================
 # EXTRACT DATA
-# ================================================
+# ===============================================================
 
-def extract_data(links_file, page_pause=3, output_file="data.txt"):
+def collect_data(links_file, page_pause=3, output_file="data.txt"):
     """
     Description:
     ------------
-    Extract relevant textual data from public scholarly CV links.
+    Collect relevant textual data from public scholarly CV links.
     The process is divided into three steps:
 
     1. Read an input file containing a list of public scholarly CV links.
@@ -251,7 +251,7 @@ def extract_data(links_file, page_pause=3, output_file="data.txt"):
     ----------
     links_file  : Input TXT file containing a list of public scholarly CV links (required).
     page_pause  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
-    output_file : Output TXT file containing the extracted data (optional, default: 'data.txt').
+    output_file : Output TXT file containing the collected data (optional, default: 'data.txt').
 
     Returns:
     --------
@@ -259,7 +259,7 @@ def extract_data(links_file, page_pause=3, output_file="data.txt"):
 
     Output:
     -------
-    A TXT file containing all extracted text from the public scholarly CV links
+    A TXT file containing all collected text from the public scholarly CV links
     is saved to disk.
     """
     # STEP 1: READ LINKS
@@ -283,7 +283,7 @@ def extract_data(links_file, page_pause=3, output_file="data.txt"):
     # STEP 3: SCRAPE PROFILES
     # Array to store extrated data
     data = []
-    # Extract text from each link
+    # Collect text from each link
     for i, link in enumerate(links, start=1):
         # Check link type
         if "orcid.org" in link:
@@ -328,10 +328,10 @@ def extract_data(links_file, page_pause=3, output_file="data.txt"):
                 continue
         # ORCID scraping
         if link_type == "orcid":
-            # Extract funding titles
+            # Collect funding titles
             for h4 in soup.select("h4.funding-title"):
                 data.append(h4.find(string=True, recursive=False).replace("\n", " ").strip())
-            # Extract work titles
+            # Collect work titles
             for h4 in soup.select("h4.work-title"):
                 data.append(h4.find(string=True, recursive=False).replace("\n", " ").strip())
             for work in soup.select("app-work"):
@@ -340,16 +340,16 @@ def extract_data(links_file, page_pause=3, output_file="data.txt"):
                     data.append(data_tag.find(string=True, recursive=False).replace("\n", " ").strip())
         # CienciaVitae scraping
         elif link_type == "cienciavitae":
-            # Extract project titles
+            # Collect project titles
             for td in soup.select("#proj table td:nth-of-type(2)"):
                 data.append(td.find(string=True, recursive=False).replace("\n", " ").strip())
-            # Extract production titles
+            # Collect production titles
             for li in soup.select("#prod li"):
-                # Extract titles between <i>
+                # Collect titles between <i>
                 title_tag = li.select_one("i")
                 if title_tag:
                     data.append(title_tag.find(string=True, recursive=False).replace("\n", " ").strip())
-                # Extract titles between quotation marks
+                # Collect titles between quotation marks
                 string = li.find(string=True, recursive=False).replace("\n", " ").strip()
                 match = re.search(r'"(.*?)"', string)
                 if match:
@@ -367,15 +367,15 @@ def extract_data(links_file, page_pause=3, output_file="data.txt"):
         f.write("\n".join(data))
     print_info(f"Data saved at: {output_file}.")
 
-# ================================================
+# ===============================================================
 # ANALISE WORDS
-# ================================================
+# ===============================================================
 
 def analyse_words(data_file, output_file="words.txt"):
     """
     Description:
     ------------
-    Analyse relevant scientific words from extracted data.
+    Analyse relevant scientific words from collected data.
     The process is divided into two steps:
 
     1. Read an input file containing data.
@@ -386,7 +386,7 @@ def analyse_words(data_file, output_file="words.txt"):
 
     Arguments:
     ----------
-    data_file   : Input TXT file containing extracted text (required).
+    data_file   : Input TXT file containing collected text (required).
     output_file : Output CSV file containing words and their counts (optional, default: 'words.csv').
 
     Returns:
@@ -430,9 +430,9 @@ def analyse_words(data_file, output_file="words.txt"):
             writer.writerow([k, v])
     print_info(f"Words and counts saved at: {output_file}.")
 
-# ================================================
+# ===============================================================
 # PLOT_WORDCLOUD
-# ================================================
+# ===============================================================
 
 def plot_wordcloud(words_file, plot_colormap="viridis", plot_maxwords=200, special_words="",\
     special_color="green", output_file="wordcloud.png"):
@@ -452,12 +452,12 @@ def plot_wordcloud(words_file, plot_colormap="viridis", plot_maxwords=200, speci
 
     Arguments:
     ----------
-    words_file          : Input CSV file with words and counts (required).
-    plot_colormap       : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
-    plot_maxwords       : Limit number of words to plot (optional, default: 200).
-    special_words       : Comma-separated list of words to highlight in the wordcloud (optional, default: none).
-    special_color       : Colour to highlight special words (optional, default: 'green').
-    output_file         : Output PNG file containing the wordcloud (optional, default: 'wordcloud.png').
+    words_file      : Input CSV file with words and counts (required).
+    plot_colormap   : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
+    plot_maxwords   : Limit number of words to plot (optional, default: 200).
+    special_words   : Comma-separated list of words to highlight in the wordcloud (optional, default: none).
+    special_color   : Colour to highlight special words (optional, default: 'green').
+    output_file     : Output PNG file containing the wordcloud (optional, default: 'wordcloud.png').
 
     Return:
     -------
