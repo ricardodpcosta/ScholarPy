@@ -6,12 +6,12 @@
 
 ## Overview
 
-ScholarPy is a Python toolkit for extracting relevant data, analysing textual information, and visualising research insights from public scholarly profiles, such as ORCID and CienciaVitae. It integrates **web browsing**, **web scraping**, **data mining**, and **data visualisation** using various Python libraries to provide meaningful insights into the research activities and outputs of individual researchers or research teams.
+ScholarPy is a Python toolkit for collecting relevant data, analysing textual information, and visualising research insights from public scholarly CVs, such as ORCID and CienciaVitae. It integrates **web browsing**, **web scraping**, **data mining**, and **data visualisation** using various Python libraries to provide meaningful insights into the research activities and outputs of individual researchers or research teams.
 
 The toolkit offers a collection of modular tools to:
 
-* Discover public scholarly profiles on institutional webpages.
-* Extract relevant data from public scholarly profiles (currently supporting ORCID and CienciaVitae).
+* Discover public scholarly CVs on institutional webpages.
+* Collect relevant data from public scholarly CVs (currently supporting ORCID and CienciaVitae).
 * Analyse textual information using **natural language processing (NLP)**.
 * Visualise research insights through meaningful infographic representations.
 
@@ -25,9 +25,9 @@ The toolkit offers a collection of modular tools to:
 
 ScholarPy is built upon two core concepts:
 
-- **Web scraping**: The process of automatically extracting data from websites. ScholarPy uses scraping to collect scholarly information from dynamic sources such as ORCID and CiênciaVitae profiles.  
+- **Web scraping**: The process of automatically extracting data from websites. ScholarPy implements web scraping to collect public scholarly CV information from online sources, such as ORCID and CiênciaVitae.  
 
-- **Data mining**: The practice of analysing large sets of text or structured data to uncover patterns, trends, and insights. In ScholarPy, it transforms raw profile data into meaningful research indicators. 
+- **Data mining**: The practice of analysing large sets of text or structured data to uncover patterns, trends, and insights. In ScholarPy, it transforms plain scholarly data into meaningful research indicators. 
 
 ---
 
