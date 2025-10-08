@@ -8,7 +8,7 @@ This folder contains example scripts demonstrating the **ScholarPy** workflow. T
 
 | File         | Description                                                     |
 | ------------ | --------------------------------------------------------------- |
-| `links.txt`  | A TXT file containing an ORCID link.                            |
+| `links.txt`  | A TXT file containing an ORCID link (possibly more).            |
 | `example.sh` | Bash script demonstrating ScholarPy using CLI commands.         |
 | `example.py` | Python script demonstrating ScholarPy using the Python package. |
 
