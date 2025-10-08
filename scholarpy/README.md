@@ -45,7 +45,7 @@ scholarpy search_links [--help] --html_urls HTML_URLS [--base_url BASE_URL] [--l
 **Arguments:**
 * `--help`        : Shows this help message and exits.
 * `--html_urls`   : Input HTML file(s) or URL(s), separated by commas (required).
-* `--base_url`    : Base URL for institutional profile pages (optional, default: none).
+* `--base_url`    : Base URL for institutional profile pages (optional, default: None).
 * `--links_limit` : Limit number of links to retrieve (optional, default: 200).
 * `--page_pause`  : Delay in seconds between HTTP/HTTPS requests (optional, default: 3).
 * `--output_file` : Output TXT file containing the found links (optional, default: 'links.txt').
@@ -120,8 +120,9 @@ scholarpy plot_wordcloud [--help] --words_file WORDS_FILE [--plot_colourmap PLOT
 * `--help`            : Shows this help message and exits.
 * `--words_file`      : Input CSV file with words and counts (required).
 * `--plot_colourmap`  : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
+* `--plot_fontpath`   : Path to TTF font file (optional, default: None).
 * `--plot_maxwords`   : Limit number of words to plot (optional, default: 200).
-* `--special_words`   : Comma-separated list of words to highlight in the wordcloud (optional, default: none).
+* `--special_words`   : Comma-separated list of words to highlight in the wordcloud (optional, default: None).
 * `--special_colour`  : Colour to highlight special words (optional, default: 'green').
 * `--output_file`     : Output PNG file containing the wordcloud (optional, default: 'wordcloud.png').
 

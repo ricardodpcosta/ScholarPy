@@ -22,16 +22,18 @@
 #
 # Usage:
 # ------
-# scholarpy-plot-wordcloud [--help] --words_file WORDS_FILE [--plot_colourmap PLOT_COLOURMAP] [--plot_maxwords PLOT_MAXWORDS]
-#                          [--special_words SPECIAL_WORDS] [--special_colour SPECIAL_COLOUR] [--output_file OUTPUT_FILE]
+# scholarpy-plot-wordcloud [--help] --words_file WORDS_FILE [--plot_colourmap PLOT_COLOURMAP] [--plot_fontpath PLOT_FONTPATH]
+#                          [--plot_maxwords PLOT_MAXWORDS] [--special_words SPECIAL_WORDS] [--special_colour SPECIAL_COLOUR]
+#                          [--output_file OUTPUT_FILE]
 #
 # Arguments:
 # ----------
 # --help            : Shows this help message and exits.
 # --words_file      : Input CSV file with words and counts (required).
 # --plot_colourmap  : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
+# --plot_fontpath   : Path to TTF font file (optional, default: None).
 # --plot_maxwords   : Limit number of words to plot (optional, default: 200).
-# --special_words   : Comma-separated list of words to highlight in the wordcloud (optional, default: none).
+# --special_words   : Comma-separated list of words to highlight in the wordcloud (optional, default: None).
 # --special_colour  : Colour to highlight special words (optional, default: 'green').
 # --output_file     : Output PNG file containing the wordcloud (optional, default: 'wordcloud.png').
 #
@@ -57,13 +59,15 @@ def main():
     parser = argparse.ArgumentParser(description="Generate wordcloud visualisations from word frequency data.")
     parser.add_argument("--words_file", required=True, help="Input CSV file with words and counts (required).")
     parser.add_argument("--plot_colourmap", default="viridis", help="Matplotlib colourmap for gradient colouring (optional, default: `viridis`).")
+    parser.add_argument("--plot_fontpath", default="None", help="Path to TTF font file (optional, default: None).")
     parser.add_argument("--plot_maxwords", type=int, default=200, help="Limit number of words to plot (optional, default: 200).")
-    parser.add_argument("--special_words", default="", help="Comma-separated list of words to highlight in the wordcloud (optional, default: none).")
+    parser.add_argument("--special_words", default=None, help="Comma-separated list of words to highlight in the wordcloud (optional, default: None).")
     parser.add_argument("--special_colour", default="green", help="Colour to highlight special words (optional, default: `green`).")
     parser.add_argument("--output_file", default="wordcloud.png", help="Output PNG file containing the wordcloud (optional, default: `wordcloud.png`).")
     args = parser.parse_args()
     # Call function
-    plot_wordcloud(args.words_file.strip(), args.plot_colourmap.strip(), args.plot_maxwords, args.special_words.strip(), args.special_colour.strip(), args.output_file.strip())
+    plot_wordcloud(args.words_file.strip(), args.plot_colourmap.strip(), args.plot_fontpath.strip(), args.plot_maxwords,\
+        args.special_words.strip(), args.special_colour.strip(), args.output_file.strip())
 
 # ===============================================================
 # RUN FUNCTION

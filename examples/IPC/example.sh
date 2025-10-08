@@ -38,6 +38,8 @@ scholarpy analyse_words \
 scholarpy plot_wordcloud \
     --words_file="words.csv" \
     --plot_colourmap="copper" \
+    --plot_fontpath=None \
+    --plot_maxwords=100 \
     --special_words="polymer,composite,material" \
     --special_colour="orange" \
     --output_file="wordcloud.png"

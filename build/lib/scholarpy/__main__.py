@@ -20,7 +20,7 @@ tools:
 
 Usage:
 ------
-__main__.py [--help] {search_links,collect_data,analyse_words,plot_wordcloud} ...
+scholarpy [--help] {search_links,collect_data,analyse_words,plot_wordcloud} ...
 
 Arguments:
 ----------
@@ -50,7 +50,7 @@ def main():
     # search_links
     parser_links = subparsers.add_parser("search_links", help="Search public scholarly CV links from HTML pages.")
     parser_links.add_argument("--html_urls", required=True, help="Input HTML file(s) or URL(s), separated by commas (required).")
-    parser_links.add_argument("--base_url", default="", help="Base URL for institutional pages (optional, default: none).")
+    parser_links.add_argument("--base_url", default="", help="Base URL for institutional pages (optional, default: None).")
     parser_links.add_argument("--links_limit", type=int, default=200, help="Limit number of links to retrieve (optional, default: 200).")
     parser_links.add_argument("--page_pause", type=int, default=3, help="Delay in seconds between HTTP/HTTPS requests (optional, default: 3).")
     parser_links.add_argument("--output_file", default="links.txt", help="Output TXT file containing the found CV links (optional, default: `links.txt`).")
@@ -70,8 +70,9 @@ def main():
     parser_wordcloud = subparsers.add_parser("plot_wordcloud", help="Generate wordcloud visualisations from word frequency data.")
     parser_wordcloud.add_argument("--words_file", required=True, help="Input CSV file with words and counts (required).")
     parser_wordcloud.add_argument("--plot_colourmap", default="viridis", help="Matplotlib colourmap for gradient colouring (optional, default: `viridis`).")
+    parser_wordcloud.add_argument("--plot_fontpath", default=None, help="Path to TTF font file (optional, default: None).")
     parser_wordcloud.add_argument("--plot_maxwords", type=int, default=200, help="Limit number of words to plot (optional, default: 200).")
-    parser_wordcloud.add_argument("--special_words", default="", help="Comma-separated list of words to highlight in the wordcloud (optional, default: none).")
+    parser_wordcloud.add_argument("--special_words", default=None, help="Comma-separated list of words to highlight in the wordcloud (optional, default: None).")
     parser_wordcloud.add_argument("--special_colour", default="green", help="Colour to highlight special words (optional, default: `green`).")
     parser_wordcloud.add_argument("--output_file", default="wordcloud.png", help="Output PNG file containing the wordcloud (optional, default: `wordcloud.png`).")
 

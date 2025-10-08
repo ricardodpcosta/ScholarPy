@@ -17,19 +17,21 @@
 # ===============================================================
 
 # Step 1: Collect data from public scholarly CVs
-scholarpy-collect-data \
+scholarpy collect_data \
     --links_file="links.txt" \
     --output_file="data.txt"
 
 # Step 2: Analyse and process words
-scholarpy-analyse-words \
+scholarpy analyse_words \
     --data_file="data.txt" \
     --output_file="words.csv"
 
 # Step 3: Generate wordcloud visualisation
-scholarpy-plot-wordcloud \
+scholarpy plot_wordcloud \
     --words_file="words.csv" \
     --plot_colourmap="viridis" \
+    --plot_fontpath=None \
+    --plot_maxwords=100 \
     --special_words="engineering,technology" \
     --special_colour="green" \
     --output_file="wordcloud.png"

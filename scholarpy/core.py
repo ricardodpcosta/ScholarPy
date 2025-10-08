@@ -11,27 +11,27 @@
 # IMPORT MODULES
 # ===============================================================
 
-import os
-import sys
-import re
-import time
-import csv
+import os, sys, re, time, csv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
+from langdetect import detect
+from deep_translator import GoogleTranslator
 import spacy
 try:
     from spacy.lang.en.stop_words import STOP_WORDS as STOPWORDS_EN
 except ImportError as e:
-    print("\033[31mEnglish model 'en_core_web_sm' not found: {e}\033[0m")
-    print("Download it with: python -m spacy download en_core_web_sm")
+    print("\033[31mEnglish model 'en_core_web_lg' not found: {e}\033[0m")
+    print("Download it with: python -m spacy download en_core_web_lg")
     sys.exit(1)
 try:
     from spacy.lang.pt.stop_words import STOP_WORDS as STOPWORDS_PT
 except ImportError as e:
-    print("\033[33mPortuguese model 'pt_core_news_sm' not found: {e}\033[0m")
-    print("Download it with: python -m spacy download pt_core_news_sm")
+    print("\033[33mPortuguese model 'pt_core_news_lg' not found: {e}\033[0m")
+    print("Download it with: python -m spacy download pt_core_news_lg")
     STOPWORDS_PT = set()
+# from spacy.tokenizer import Tokenizer
+# from spacy.util import compile_infix_regex
 import matplotlib
 from matplotlib import pyplot as plt
 from wordcloud import WordCloud
@@ -40,19 +40,45 @@ from wordcloud import WordCloud
 # GLOBAL VARIABLES
 # ===============================================================
 
-# Additional specific stopwords to be excluded
-extra_stopwords = set([
+# Additional stop words
+EXTRA_STOPWORDS = set([
     "abstract", "académico", "academic", "acta", "anual", "approach", "apply", "artigo", "article",
-    "base", "case", "center", "centre", "centro", "change", "congresso", "conference", "contributor",
-    "decrease", "education", "effect", "estrangeiro", "european", "europeu", "high", "increase", "portuguesa", "portuguese",
-    "instituição", "instituto", "internacional", "international", "journal", "jornal", "load", "low", "report",
-    "national", "nacional", "path", "portugal", "proceeding", "profile", "property", "publications",
-    "reduce", "research", "review", "self", "simpósio", "study", "strategy", "student", "symposium",
-    "tipo", "university", "universidade", "user", "works", "workshop"
+    "base", "case", "center", "centre", "centro", "change", "congress", "conference", "contributor",
+    "decrease", "education", "effect", "european", "high", "ieee", "increase", "international",
+    "journal", "load", "low", "national", "path", "portugal", "portuguese", "procedia", "proceeding",
+    "profile", "project", "property", "publications", "reduce", "reduction", "report", "research",
+    "review", "self", "strategy", "student", "study", "symposium", "techma", "university", "user",
+    "works", "workshop"
 ])
 STOPWORDS_PT = locals().get("STOPWORDS_PT", set())
 STOPWORDS_EN = locals().get("STOPWORDS_EN", set())
-stopwords = STOPWORDS_PT.union(STOPWORDS_EN).union(extra_stopwords)
+STOPWORDS = STOPWORDS_PT.union(STOPWORDS_EN).union(EXTRA_STOPWORDS)
+
+# Additional lemmatised words
+LEMMAWORDS = {
+    "additive manufacturing": "additive_manufacturing",
+    "analyses": "analyse",
+    "analyze": "analyse",
+    "analyzes": "analyse",
+    "artificial intelligence": "artificial_intelligence",
+    "engineer": "engineering",
+    "finite element": "finite_element",
+    "machine learning": "machine_learning",
+    "manufacture": "manufacturing",
+    "model": "modelling",
+    "multi layered": "multilayered",
+    "multi material": "multimaterial",
+    "multi modal": "multimodal",
+    "multi objective": "multiobjective",
+    "multi physics": "multiphisics",
+    "multi scale": "multiscale",
+    "multi sensor": "multisensor",
+    "multi variate": "multivariate",
+    "neural networks": "neural_networks",
+    "optimal": "optimisation",
+    "optimise": "optimisation",
+    "optimize": "optimisation"
+}
 
 # ANSI COLOUR ESCAPE CODES
 RESET = "\033[0m"
@@ -80,6 +106,16 @@ def print_error(message):
     """Prints an error message in red."""
     print(f"{RED}{message}{RESET}")
 
+def translate_en(text):
+    """Translate text to english."""
+    # Detect language
+    if text:
+        lang = detect(text)
+        # Translate if not english
+        if lang != "en":
+            text = GoogleTranslator(source="auto", target="en").translate(text)
+    return text
+
 if __name__ == "__main__":
     print_warning("This module is intended to be imported, not run directly")
 
@@ -87,7 +123,7 @@ if __name__ == "__main__":
 # SEARCH LINKS
 # ===============================================================
 
-def search_links(html_urls, base_url="", links_limit=200, page_pause=3, output_file="links.txt"):
+def search_links(html_urls, base_url=None, links_limit=200, page_pause=3, output_file="links.txt"):
     """
     Description:
     ------------
@@ -109,7 +145,7 @@ def search_links(html_urls, base_url="", links_limit=200, page_pause=3, output_f
     Arguments:
     ----------
     html_urls   : Input HTML file(s) or URL(s), separated by commas (required).
-    base_url    : Base URL for institutional profile pages (optional, default: none).
+    base_url    : Base URL for institutional profile pages (optional, default: None).
     links_limit : Limit number of links to retrieve (optional, default: 200).
     page_pause  : Delay in seconds between HTTP/HTTPS requests (optional, default: 3).
     output_file : Output TXT file containing the found links (optional, default: 'links.txt').
@@ -329,37 +365,49 @@ def collect_data(links_file, page_pause=3, output_file="data.txt"):
         if link_type == "orcid":
             # Collect funding titles
             for h4 in soup.select("h4.funding-title"):
-                data.append(h4.find(string=True, recursive=False).replace("\n", " ").strip())
+                text = h4.find(string=True, recursive=False).replace("\n", " ").strip()
+                if text:
+                    data.append(translate_en(text))
             # Collect work titles
             for h4 in soup.select("h4.work-title"):
-                data.append(h4.find(string=True, recursive=False).replace("\n", " ").strip())
+                text = h4.find(string=True, recursive=False).replace("\n", " ").strip()
+                if text:
+                    data.append(translate_en(text))
             for work in soup.select("app-work"):
                 data_tag = work.select_one("div.general-data")
                 if data_tag:
-                    data.append(data_tag.find(string=True, recursive=False).replace("\n", " ").strip())
+                    text = data_tag.find(string=True, recursive=False).replace("\n", " ").strip()
+                    if text:
+                        data.append(translate_en(text))
         # CienciaVitae scraping
         elif link_type == "cienciavitae":
             # Collect project titles
             for td in soup.select("#proj table td:nth-of-type(2)"):
-                data.append(td.find(string=True, recursive=False).replace("\n", " ").strip())
+                text = td.find(string=True, recursive=False).replace("\n", " ").strip()
+                if text:
+                    data.append(translate_en(text))
             # Collect production titles
             for li in soup.select("#prod li"):
                 # Collect titles between <i>
                 title_tag = li.select_one("i")
                 if title_tag:
-                    data.append(title_tag.find(string=True, recursive=False).replace("\n", " ").strip())
+                    text = title_tag.find(string=True, recursive=False).replace("\n", " ").strip()
+                    if text:
+                        data.append(translate_en(text))
                 # Collect titles between quotation marks
                 string = li.find(string=True, recursive=False).replace("\n", " ").strip()
                 match = re.search(r'"(.*?)"', string)
                 if match:
-                    data.append(match.group(1))
+                    text = match.group(1)
+                    if text:
+                        data.append(translate_en(text))
     # Close driver
     driver.quit()
     # Clean and condense data
     for i, string in enumerate(data):
         string = re.sub(r"[^a-zA-ZáéíóúàãõâêîôûçÁÉÍÓÚÀÃÕÂÊÎÔÛÇ\s]", " ", string)
         string = re.sub(r"\s+", " ", string)
-        data[i] = string.strip()
+        data[i] = string.lower().strip()
     # STEP 4: SAVE DATA
     # Save data to file
     with open(output_file, "w", encoding="utf-8") as f:
@@ -406,34 +454,47 @@ def analyse_words(data_file, output_file="words.txt"):
     # STEP 2: INITIALISE MODULES
     # Load spaCy language model
     try:
-        nlp = spacy.load("en_core_web_sm")
+        nlp = spacy.load("en_core_web_lg")
     except OSError:
-        print_error("English model 'en_core_web_sm' not found")
-        print_info("Download it with: python -m spacy download en_core_web_sm")
+        print_error("English model 'en_core_web_lg' not found")
+        print_info("Download it with: python -m spacy download en_core_web_lg")
         sys.exit(1)
-    # STEP 3: ANALISE DATA
-    # Dictionary to store word frequencies
+    # # Customize tokenizer to preserve internal hyphens
+    # infixes = list(nlp.Defaults.infixes) + [r'(?<=[0-9a-zA-Z])-(?=[0-9a-zA-Z])']
+    # infix_re = compile_infix_regex(infixes)
+    # nlp.tokenizer = Tokenizer(nlp.vocab,
+    #     prefix_search=nlp.tokenizer.prefix_search,
+    #     suffix_search=nlp.tokenizer.suffix_search,
+    #     infix_finditer=infix_re.finditer,
+    #     token_match=nlp.tokenizer.token_match)
+    # STEP 3: ANALYSE DATA
+    # Dictionary to store words and counts
     words = {}
+    # Lemmatisation of additional words
+    for word, lemma in LEMMAWORDS.items():
+        pattern = r"\b" + re.escape(word) + r"\b"
+        data = re.sub(pattern, lemma, data, flags=re.IGNORECASE)
     # Lemmatisation and stopword filtering
-    doc = nlp(data.lower())
+    doc = nlp(data)
     for token in doc:
         lemma = token.lemma_.strip()
-        if len(lemma) > 3 and lemma not in stopwords:
+        if len(lemma) > 3 and lemma not in STOPWORDS:
             words[lemma] = words.get(lemma, 0) + 1
     # STEP 4: SAVE WORDS
     # Save words and counts to file
     with open(output_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["word", "count"])
-        for k, v in sorted(words.items(), key=lambda x: x[1], reverse=True):
-            writer.writerow([k, v])
+        for word, count in sorted(words.items(), key=lambda x: x[1], reverse=True):
+            word = word.replace("_", " ")
+            writer.writerow([word, count])
     print_info(f"Words file saved at: {output_file}")
 
 # ===============================================================
 # PLOT_WORDCLOUD
 # ===============================================================
 
-def plot_wordcloud(words_file, plot_colourmap="viridis", plot_maxwords=200, special_words="",\
+def plot_wordcloud(words_file, plot_colourmap="viridis", plot_fontpath=None, plot_maxwords=200, special_words=None,\
     special_colour="green", output_file="wordcloud.png"):
     """
     Description:
@@ -453,8 +514,9 @@ def plot_wordcloud(words_file, plot_colourmap="viridis", plot_maxwords=200, spec
     ----------
     words_file      : Input CSV file with words and counts (required).
     plot_colourmap  : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
+    plot_fontpath   : Path to TTF font file (optional, default: None).
     plot_maxwords   : Limit number of words to plot (optional, default: 200).
-    special_words   : Comma-separated list of words to highlight in the wordcloud (optional, default: none).
+    special_words   : Comma-separated list of words to highlight in the wordcloud (optional, default: None).
     special_colour  : Colour to highlight special words (optional, default: 'green').
     output_file     : Output PNG file containing the wordcloud (optional, default: 'wordcloud.png').
 
@@ -495,7 +557,8 @@ def plot_wordcloud(words_file, plot_colourmap="viridis", plot_maxwords=200, spec
         return f"rgb({int(r*255)}, {int(g*255)}, {int(b*255)})"
     # Generate the base wordcloud plot
     wordcloud1 = WordCloud(width=1200, height=600, background_color="white",\
-        color_func=gradient_colour_func, max_words=plot_maxwords).generate_from_frequencies(words)
+        color_func=gradient_colour_func, max_words=plot_maxwords,\
+        font_path=plot_fontpath).generate_from_frequencies(words)
     # Display and save wordcloud plot
     plt.figure(figsize=(15, 7.5))
     plt.imshow(wordcloud1, interpolation="bilinear")
@@ -513,7 +576,7 @@ def plot_wordcloud(words_file, plot_colourmap="viridis", plot_maxwords=200, spec
             if word in special_words:
                 return special_colour
             return "gray"
-        # Recolour wordcloud1 (keeps the same layout, only changes colours)
+        # Recolour wordcloud1 keeping the same layout
         wordcloud2 = wordcloud1.recolor(color_func=special_colour_func)
         # Display and save wordcloud plot
         plt.figure(figsize=(15, 7.5))

@@ -28,7 +28,7 @@ def main():
     search_links(
         html_urls="members.html",
         base_url="https://www.ua.pt/pt/p/",
-        links_limit=50,
+        links_limit=200,
         output_file="links.txt"
     )
     # Step 2: Collect data from public scholarly CVs
@@ -44,8 +44,10 @@ def main():
     # Step 4: Generate wordcloud visualisation
     plot_wordcloud(
         words_file="words.csv",
-        plot_colourmap="viridis",
-        special_words="engineering,technology",
+        plot_colourmap="copper",
+        plot_fontpath=None,
+        plot_maxwords=100,
+        special_words="mechanical,science,model,material,additive manufacturing,computational,engineering,technology,manufacturing,modelling,simulation,numerical,flow,fluid,thermal,finite element,polymer,composite",
         special_colour="green",
         output_file="wordcloud.png"
     )

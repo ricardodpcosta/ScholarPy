@@ -38,6 +38,8 @@ def main():
     plot_wordcloud(
         words_file="words.csv",
         plot_colourmap="copper",
+        plot_fontpath=None,
+        plot_maxwords=100,
         special_words="engineering,technology",
         special_colour="orange",
         output_file="wordcloud.png"

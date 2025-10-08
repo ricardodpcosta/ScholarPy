@@ -33,7 +33,7 @@
 # ----------
 # --help        : Shows this help message and exits.
 # --html_urls   : Input HTML file(s) or URL(s), separated by commas (required).
-# --base_url    : Base URL for institutional profile pages (optional, default: none).
+# --base_url    : Base URL for institutional profile pages (optional, default: None).
 # --links_limit : Limit number of links to retrieve (optional, default: 200).
 # --page_pause  : Delay in seconds between HTTP/HTTPS requests (optional, default: 3).
 # --output_file : Output TXT file containing the found links (optional, default: 'links.txt').
@@ -58,7 +58,7 @@ def main():
     # Parse arguments
     parser = argparse.ArgumentParser(description="Search public scholarly CV links from HTML pages.")
     parser.add_argument("--html_urls", required=True, help="Input HTML file(s) or URL(s), separated by commas (required).")
-    parser.add_argument("--base_url", default="", help="Base URL for institutional pages (optional, default: none).")
+    parser.add_argument("--base_url", default=None, help="Base URL for institutional pages (optional, default: None).")
     parser.add_argument("--links_limit", type=int, default=200, help="Limit number of links to retrieve (optional, default: 200).")
     parser.add_argument("--page_pause", type=int, default=3, help="Delay in seconds between HTTP/HTTPS requests (optional, default: 3).")
     parser.add_argument("--output_file", default="links.txt", help="Output TXT file containing the found CV links (optional, default: `links.txt`).")
