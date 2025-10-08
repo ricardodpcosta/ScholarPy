@@ -6,6 +6,7 @@ scholarpy/__main__.py
 scholarpy/analyse_words.py
 scholarpy/collect_data.py
 scholarpy/core.py
+scholarpy/globals.py
 scholarpy/plot_wordcloud.py
 scholarpy/search_links.py
 scholarpy.egg-info/PKG-INFO

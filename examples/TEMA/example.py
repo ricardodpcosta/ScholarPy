@@ -25,17 +25,17 @@ from scholarpy.core import (
 
 def main():
     # Step 1: Search public scholarly CV links
-    search_links(
-        html_urls="members.html",
-        base_url="https://www.ua.pt/pt/p/",
-        links_limit=200,
-        output_file="links.txt"
-    )
+    # search_links(
+    #     html_urls="members.html",
+    #     base_url="https://www.ua.pt/pt/p/",
+    #     links_limit=200,
+    #     output_file="links.txt"
+    # )
     # Step 2: Collect data from public scholarly CVs
-    collect_data(
-        links_file="links.txt",
-        output_file="data.txt"
-    )
+    # collect_data(
+    #     links_file="links.txt",
+    #     output_file="data.txt"
+    # )
     # Step 3: Analyse and process words
     analyse_words(
         data_file="data.txt",
@@ -47,8 +47,10 @@ def main():
         plot_colourmap="copper",
         plot_fontpath=None,
         plot_maxwords=100,
-        special_words="mechanical,science,model,material,additive manufacturing,computational,engineering,technology,manufacturing,modelling,simulation,numerical,flow,fluid,thermal,finite element,polymer,composite",
-        special_colour="green",
+        special_words="additive manufacturing,composite,computational,design,efficiency,\
+            finite element,flow,fluid,heat,intelligent,manufacturing,modelling,numerical,\
+            optimisation,plastic,polymer,processing,process,simulation,sustainability,thermal",
+        special_colour="orange",
         output_file="wordcloud.png"
     )
     print("Workflow completed successfully.")

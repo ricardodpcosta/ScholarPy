@@ -15,7 +15,7 @@ import os, sys, re, time, csv
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
-from langdetect import detect
+from langdetect import detect, LangDetectException
 from deep_translator import GoogleTranslator
 import spacy
 try:
@@ -35,51 +35,15 @@ except ImportError as e:
 import matplotlib
 from matplotlib import pyplot as plt
 from wordcloud import WordCloud
+from .globals import *
 
 # ===============================================================
 # GLOBAL VARIABLES
 # ===============================================================
 
-# Additional stop words
-EXTRA_STOPWORDS = set([
-    "abstract", "académico", "academic", "acta", "anual", "approach", "apply", "artigo", "article",
-    "base", "case", "center", "centre", "centro", "change", "congress", "conference", "contributor",
-    "decrease", "education", "effect", "european", "high", "ieee", "increase",
-    "international", "journal", "load", "low",
-    "national", "path", "portugal", "portuguesa", "portuguese", "procedia", "proceeding",
-    "profile", "project","property", "publications", "reduce", "reduction",
-    "report", "research", "review", "self", "strategy", "student", "study", "symposium",
-    "techma", "tipo", "university", "user", "works", "workshop"
-])
 STOPWORDS_PT = locals().get("STOPWORDS_PT", set())
 STOPWORDS_EN = locals().get("STOPWORDS_EN", set())
-STOPWORDS = STOPWORDS_PT.union(STOPWORDS_EN).union(EXTRA_STOPWORDS)
-
-# Additional compound words
-TRANSWORDS = {
-    "artificial intelligence" : "artificial_intelligence",
-    "machine learning" : "machine_learning",
-    "finite element" : "finite_element",
-    "neural networks" : "neural_networks",
-    "additive manufacturing" : "additive_manufacturing",
-    "optimise" : "optimisation",
-    "optimize" : "optimisation",
-    "optimal" : "optimisation",
-    "analyze" : "analyse",
-    "analyses" : "analyse",
-    "analyzes" : "analyse",
-    "multi scale" : "multiscale",
-    "multi physics" : "multiphisics",
-    "multi modal" : "multimodal",
-    "multi material" : "multimaterial",
-    "multi layered" : "multilayered",
-    "multi sensor" : "multisensor",
-    "multi variate" : "multivariate",
-    "multi objective" : "multiobjective",
-    "model" : "modelling",
-    "manufacture" : "manufacturing",
-    "engineer" : "engineering",
-}
+STOPWORDS = STOPWORDS_PT.union(STOPWORDS_EN).union(STOPWORDS)
 
 # ANSI COLOUR ESCAPE CODES
 RESET = "\033[0m"
@@ -108,13 +72,25 @@ def print_error(message):
     print(f"{RED}{message}{RESET}")
 
 def translate_en(text):
-    """Translate text to english."""
-    # Detect language
-    if text:
+    """Translate text to English."""
+    # Empty string
+    text = text.strip()
+    if not text:
+        return ""
+    # Skip very short or non-alphabetic strings
+    if len(text) < 3 or not any(c.isalpha() for c in text):
+        return text
+    # Translate text
+    try:
         lang = detect(text)
-        # Translate if not english
         if lang != "en":
             text = GoogleTranslator(source="auto", target="en").translate(text)
+    except LangDetectException:
+        # Could not detect language
+        return text
+    except Exception:
+        # Catch unexpected translation API errors
+        return text
     return text
 
 if __name__ == "__main__":
@@ -366,25 +342,25 @@ def collect_data(links_file, page_pause=3, output_file="data.txt"):
         if link_type == "orcid":
             # Collect funding titles
             for h4 in soup.select("h4.funding-title"):
-                text = h4.find(string=True, recursive=False).replace("\n", " ").strip()
+                text = h4.find(string=True, recursive=False).replace("\n", " ")
                 if text:
                     data.append(translate_en(text))
             # Collect work titles
             for h4 in soup.select("h4.work-title"):
-                text = h4.find(string=True, recursive=False).replace("\n", " ").strip()
+                text = h4.find(string=True, recursive=False).replace("\n", " ")
                 if text:
                     data.append(translate_en(text))
             for work in soup.select("app-work"):
                 data_tag = work.select_one("div.general-data")
                 if data_tag:
-                    text = data_tag.find(string=True, recursive=False).replace("\n", " ").strip()
+                    text = data_tag.find(string=True, recursive=False).replace("\n", " ")
                     if text:
                         data.append(translate_en(text))
         # CienciaVitae scraping
         elif link_type == "cienciavitae":
             # Collect project titles
             for td in soup.select("#proj table td:nth-of-type(2)"):
-                text = td.find(string=True, recursive=False).replace("\n", " ").strip()
+                text = td.find(string=True, recursive=False).replace("\n", " ")
                 if text:
                     data.append(translate_en(text))
             # Collect production titles
@@ -392,11 +368,11 @@ def collect_data(links_file, page_pause=3, output_file="data.txt"):
                 # Collect titles between <i>
                 title_tag = li.select_one("i")
                 if title_tag:
-                    text = title_tag.find(string=True, recursive=False).replace("\n", " ").strip()
+                    text = title_tag.find(string=True, recursive=False).replace("\n", " ")
                     if text:
                         data.append(translate_en(text))
                 # Collect titles between quotation marks
-                string = li.find(string=True, recursive=False).replace("\n", " ").strip()
+                string = li.find(string=True, recursive=False).replace("\n", " ")
                 match = re.search(r'"(.*?)"', string)
                 if match:
                     text = match.group(1)
@@ -471,23 +447,17 @@ def analyse_words(data_file, output_file="words.txt"):
     # STEP 3: ANALYSE DATA
     # Dictionary to store words and counts
     words = {}
-
-    data = data.lower()
-
-    # Replace additional compound words with hyphenated versions
-    for word, trans in TRANSWORDS.items():
+    # Rewrite compound words
+    for word, comp in COMPWORDS.items():
         pattern = r"\b" + re.escape(word) + r"\b"
-        data = re.sub(pattern, trans, data, flags=re.IGNORECASE)
+        data = re.sub(pattern, comp, data, flags=re.IGNORECASE)
     # Lemmatisation and stopword filtering
     doc = nlp(data)
     for token in doc:
         lemma = token.lemma_.strip()
-
-        if lemma == "bioengineere":
-            print(lemma)
-            print(token.text)
-
         if len(lemma) > 3 and lemma not in STOPWORDS:
+            if lemma in LEMMAWORDS.keys():
+                lemma = LEMMAWORDS[lemma]
             words[lemma] = words.get(lemma, 0) + 1
     # STEP 4: SAVE WORDS
     # Save words and counts to file
@@ -584,7 +554,7 @@ def plot_wordcloud(words_file, plot_colourmap="viridis", plot_fontpath=None, plo
         def special_colour_func(word, font_size, position, orientation, random_state=None, **kwargs):
             if word in special_words:
                 return special_colour
-            return "gray"
+            return "lightgray"
         # Recolour wordcloud1 keeping the same layout
         wordcloud2 = wordcloud1.recolor(color_func=special_colour_func)
         # Display and save wordcloud plot
