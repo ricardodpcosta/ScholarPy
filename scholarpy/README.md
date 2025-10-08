@@ -1,11 +1,34 @@
 
 # Usage
 
-ScholarPy includes a collection of tools, each designed for a specific task. The list below details the CLI tools included in the toolkit and their usage instructions.
+ScholarPy provides a collection of specialised tools, each designed for a specific task. Every tool can be executed either through the unified command-line interface (`scholarpy`) or directly from within a Python script by importing the `scholarpy` package. The tool names are consistent across both interfaces, ensuring a uniform experience.
+
+The list below first introduces the unified command-line interface (`scholarpy`), followed by the individual tools included in the toolkit and their usage instructions.
 
 ---
 
-## 1. `scholarpy-search-links`
+## 1. `scholarpy`
+
+**Description**: ScholarPy unified command-line interface. Supports the following tools:
+1. `search_links`    - Search public scholarly CV links.
+2. `collect_data`    - Collect textual data from links.
+3. `analyse_words`   - Analyse relevant word frequencies.
+4. `plot_wordcloud`  - Generate wordcloud visualisations.
+
+**Usage:**
+```bash
+scholarpy [--help] {search_links,collect_data,analyse_words,plot_wordcloud} ...
+```
+
+**Arguments:**
+* `--help`        : Shows this help message and exits.
+
+**Output:**
+A file is saved to disk depending of the executed tool.
+
+---
+
+## 2. `scholarpy search_links`
 
 **Description:** Search public scholarly CV links from HTML pages. It has two modes of operation:
 
@@ -16,7 +39,7 @@ To avoid server overload and subsequent client IP blocking, a delay is applied b
 
 **Usage:**
 ```bash
-scholarpy-search-links [--help] --html_urls HTML_URLS [--base_url BASE_URL] [--links_limit LINKS_LIMIT] [--page_pause PAGE_PAUSE] [--output_file OUTPUT_FILE]
+scholarpy search_links [--help] --html_urls HTML_URLS [--base_url BASE_URL] [--links_limit LINKS_LIMIT] [--page_pause PAGE_PAUSE] [--output_file OUTPUT_FILE]
 ```
 
 **Arguments:**
@@ -31,7 +54,7 @@ scholarpy-search-links [--help] --html_urls HTML_URLS [--base_url BASE_URL] [--l
 
 ---
 
-## 2. `scholarpy-collect-data`
+## 3. `scholarpy collect_data`
 
 **Description:** Collect relevant textual data from public scholarly CV links. The process is divided into three steps:
 1. Read an input file containing a list of public scholarly CV links.
@@ -46,7 +69,7 @@ a delay is applied between HTTP/HTTPS requests.
 
 **Usage:**
 ```bash
-scholarpy-collect-data [--help] --links_file LINKS_FILE [--page_pause PAGE_PAUSE] [--output_file OUTPUT_FILE]
+scholarpy collect_data [--help] --links_file LINKS_FILE [--page_pause PAGE_PAUSE] [--output_file OUTPUT_FILE]
 ```
 
 **Arguments:**
@@ -60,7 +83,7 @@ A TXT file containing all collected text from the public scholarly CV links is s
 
 ---
 
-## 3. `scholarpy-analise-words`
+## 4. `scholarpy analise_words`
 
 **Description:** Analyse relevant scientific words from collected data. The process is divided into two steps:
 1. Read an input file containing data.
@@ -69,7 +92,7 @@ Words are lemmatised (normalised) and filtered to remove common English and Port
 
 **Usage:**
 ```bash
-scholarpy-analyse-words [--help] --data_file DATA_FILE [--output_file OUTPUT_FILE]
+scholarpy analyse_words [--help] --data_file DATA_FILE [--output_file OUTPUT_FILE]
 ```
 
 **Arguments:**
@@ -81,7 +104,7 @@ scholarpy-analyse-words [--help] --data_file DATA_FILE [--output_file OUTPUT_FIL
 
 ---
 
-## 4. `scholarpy-plot-wordcloud`
+## 5. `scholarpy plot_wordcloud`
 
 **Description:** Generate wordcloud visualisations from word frequency data. It generates two images:
 1. A standard wordcloud plot containing all words with a gradient colour.
@@ -90,11 +113,11 @@ The word layout remains identical between both images, allowing for easy compari
 
 **Usage:**
 ```bash
-scholarpy-plot-wordcloud [--help] --words_file WORDS_FILE [--plot_colourmap PLOT_COLOURMAP] [--plot_maxwords PLOT_MAXWORDS] [--special_words SPECIAL_WORDS] [--special_colour SPECIAL_COLOUR] [--output_file OUTPUT_FILE]
+scholarpy plot_wordcloud [--help] --words_file WORDS_FILE [--plot_colourmap PLOT_COLOURMAP] [--plot_maxwords PLOT_MAXWORDS] [--special_words SPECIAL_WORDS] [--special_colour SPECIAL_COLOUR] [--output_file OUTPUT_FILE]
 ```
 
 **Arguments:**
-* `--help`        : Shows this help message and exits.
+* `--help`            : Shows this help message and exits.
 * `--words_file`      : Input CSV file with words and counts (required).
 * `--plot_colourmap`  : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
 * `--plot_maxwords`   : Limit number of words to plot (optional, default: 200).

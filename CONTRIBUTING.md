@@ -9,7 +9,7 @@ Thank you for your interest in contributing to the repository. This document pro
 
 The simplest route is to check the contact details in the `README.md` file and **reaching out via email with your ideas or suggestions**. Alternatively, you may follow the standard GitHub contribution procedure outlined below.
 
-1. **Fork the repository** and create a new branch for your feature or fix.
+1. **Fork the repository** and create a branch for your feature or fix.
    ```bash
    git checkout -b my_branch
    ```
@@ -46,7 +46,7 @@ Follow these coding style guidelines:
 If you encounter an issue or wish to request a feature:
 
 - Check the **Issues** tab to see if your problem has already been reported.
-- If not, open a new issue and provide:
+- If not, open an issue and provide:
   - A clear title and description of the problem.
   - Steps to reproduce the issue, if applicable.
   - Relevant error messages, screenshots, and logs.

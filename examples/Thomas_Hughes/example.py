@@ -34,7 +34,7 @@ def main():
         data_file="data.txt",
         output_file="words.csv"
     )
-    # Step 3: Generate word cloud visualization
+    # Step 3: Generate wordcloud visualisation
     plot_wordcloud(
         words_file="words.csv",
         plot_colourmap="copper",

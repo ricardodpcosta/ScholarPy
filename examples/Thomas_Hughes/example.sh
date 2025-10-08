@@ -26,7 +26,7 @@ scholarpy-analyse-words \
     --data_file="data.txt" \
     --output_file="words.csv"
 
-# Step 3: Generate word cloud visualization
+# Step 3: Generate wordcloud visualisation
 scholarpy-plot-wordcloud \
     --words_file="words.csv" \
     --plot_colourmap="viridis" \

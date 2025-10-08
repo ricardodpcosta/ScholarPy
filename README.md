@@ -30,7 +30,7 @@ ScholarPy is built upon two core concepts:
 
 - **Web scraping**: The process of automatically extracting data from websites. ScholarPy implements web scraping to collect public scholarly CV information from online sources, such as ORCID and CiênciaVitae.  
 
-- **Data mining**: The practice of analysing large sets of text or structured data to uncover patterns, trends, and insights. In ScholarPy, it transforms plain scholarly data into meaningful research indicators. 
+- **Data mining**: The practice of analysing large sets of text or structured data to uncover patterns, trends, and insights. In ScholarPy, it transforms plain scholarly data into meaningful research indicators.
 
 ---
 
@@ -53,12 +53,12 @@ This Python toolkit is based on advanced data processing and artificial intellig
 ScholarPy requires **Python 3.10+** and the following modules:
 
 * [Selenium](https://pypi.org/project/selenium/).
-* [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/). 
+* [BeautifulSoup4](https://pypi.org/project/beautifulsoup4/).
 * [lxml](https://pypi.org/project/lxml/).
 * [spaCy](https://spacy.io/).
   * (Required) English model (`en_core_web_sm`).
   * (Optional) Portuguese model (`pt_core_news_sm`).  
-* [Matplotlib](https://pypi.org/project/matplotlib/). 
+* [Matplotlib](https://pypi.org/project/matplotlib/).
 * [WordCloud](https://pypi.org/project/wordcloud/).
 
 ---
@@ -156,13 +156,13 @@ Once installed, you can import ScholarPy in any Python script:
 
 ```python
 from scholarpy import core
-core.analyse_words(data_file="data.txt", output_file="words.csv")
+core.collect_data(links_file="links.txt", output_file="data.txt")
 ```
 
 Or execute the tools directly from a command line, for example:
 
 ```bash
-scholarpy-collect-data --links_file="links.txt" --output_file="data.txt"
+scholarpy collect_data --links_file="links.txt" --output_file="data.txt"
 ```
 
 ---

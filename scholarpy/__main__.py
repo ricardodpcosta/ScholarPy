@@ -20,7 +20,7 @@ tools:
 
 Usage:
 ------
-__main__.py [--help] {search_links,collect_data,analyse_words,plot_wordcloud} ...
+scholarpy [--help] {search_links,collect_data,analyse_words,plot_wordcloud} ...
 
 Arguments:
 ----------

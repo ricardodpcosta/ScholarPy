@@ -17,7 +17,7 @@
 # ===============================================================
 
 # Step 1: Search public scholarly CV links
-scholarpy-search-links \
+scholarpy search_links \
     --html_urls="https://ipc.uminho.pt/en/team, \
         https://ipc.uminho.pt/en/team?page=2, \
         https://ipc.uminho.pt/en/team?page=3" \
@@ -25,17 +25,17 @@ scholarpy-search-links \
     --output_file="links.txt"
 
 # Step 2: Collect data from public scholarly CVs
-scholarpy-collect-data \
+scholarpy collect_data \
     --links_file="links.txt" \
     --output_file="data.txt"
 
 # Step 3: Analyse and process words
-scholarpy-analyse-words \
+scholarpy analyse_words \
     --data_file="data.txt" \
     --output_file="words.csv"
 
-# Step 4: Generate word cloud visualization
-scholarpy-plot-wordcloud \
+# Step 4: Generate wordcloud visualisation
+scholarpy plot_wordcloud \
     --words_file="words.csv" \
     --plot_colourmap="copper" \
     --special_words="polymer,composite,material" \
