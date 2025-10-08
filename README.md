@@ -17,7 +17,7 @@ The toolkit offers a collection of modular tools to:
 
 <br>
 
-<img src="images/pipeline.png" alt="ScholarPy pipeline" width="100%"/>
+<img src="gallery/pipeline.png" alt="ScholarPy pipeline" width="100%"/>
 
 ---
 
