@@ -69,20 +69,20 @@ There are two methods to install and use **ScholarPy**:
 
 ### A. Manual installation (quick local setup)
 
-1. **Clone the repository:**
+**1. Clone the repository:**
 
 ```bash
 git clone https://github.com/ricardodpcosta/ScholarPy.git
 cd ScholarPy
 ```
 
-2. **Install required dependencies** via [pip](https://pypi.org/project/pip/):
+**2. Install required dependencies via [pip](https://pypi.org/project/pip/):**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Download the spaCy language models**
+**3. Download the spaCy language models**
    *(English required, Portuguese optional)*:
 
 ```bash
@@ -90,7 +90,7 @@ python -m spacy download en_core_web_sm
 python -m spacy download pt_core_news_sm
 ```
 
-4. **Installation completed**
+**4. Installation completed:**
 
 Once installed, the tools can be executed directly from a command line, for example:
 
@@ -100,14 +100,14 @@ python scholarpy/collect_data.py --links_file="links.txt" --output_file="data.tx
 
 ### B. Package installation (recommended)
 
-1. **Clone the repository:**
+**1. Clone the repository:**
 
 ```bash
 git clone https://github.com/ricardodpcosta/ScholarPy.git
 cd ScholarPy
 ```
 
-2. **Install directly from the cloned repository:**
+**2. Install directly from the cloned repository:**
 
 ```bash
 pip install .
@@ -119,7 +119,7 @@ or, to install in editable/development mode:
 pip install -e .
 ```
 
-3. **Download the spaCy language models**
+**3. Download the spaCy language models**
    *(English required, Portuguese optional)*:
 
 ```bash
@@ -127,17 +127,15 @@ python -m spacy download en_core_web_sm
 python -m spacy download pt_core_news_sm
 ```
 
-4. **Verify the installation:**
+**4. Verify the installation:**
 
-To confirm that **ScholarPy** is correctly installed:
-
-* From a terminal or shell:
+To confirm that **ScholarPy** is correctly installed from a terminal or shell:
 
 ```bash
 python -m scholarpy --help
 ```
 
-* Or from within Python:
+Or from within Python:
 
 ```python
 import scholarpy
@@ -146,7 +144,7 @@ print("ScholarPy successfully installed!")
 
 If no errors are displayed, the installation is complete and ready to use.
 
-5. **Installation completed**
+**5. Installation completed:**
 
 Once installed, you can import ScholarPy in any Python script:
 
