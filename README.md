@@ -2,6 +2,10 @@
 
 **A Python toolkit for collecting, analysing, and visualising research insights from public scholarly CVs with web scraping and data mining.**
 
+<br>
+
+<img src="gallery/scholarpy.png" alt="ScholarPy pipeline" width="20%"/>
+
 ---
 
 ## Overview
@@ -180,7 +184,7 @@ ScholarPy/
 
 ## Workflow
 
-The general workflow in ScholarPy is as follows (also check the examples):
+A typical workflow within ScholarPy is as follows (check the examples):
 
 1. Run `scholarpy-search-links` to collect public scholarly CV links (currently supporting **ORCID** and **CienciaVitae**).
 
