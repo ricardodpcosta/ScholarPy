@@ -90,10 +90,8 @@ python -m spacy download pt_core_news_sm
 You can now run any tool directly from the repository, for example:
 
 ```bash
-python collect_data.py --links_file="links.txt" --output_file="data.txt"
+python scholarpy/collect_data.py --links_file="links.txt" --output_file="data.txt"
 ```
-
----
 
 ### Package installation (recommended)
 
