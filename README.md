@@ -44,7 +44,7 @@ This Python toolkit is based on advanced data processing and artificial intellig
 
 * **SpaCy**: A state-of-the-art natural language processing (NLP) library. It supports tokenisation, lemmatisation, part-of-speech tagging, and stopword filtering in multiple languages (including English and Portuguese), making it ideal for processing scholarly texts.
 
-* **Matplotlib**: A comprehensive data visualisation library. It provides tools to generate static and interactive plots, enabling the creation of custom graphs, trend plots, and word clouds that highlight the most relevant research insights from research profiles.
+* **Matplotlib**: A comprehensive data visualisation library. It provides tools to generate static and interactive plots, enabling the creation of custom graphs, trend plots, and wordclouds that highlight the most relevant research insights from research profiles.
 
 ---
 
@@ -107,7 +107,13 @@ git clone https://github.com/ricardodpcosta/ScholarPy.git
 cd ScholarPy
 ```
 
-**2. Install directly from the cloned repository:**
+**2. Make sure `pip`, `setuptools` and `wheel` are updated**:
+
+```bash
+pip install -U pip setuptools wheel
+```
+
+**3. Install directly from the cloned repository:**
 
 ```bash
 pip install .
@@ -119,7 +125,7 @@ or, to install in editable/development mode:
 pip install -e .
 ```
 
-**3. Download the spaCy language models**
+**4. Download the spaCy language models**
    *(English required, Portuguese optional)*:
 
 ```bash
@@ -127,7 +133,7 @@ python -m spacy download en_core_web_sm
 python -m spacy download pt_core_news_sm
 ```
 
-**4. Verify the installation:**
+**5. Verify the installation:**
 
 To confirm that **ScholarPy** is correctly installed from a terminal or shell:
 
@@ -144,7 +150,7 @@ print("ScholarPy successfully installed!")
 
 If no errors are displayed, the installation is complete and ready to use.
 
-**5. Installation completed:**
+**6. Installation completed:**
 
 Once installed, you can import ScholarPy in any Python script:
 
