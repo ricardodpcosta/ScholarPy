@@ -22,7 +22,7 @@ The simplest route is to check the contact details in the `README.md` file and *
 
 ### Addition of tools
 
-Each tool must be located within the `scripts/` directory and include comprehensive usage instructions clearly documented in the `README.md` file.
+Each tool must be located within the `scholarpy/` directory and include comprehensive usage instructions clearly documented in the `README.md` file.
 
 ---
 
