@@ -3,8 +3,8 @@
 **A Python toolkit for collecting, analysing, and visualising research insights from public scholarly CVs with web scraping and data mining.**
 
 <br>
-
 <img src="gallery/scholarpy.png" alt="ScholarPy pipeline" width="20%"/>
+
 
 ---
 
@@ -20,7 +20,6 @@ The toolkit offers a collection of modular tools to:
 * Visualise research insights through meaningful infographic representations.
 
 <br>
-
 <img src="gallery/pipeline.png" alt="ScholarPy pipeline" width="100%"/>
 
 ---
