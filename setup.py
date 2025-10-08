@@ -22,10 +22,10 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "scholarpy-search=scholarpy.cli.search_links:main",
-            "scholarpy-collect=scholarpy.cli.collect_data:main",
-            "scholarpy-analyse=scholarpy.cli.analyse_words:main",
-            "scholarpy-plot=scholarpy.cli.plot_wordcloud:main",
+            "scholarpy-search-links=scholarpy.cli.search_links:main",
+            "scholarpy-collect-data=scholarpy.cli.collect_data:main",
+            "scholarpy-analyse-words=scholarpy.cli.analyse_words:main",
+            "scholarpy-plot-wordcloud=scholarpy.cli.plot_wordcloud:main",
         ],
     },
 )
