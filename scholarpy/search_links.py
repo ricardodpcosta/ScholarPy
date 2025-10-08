@@ -24,6 +24,10 @@
 # To avoid server overload and subsequent client IP blocking, a delay is
 # applied between HTTP/HTTPS requests.
 #
+# Usage:
+# ------
+# Run `scholarpy-search-links --help` on the command line.
+#
 # Arguments:
 # ----------
 # --html_urls   : Input HTML file(s) or URL(s), separated by commas (required).

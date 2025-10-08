@@ -15,8 +15,12 @@
 # 1. Read an input file containing data.
 # 2. Lemmatise, filter, and count words.
 #
-# Words are lemmatised (normalized) and filtered to remove common
+# Words are lemmatised (normalised) and filtered to remove common
 # English and Portuguese stopwords, as well as domain-generic words.
+#
+# Usage:
+# ------
+# Run `scholarpy-analise-words --help` on the command line.
 #
 # Arguments:
 # ----------

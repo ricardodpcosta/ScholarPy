@@ -23,6 +23,10 @@
 # HTML parsing. To avoid server overload and subsequent client IP blocking,
 # a delay is applied between HTTP/HTTPS requests.
 #
+# Usage:
+# ------
+# Run `scholarpy-collect-data --help` on the command line.
+#
 # Arguments:
 # ----------
 # --links_file  : Input TXT file containing a list of public scholarly CV links (required).

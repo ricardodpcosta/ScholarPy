@@ -54,7 +54,7 @@ STOPWORDS_PT = locals().get("STOPWORDS_PT", set())
 STOPWORDS_EN = locals().get("STOPWORDS_EN", set())
 stopwords = STOPWORDS_PT.union(STOPWORDS_EN).union(extra_stopwords)
 
-# ANSI COLOR ESCAPE CODES
+# ANSI COLOUR ESCAPE CODES
 RESET = "\033[0m"
 RED = "\033[31m"
 GREEN = "\033[32m"
@@ -434,8 +434,8 @@ def analyse_words(data_file, output_file="words.txt"):
 # PLOT_WORDCLOUD
 # ===============================================================
 
-def plot_wordcloud(words_file, plot_colormap="viridis", plot_maxwords=200, special_words="",\
-    special_color="green", output_file="wordcloud.png"):
+def plot_wordcloud(words_file, plot_colourmap="viridis", plot_maxwords=200, special_words="",\
+    special_colour="green", output_file="wordcloud.png"):
     """
     Description:
     ------------
@@ -453,10 +453,10 @@ def plot_wordcloud(words_file, plot_colormap="viridis", plot_maxwords=200, speci
     Arguments:
     ----------
     words_file      : Input CSV file with words and counts (required).
-    plot_colormap   : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
+    plot_colourmap  : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
     plot_maxwords   : Limit number of words to plot (optional, default: 200).
     special_words   : Comma-separated list of words to highlight in the wordcloud (optional, default: none).
-    special_color   : Colour to highlight special words (optional, default: 'green').
+    special_colour  : Colour to highlight special words (optional, default: 'green').
     output_file     : Output PNG file containing the wordcloud (optional, default: 'wordcloud.png').
 
     Return:
@@ -486,9 +486,9 @@ def plot_wordcloud(words_file, plot_colormap="viridis", plot_maxwords=200, speci
     max_freq = max(words.values())
     # STEP 2: GENERATE WORDCLOUD
     # Get colourmap from Matplotlib
-    cmap = plt.get_cmap(plot_colormap)
+    cmap = plt.get_cmap(plot_colourmap)
     # Custom colour function to colour words according to their size
-    def gradient_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
+    def gradient_colour_func(word, font_size, position, orientation, random_state=None, **kwargs):
         # Normalise font size
         norm_size = (words[word] - min_freq) / (max_freq - min_freq)
         norm_size = max(0, min(norm_size, 1))
@@ -496,7 +496,7 @@ def plot_wordcloud(words_file, plot_colormap="viridis", plot_maxwords=200, speci
         return f"rgb({int(r*255)}, {int(g*255)}, {int(b*255)})"
     # Generate the base wordcloud plot
     wordcloud1 = WordCloud(width=1200, height=600, background_color="white",\
-        color_func=gradient_color_func, max_words=plot_maxwords).generate_from_frequencies(words)
+        color_func=gradient_colour_func, max_words=plot_maxwords).generate_from_frequencies(words)
     # Display and save wordcloud plot
     plt.figure(figsize=(15, 7.5))
     plt.imshow(wordcloud1, interpolation="bilinear")
@@ -510,12 +510,12 @@ def plot_wordcloud(words_file, plot_colormap="viridis", plot_maxwords=200, speci
         # Split special words string
         special_words = [word.strip().lower() for word in special_words.split(",") if word.strip()]
         # Custom colour function for special words
-        def special_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
+        def special_colour_func(word, font_size, position, orientation, random_state=None, **kwargs):
             if word in special_words:
-                return special_color
+                return special_colour
             return "gray"
         # Recolour wordcloud1 (keeps the same layout, only changes colours)
-        wordcloud2 = wordcloud1.recolor(color_func=special_color_func)
+        wordcloud2 = wordcloud1.recolor(color_func=special_colour_func)
         # Display and save wordcloud plot
         plt.figure(figsize=(15, 7.5))
         plt.imshow(wordcloud2, interpolation="bilinear")
