@@ -87,7 +87,7 @@ python -m spacy download en_core_web_sm
 python -m spacy download pt_core_news_sm
 ```
 
-You can now run any tool directly from the repository, for example:
+Once installed, the tools can be executed directly from a command line, for example:
 
 ```bash
 python scholarpy/collect_data.py --links_file="links.txt" --output_file="data.txt"
@@ -129,12 +129,11 @@ from scholarpy import core
 core.analyse_words(data_file="data.txt", output_file="words.csv")
 ```
 
-Or run any tool directly from the repository, for example:
+Or execute the tools directly from a command line, for example:
 
 ```bash
-python collect_data.py --links_file="links.txt" --output_file="data.txt"
+collect-data --links_file="links.txt" --output_file="data.txt"
 ```
-
 
 ### Verify the installation
 
