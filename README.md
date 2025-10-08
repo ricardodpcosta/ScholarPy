@@ -62,9 +62,9 @@ ScholarPy requires **Python 3.10+** and the following modules:
 
 ## Installation
 
-There are two routes to install and use **ScholarPy**:
+There are two methods to install and use **ScholarPy**:
 
-### Manual installation (quick local setup)
+### A. Manual installation (quick local setup)
 
 1. **Clone the repository:**
 
@@ -93,7 +93,7 @@ You can now run any tool directly from the repository, for example:
 python scholarpy/collect_data.py --links_file="links.txt" --output_file="data.txt"
 ```
 
-### Package installation (recommended)
+### B. Package installation (recommended)
 
 1. **Clone the repository:**
 
