@@ -60,27 +60,106 @@ ScholarPy requires **Python 3.10+** and the following modules:
 
 ---
 
+Aqui está a versão atualizada e clara da secção **Installation**, organizada nas duas opções conforme combinámos — mantendo um tom profissional e consistente com o estilo do teu `README.md`:
+
+---
+
 ## Installation
 
-1. Clone the repository:
+There are two routes to install and use **ScholarPy**:
+
+### Manual installation (quick local setup)
+
+1. **Clone the repository:**
 
 ```bash
 git clone https://github.com/ricardodpcosta/ScholarPy.git
 cd ScholarPy
-````
+```
 
-2. Install required packages via [pip](https://pypi.org/project/pip/) (package installer for Python):
+2. **Install required dependencies** via [pip](https://pypi.org/project/pip/):
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Download the spaCy language models (English required, Portuguese optional):
+3. **Download the spaCy language models**
+   *(English required, Portuguese optional)*:
 
 ```bash
 python -m spacy download en_core_web_sm
 python -m spacy download pt_core_news_sm
 ```
+
+You can now run any tool directly from the repository, for example:
+
+```bash
+python collect_data.py --links_file="links.txt" --output_file="data.txt"
+```
+
+---
+
+### Package installation (recommended)
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/ricardodpcosta/ScholarPy.git
+cd ScholarPy
+```
+
+2. **Install directly from the cloned repository:**
+
+```bash
+pip install .
+```
+
+or, to install in editable/development mode:
+
+```bash
+pip install -e .
+```
+
+3. **Download the spaCy language models**
+   *(English required, Portuguese optional)*:
+
+```bash
+python -m spacy download en_core_web_sm
+python -m spacy download pt_core_news_sm
+```
+
+Once installed, you can import ScholarPy in any Python script:
+
+```python
+from scholarpy import core
+core.analyse_words(data_file="data.txt", output_file="words.csv")
+```
+
+Or run any tool directly from the repository, for example:
+
+```bash
+python collect_data.py --links_file="links.txt" --output_file="data.txt"
+```
+
+
+### Verify the installation
+
+To confirm that **ScholarPy** is correctly installed:
+
+* From a terminal or shell:
+
+```bash
+python -m scholarpy --help
+```
+
+* Or from within Python:
+
+```python
+import scholarpy
+print("ScholarPy successfully installed!")
+```
+
+If no errors are displayed, the installation is complete and ready to use.
 
 ---
 
@@ -89,20 +168,19 @@ python -m spacy download pt_core_news_sm
 ```
 ScholarPy/
 │
-├─ scripts/                 # Python scripts included in the toolkit
-│   ├─ search_links.py      # Search public scholarly CV links from HTML or URLs
-│   ├─ extract_data.py      # Scrape data from public scholarly CV pages
-│   ├─ process_words.py     # Process text, lemmatise, filter stopwords, count words
-│   ├─ plot_wordcloud.py    # Generate word cloud visualisations from processed words
-|   └─ README.md            # Tools description and usage instructions
+├─ scholarpy/               # Main source package
+│   ├─ __init__.py          # Package initializer
+│   ├─ core.py              # Core functions and shared utilities
+│   ├─ ...                  # Additional functional modules and tool wrappers
+│   └─ README.md            # Package-level documentation and usage details
 │
-├─ examples/                # Example cases with running scripts
+├─ examples/                # Example workflows and demonstration scripts
 │
-├─ requirements.txt         # Python dependencies for installation
-├─ README.md                # Project overview, installation, and workflow
-├─ CONTRIBUTING.md          # Contributing guidelines
-└─ LICENSE                  # License clauses
-
+├─ setup.py                 # Package configuration and installation script
+├─ requirements.txt         # Python dependency list for installation
+├─ README.md                # Project overview, installation, and usage guide
+├─ CONTRIBUTING.md          # Contribution guidelines and best practices
+└─ LICENSE                  # Software license information
 ```
 
 ---
