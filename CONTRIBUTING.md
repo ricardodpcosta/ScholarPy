@@ -20,7 +20,7 @@ The simplest route is to check the contact details in the `README.md` file and *
 
 ---
 
-### Addition of tools
+## Addition of tools
 
 Each tool must be located within the `scholarpy/` directory and include comprehensive usage instructions clearly documented in the `README.md` file.
 
@@ -41,7 +41,7 @@ Follow these coding style guidelines:
 
 ---
 
-### Resolution of issues
+## Resolution of issues
 
 If you encounter an issue or wish to request a feature:
 
