@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+scholarpy/__init__.py
+scholarpy/__main__.py
+scholarpy/analyse_words.py
+scholarpy/collect_data.py
+scholarpy/core.py
+scholarpy/plot_wordcloud.py
+scholarpy/search_links.py
+scholarpy.egg-info/PKG-INFO
+scholarpy.egg-info/SOURCES.txt
+scholarpy.egg-info/dependency_links.txt
+scholarpy.egg-info/entry_points.txt
+scholarpy.egg-info/requires.txt
+scholarpy.egg-info/top_level.txt

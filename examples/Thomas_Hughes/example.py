@@ -25,7 +25,7 @@ from scholarpy.core import (
 
 def main():
     # Step 1: Collect data from public scholarly CVs
-    extract_data(
+    collect_data(
         links_file="links.txt",
         output_file="data.txt"
     )
@@ -37,9 +37,9 @@ def main():
     # Step 3: Generate word cloud visualization
     plot_wordcloud(
         words_file="words.csv",
-        plot_colormap="copper",
+        plot_colourmap="copper",
         special_words="engineering,technology",
-        special_color="orange",
+        special_colour="orange",
         output_file="wordcloud.png"
     )
     print("Workflow completed successfully.")

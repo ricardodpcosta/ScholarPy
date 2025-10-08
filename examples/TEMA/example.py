@@ -32,7 +32,7 @@ def main():
         output_file="links.txt"
     )
     # Step 2: Collect data from public scholarly CVs
-    extract_data(
+    collect_data(
         links_file="links.txt",
         output_file="data.txt"
     )
@@ -44,9 +44,9 @@ def main():
     # Step 4: Generate word cloud visualization
     plot_wordcloud(
         words_file="words.csv",
-        plot_colormap="viridis",
+        plot_colourmap="viridis",
         special_words="engineering,technology",
-        special_color="green",
+        special_colour="green",
         output_file="wordcloud.png"
     )
     print("Workflow completed successfully.")

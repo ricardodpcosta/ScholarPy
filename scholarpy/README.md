@@ -14,9 +14,13 @@ ScholarPy includes a collection of tools, each designed for a specific task. The
 
 To avoid server overload and subsequent client IP blocking, a delay is applied between HTTP/HTTPS requests.
 
-**Usage:** Run `scholarpy-search_links --help` on the command line.
+**Usage:**
+```bash
+scholarpy-search-links [--help] --html_urls HTML_URLS [--base_url BASE_URL] [--links_limit LINKS_LIMIT] [--page_pause PAGE_PAUSE] [--output_file OUTPUT_FILE]
+```
 
 **Arguments:**
+* `--help`        : Shows this help message and exits.
 * `--html_urls`   : Input HTML file(s) or URL(s), separated by commas (required).
 * `--base_url`    : Base URL for institutional profile pages (optional, default: none).
 * `--links_limit` : Limit number of links to retrieve (optional, default: 200).
@@ -40,9 +44,13 @@ scholarly CV pages may load dynamically and are not fully accessible via static
 HTML parsing. To avoid server overload and subsequent client IP blocking,
 a delay is applied between HTTP/HTTPS requests.
 
-**Usage:** Run `scholarpy-collect-data --help` on the command line.
+**Usage:**
+```bash
+scholarpy-collect-data [--help] --links_file LINKS_FILE [--page_pause PAGE_PAUSE] [--output_file OUTPUT_FILE]
+```
 
 **Arguments:**
+* `--help`        : Shows this help message and exits.
 * `--links_file`  : Input TXT file containing a list of public scholarly CV links (required).
 * `--page_pause`  : Delay in seconds between HTTP/HTTPS requests (optional, default=3).
 * `--output_file` : Output TXT file containing the collected data (optional, default: 'data.txt').
@@ -59,9 +67,13 @@ A TXT file containing all collected text from the public scholarly CV links is s
 2. Lemmatise, filter, and count words.
 Words are lemmatised (normalised) and filtered to remove common English and Portuguese stopwords, as well as domain-generic words.
 
-**Usage:** Run `scholarpy-analise-words --help` on the command line.
+**Usage:**
+```bash
+scholarpy-analyse-words [--help] --data_file DATA_FILE [--output_file OUTPUT_FILE]
+```
 
 **Arguments:**
+* `--help`        : Shows this help message and exits.
 * `--data_file`   : Input TXT file containing collected text (required).
 * `--output_file` : Output CSV file containing words and their counts (optional, default: 'words.csv').
 
@@ -76,9 +88,13 @@ Words are lemmatised (normalised) and filtered to remove common English and Port
 2. A recoloured version of the same layout, where special words are coloured with a custom colour.
 The word layout remains identical between both images, allowing for easy comparison, while only the colours differ.
 
-**Usage:** Run `scholarpy-plot-wordcloud --help` on the command line.
+**Usage:**
+```bash
+scholarpy-plot-wordcloud [--help] --words_file WORDS_FILE [--plot_colourmap PLOT_COLOURMAP] [--plot_maxwords PLOT_MAXWORDS] [--special_words SPECIAL_WORDS] [--special_colour SPECIAL_COLOUR] [--output_file OUTPUT_FILE]
+```
 
 **Arguments:**
+* `--help`        : Shows this help message and exits.
 * `--words_file`      : Input CSV file with words and counts (required).
 * `--plot_colourmap`  : Matplotlib colourmap for gradient colouring (optional, default: 'viridis').
 * `--plot_maxwords`   : Limit number of words to plot (optional, default: 200).

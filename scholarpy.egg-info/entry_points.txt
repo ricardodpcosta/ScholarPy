@@ -1,0 +1,6 @@
+[console_scripts]
+scholarpy = scholarpy.__main__:main
+scholarpy-analyse-words = scholarpy.analyse_words:main
+scholarpy-collect-data = scholarpy.collect_data:main
+scholarpy-plot-wordcloud = scholarpy.plot_wordcloud:main
+scholarpy-search-links = scholarpy.search_links:main

@@ -36,9 +36,9 @@ scholarpy-analyse-words \
 # Step 4: Generate word cloud visualization
 scholarpy-plot-wordcloud \
     --words_file="words.csv" \
-    --plot_colormap="viridis" \
+    --plot_colourmap="viridis" \
     --special_words="engineering,technology" \
-    --special_color="green" \
+    --special_colour="green" \
     --output_file="wordcloud.png"
 
 echo "Workflow completed successfully."

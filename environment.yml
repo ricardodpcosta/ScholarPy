@@ -1,0 +1,13 @@
+name: scholarpy
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - selenium>=4.0
+  - beautifulsoup4>=4.12
+  - lxml>=4.9
+  - spacy>=3.5
+  - matplotlib>=3.7
+  - pip
+  - pip:
+      - wordcloud>=1.8
