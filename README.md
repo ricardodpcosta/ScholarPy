@@ -1,6 +1,6 @@
 # ScholarPy
 
-**Extract, analyse, and visualise research insights from scholarly profiles with web scraping and data mining in Python.**
+**A Python toolkit for collecting, analysing, and visualising research insights from public scholarly CVs with web scraping and data mining.**
 
 ---
 
