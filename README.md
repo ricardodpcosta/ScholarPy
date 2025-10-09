@@ -193,16 +193,16 @@ ScholarPy/
 
 A typical workflow within ScholarPy is as follows (check the examples):
 
-1. Run `scholarpy-search-links` to collect public scholarly CV links (currently supporting **ORCID** and **CienciaVitae**).
+1. Run `scholarpy search_links` to collect public scholarly CV links (currently supporting **ORCID** and **CienciaVitae**).
 
    * If you already have a prepared list of links, skip this step and proceed directly to **Step 2**.
    * The input can be a single link (for individual analysis) or a list of links (for group/collective analysis).
 
-2. Run `scholarpy-extract-data` to scrape relevant textual data from the retrieved scholarly CV pages.
+2. Run `scholarpy extract_data` to scrape relevant textual data from the retrieved scholarly CV pages.
 
-3. Perform various analyses of the extracted text data using the available tools (currently `analyse_words.py`).
+3. Perform various analyses of the extracted text data using the available tools (currently `scholarpy analyse_words`).
 
-4. Generate various data visualisations using the available tools (currently `plot_wordcloud.py`).
+4. Generate various data visualisations using the available tools (currently `scholarpy plot_wordcloud`).
 
 ---
 
