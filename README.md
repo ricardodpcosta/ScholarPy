@@ -5,7 +5,6 @@
 <br>
 <img src="gallery/scholarpy.png" alt="ScholarPy pipeline" width="20%"/>
 
-
 ---
 
 ## Overview
@@ -46,6 +45,16 @@ This Python toolkit is based on advanced data processing and artificial intellig
 
 * **Matplotlib**: A comprehensive data visualisation library. It provides tools to generate static and interactive plots, enabling the creation of custom graphs, trend plots, and wordclouds that highlight the most relevant research insights from research profiles.
 
+<br>
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="gallery/wordcloud.png" width="100%"></td>
+      <td align="center"><img src="gallery/special_wordcloud.png" width="100%"></td>
+    </tr>
+  </table>
+</div>
+     
 ---
 
 ## Requirements
