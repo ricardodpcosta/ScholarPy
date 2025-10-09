@@ -1,4 +1,4 @@
-# Thomas Hughes example
+# HBV example
 
 This folder contains example scripts demonstrating the **ScholarPy** workflow. These examples assume that **ScholarPy** is installed via **pip** and is accessible either as CLI commands (Bash script) or as a Python module (Python script).
 
