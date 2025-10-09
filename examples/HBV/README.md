@@ -36,6 +36,6 @@ python example.py
 
 ## Customisation
 
-* Replace the ORCID link in `links.txt` with your own ORCID link.
+* Replace the link in `links.txt` with your own public scholarly CV link.
 * Adjust parameters in the scripts to fit your needs.
 * Both scripts save the output files in the current folder.
