@@ -37,5 +37,5 @@ python example.py
 ## Customisation
 
 * Replace the link in `links.txt` with your own public scholarly CV link.
-* Adjust parameters in the scripts to fit your needs.
-* Both scripts save the output files in the current folder.
+* Adjust the remaining function/command arguments in the scripts as necessary.
+* Both scripts are configured to save the output files in the current folder.

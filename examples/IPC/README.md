@@ -35,6 +35,6 @@ python example.py
 
 ## Customisation
 
-* Replace `html_urls` in the scripts with your own HTML page(s) (file or URL).
-* Adjust parameters in the scripts to fit your needs.
-* Both scripts save the output files in the current folder.
+* Replace the argument `html_urls` in the scripts with your own HTML page(s) (file or URL).
+* Adjust the remaining function/command arguments in the scripts as necessary.
+* Both scripts are configured to save the output files in the current folder.

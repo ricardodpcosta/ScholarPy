@@ -36,6 +36,6 @@ python example.py
 
 ## Customisation
 
-* Replace `members.html` with your own HTML page(s) (a file or URL).
-* Adjust parameters in the scripts to fit your needs.
-* Both scripts save the output files in the current folder.
+* Replace the page `members.html` in the folder with your own HTML page(s) (a file or URL).
+* Adjust the remaining function/command arguments in the scripts as necessary.
+* Both scripts are configured to save the output files in the current folder.
