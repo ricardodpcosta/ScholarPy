@@ -43,7 +43,7 @@ This Python toolkit is based on advanced data processing and artificial intellig
 
 * **SpaCy**: A state-of-the-art natural language processing (NLP) library. It supports tokenisation, lemmatisation, part-of-speech tagging, and stopword filtering in multiple languages (including English and Portuguese), making it ideal for processing scholarly texts.
 
-* **Matplotlib**: A comprehensive data visualisation library. It provides tools to generate static and interactive plots, enabling the creation of custom graphs, trend plots, and wordclouds that highlight the most relevant research insights from research profiles.
+* [**Matplotlib**](https://matplotlib.org/): A comprehensive data visualisation library. It provides tools to generate static and interactive plots, enabling the creation of custom graphs, trend plots, and wordclouds that highlight the most relevant research insights from research profiles.
 
 <br>
 <div align="center">
