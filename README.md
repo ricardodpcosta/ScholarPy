@@ -127,11 +127,7 @@ Alternatively, to install in editable/development mode:
 pip install -e .
 ```
 
-If desired, dependencies can be installed before **ScholarPy**:
-
-```bash
-pip install -r requirements.txt
-```
+> **NOTE:** If desired, dependencies can be installed before **ScholarPy** with `pip install -r requirements.txt`.
 
 **5. Download the spaCy language models:**
 
