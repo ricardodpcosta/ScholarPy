@@ -149,7 +149,7 @@ python -m spacy download pt_core_news_lg
 To confirm that **ScholarPy** is correctly installed from a terminal or shell:
 
 ```bash
-python -m scholarpy --help
+scholarpy --help
 ```
 
 Alternatively, from within a Python program or interactive shell:
@@ -224,7 +224,7 @@ python -m spacy download pt_core_news_lg
 To confirm that **ScholarPy** is correctly installed from a terminal or shell:
 
 ```bash
-python -m scholarpy --help
+scholarpy --help
 ```
 
 Alternatively, from within a Python program or interactive shell:
