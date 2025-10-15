@@ -74,7 +74,13 @@ ScholarPy requires **Python 3.10+** and the following modules:
 
 ## Installation
 
-There are three methods to install and use **ScholarPy**:
+
+Before installing **ScholarPy**, it is generally recommended to install packages in a virtual environment to avoid modifying the system state.
+
+
+ 
+
+There are three methods to install and use **ScholarPy** described below.
 
 ### A. Manual installation (quick local setup)
 
