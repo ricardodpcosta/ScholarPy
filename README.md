@@ -74,17 +74,15 @@ ScholarPy requires **Python 3.10+** and the following modules:
 
 ## Installation
 
+Check whether your system provides a [**Python**](https://www.python.org/downloads/)'s installation with version 3.10 or above, and the [pip](https://pypi.org/project/pip/) package installer is available on your Python installation.
 
-Before installing **ScholarPy**, it is generally recommended to install packages in a virtual environment to avoid modifying the system state.
+It is generally recommended to install **ScholarPy** and its dependencies in a virtual environment to avoid modifying the system state. Several options for creating a virtual environment are available, including:
 
+* [**venv**](https://docs.python.org/3/library/venv.html): a Python module for creating lightweight virtual environments, each with their own independent set of packages installed in their site directory. Since **venv** is part of Python's standard library, no installation is required.
 
- 
+* [**conda**](https://anaconda.org/anaconda/conda): an open source package management system and environment management system for installing multiple versions of software packages and their dependencies and switching easily between them. Usually, **conda** needs to be [installed](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) previously.
 
-There are three methods to install and use **ScholarPy** described below.
-
-### A. Manual installation (quick local setup)
-
-The Python package installer [pip](https://pypi.org/project/pip/) must be installed before proceeding.
+There are two methods to install and use **ScholarPy** described below.
 
 **1. Clone the repository:**
 
@@ -93,45 +91,31 @@ git clone https://github.com/ricardodpcosta/ScholarPy.git
 cd ScholarPy
 ```
 
-**2. Install required dependencies via [pip](https://pypi.org/project/pip/):**
+**2. Create a virtual environment:**
+
+* Using **venv**:
 
 ```bash
-pip install -r requirements.txt
+python -m venv virtual
+source virtual/bin/activate
 ```
 
-**3. Download the spaCy language models:** *(English required, Portuguese optional)*
+* Using **conda**:
 
 ```bash
-python -m spacy download en_core_web_lg
-python -m spacy download pt_core_news_lg
+conda env create -f environment.yml
+conda activate virtual
 ```
 
-**4. Installation completed:**
+Skip this step for installing **ScholarPy** and its dependencies directly on top of the base Python's installation.
 
-Once installed, the tools can be executed directly from a command line, for example:
-
-```bash
-python scholarpy/collect_data.py --links_file="links.txt" --output_file="data.txt"
-```
-
-### B. Package installation via pip (recommended)
-
-The Python package installer [pip](https://pypi.org/project/pip/) must be installed before proceeding.
-
-**1. Clone the repository:**
-
-```bash
-git clone https://github.com/ricardodpcosta/ScholarPy.git
-cd ScholarPy
-```
-
-**2. Make sure `pip`, `setuptools` and `wheel` are updated**:
+**3. Update the package installation environment:**
 
 ```bash
 pip install --upgrade pip setuptools wheel
 ```
 
-**3. Install directly from the cloned repository:**
+**4. Install ScholarPy via pip:**
 
 ```bash
 pip install .
@@ -143,16 +127,22 @@ Alternatively, to install in editable/development mode:
 pip install -e .
 ```
 
-**4. Download the spaCy language models:** *(English required, Portuguese optional)*
+If desired, dependencies can be installed before **ScholarPy**:
+
+```bash
+pip install -r requirements.txt
+```
+
+**5. Download the spaCy language models:**
 
 ```bash
 python -m spacy download en_core_web_lg
 python -m spacy download pt_core_news_lg
 ```
 
-**5. Verify the installation:**
+*(English required, Portuguese optional)*
 
-To confirm that **ScholarPy** is correctly installed from a terminal or shell:
+**6. Verify ScholarPy is installed:**
 
 ```bash
 scholarpy --help
@@ -165,86 +155,11 @@ import scholarpy
 print("ScholarPy successfully installed!")
 ```
 
-If no errors are displayed, the installation is complete and ready to use.
+If no errors are displayed, the installation is complete and **ScholarPy** is correctly installed.
 
-**6. Installation completed:**
+**7. Start using ScholarPy:**
 
-Once installed, you can import ScholarPy in any Python script:
-
-```python
-from scholarpy import core
-core.collect_data(links_file="links.txt", output_file="data.txt")
-```
-
-Alternatively, execute the tools directly from a command line, for example:
-
-```bash
-scholarpy collect_data --links_file="links.txt" --output_file="data.txt"
-```
-
-### C. Package installation via conda (recommended)
-
-The package and environment management system [conda](https://anaconda.org/anaconda/conda) must be installed before proceeding.
-
-**1. Clone the repository:**
-
-```bash
-git clone https://github.com/ricardodpcosta/ScholarPy.git
-cd ScholarPy
-```
-
-**2. Create the conda environment:**
-
-```bash
-conda env create -f environment.yml
-````
-
-**3. Activate the conda environment:**
-
-```bash
-conda activate scholarpy
-```
-
-**3. Install directly from the cloned repository:**
-
-```bash
-pip install .
-```
-
-Alternatively, to install in editable/development mode:
-
-```bash
-pip install -e .
-```
-
-**4. Download the spaCy language models**
-   *(English required, Portuguese optional)*:
-
-```bash
-python -m spacy download en_core_web_lg
-python -m spacy download pt_core_news_lg
-```
-
-**5. Verify the installation:**
-
-To confirm that **ScholarPy** is correctly installed from a terminal or shell:
-
-```bash
-scholarpy --help
-```
-
-Alternatively, from within a Python program or interactive shell:
-
-```python
-import scholarpy
-print("ScholarPy successfully installed!")
-```
-
-If no errors are displayed, the installation is complete and ready to use.
-
-**6. Installation completed:**
-
-Once installed, you can import ScholarPy in any Python script:
+Once installed, you can import ScholarPy in any Python program:
 
 ```python
 from scholarpy import core
