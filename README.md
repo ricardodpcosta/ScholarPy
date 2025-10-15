@@ -136,7 +136,7 @@ python -m spacy download en_core_web_lg
 python -m spacy download pt_core_news_lg
 ```
 
-*(English required, Portuguese optional)*
+> **NOTE:** The English model is required, and the Portuguese model is optional.
 
 **6. Verify ScholarPy is installed:**
 
