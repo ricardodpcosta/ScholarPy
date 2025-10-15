@@ -43,7 +43,7 @@ This Python toolkit is based on advanced data processing and artificial intellig
 
 * **SpaCy**: A state-of-the-art natural language processing (NLP) library. It supports tokenisation, lemmatisation, part-of-speech tagging, and stopword filtering in multiple languages (including English and Portuguese), making it ideal for processing scholarly texts.
 
-* **Matplotlib**: A comprehensive data visualisation library. It provides tools to generate static and interactive plots, enabling the creation of custom graphs, trend plots, and wordclouds that highlight the most relevant research insights from research profiles.
+* [**Matplotlib**](https://matplotlib.org/): A comprehensive data visualisation library. It provides tools to generate static and interactive plots, enabling the creation of custom graphs, trend plots, and wordclouds that highlight the most relevant research insights from research profiles.
 
 <br>
 <div align="center">
@@ -74,40 +74,15 @@ ScholarPy requires **Python 3.10+** and the following modules:
 
 ## Installation
 
-There are two methods to install and use **ScholarPy**:
+Check whether your system provides a [**Python**](https://www.python.org/downloads/) installation with version 3.10 or above, and the [pip](https://pypi.org/project/pip/) package installer is available on your Python installation.
 
-### A. Manual installation (quick local setup)
+It is generally recommended to install **ScholarPy** and its dependencies in a virtual environment to avoid modifying the system state. Several options for creating a virtual environment are available, including:
 
-**1. Clone the repository:**
+* [**venv**](https://docs.python.org/3/library/venv.html): a Python module for creating lightweight virtual environments, each with their own independent set of packages installed in their site directory. Since **venv** is part of the Python standard library, no installation is required.
 
-```bash
-git clone https://github.com/ricardodpcosta/ScholarPy.git
-cd ScholarPy
-```
+* [**conda**](https://anaconda.org/anaconda/conda): an open source package management system and environment management system for installing multiple versions of software packages and their dependencies and switching easily between them. Usually, **conda** needs to be [installed](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) previously.
 
-**2. Install required dependencies via [pip](https://pypi.org/project/pip/):**
-
-```bash
-pip install -r requirements.txt
-```
-
-**3. Download the spaCy language models**
-   *(English required, Portuguese optional)*:
-
-```bash
-python -m spacy download en_core_web_lg
-python -m spacy download pt_core_news_lg
-```
-
-**4. Installation completed:**
-
-Once installed, the tools can be executed directly from a command line, for example:
-
-```bash
-python scholarpy/collect_data.py --links_file="links.txt" --output_file="data.txt"
-```
-
-### B. Package installation (recommended)
+Follow these steps to install **ScholarPy**:
 
 **1. Clone the repository:**
 
@@ -116,63 +91,100 @@ git clone https://github.com/ricardodpcosta/ScholarPy.git
 cd ScholarPy
 ```
 
-**2. Make sure `pip`, `setuptools` and `wheel` are updated**:
+**2. Create a virtual environment:**
+
+* Using **venv**:
 
 ```bash
-pip install -U pip setuptools wheel
+python -m venv virtual
+source virtual/bin/activate
 ```
 
-**3. Install directly from the cloned repository:**
+* Using **conda**:
+
+```bash
+conda env create -f environment.yml
+conda activate scholarpy
+```
+
+> **NOTE:** Skip this step for installing **ScholarPy** and its dependencies directly on top of your base Python installation.
+
+**3. Update the package installation environment:**
+
+```bash
+pip install --upgrade pip setuptools wheel
+```
+
+**4. Install ScholarPy via pip:**
 
 ```bash
 pip install .
 ```
 
-or, to install in editable/development mode:
+Alternatively, to install in editable/development mode:
 
 ```bash
 pip install -e .
 ```
 
-**4. Download the spaCy language models**
-   *(English required, Portuguese optional)*:
+> **NOTE:** If desired, dependencies can be installed before **ScholarPy** with `pip install -r requirements.txt`.
+
+**5. Download the spaCy language models:**
 
 ```bash
 python -m spacy download en_core_web_lg
 python -m spacy download pt_core_news_lg
 ```
 
-**5. Verify the installation:**
+> **NOTE:** The English model is required, and the Portuguese model is optional.
 
-To confirm that **ScholarPy** is correctly installed from a terminal or shell:
+**6. Verify ScholarPy is installed:**
 
 ```bash
-python -m scholarpy --help
+scholarpy --help
 ```
 
-Or from within Python:
+Alternatively, from within a Python program or interactive shell:
 
 ```python
 import scholarpy
 print("ScholarPy successfully installed!")
 ```
 
-If no errors are displayed, the installation is complete and ready to use.
+If no errors are displayed, the installation is complete and **ScholarPy** is correctly installed.
 
-**6. Installation completed:**
+**7. Start using ScholarPy:**
 
-Once installed, you can import ScholarPy in any Python script:
+Once installed, you can import ScholarPy in any Python program:
 
 ```python
 from scholarpy import core
 core.collect_data(links_file="links.txt", output_file="data.txt")
 ```
 
-Or execute the tools directly from a command line, for example:
+Alternatively, execute the tools directly from a command line, for example:
 
 ```bash
 scholarpy collect_data --links_file="links.txt" --output_file="data.txt"
 ```
+
+**8. Deactivate the virtual environment:**
+
+* Using **venv**:
+
+```bash
+source virtual/bin/deactivate
+```
+
+* Using **conda**:
+
+```bash
+conda deactivate
+```
+
+> **NOTE:** For reactivating the previous virtual environment created for **ScholarPy** (without reinstalling), run from the project's root directory `source virtual/bin/activate` (if using **venv**) or `conda activate scholarpy` (if using **conda**).
+>
+> **NOTE:** For deleting the virtual environment created for **ScholarPy**, deactivate it and then run from the project's root directory `rm -rf virtual` (if using **venv**) or `conda remove –name scholarpy –all` (if using **conda**).
 
 ---
 
