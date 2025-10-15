@@ -74,15 +74,15 @@ ScholarPy requires **Python 3.10+** and the following modules:
 
 ## Installation
 
-Check whether your system provides a [**Python**](https://www.python.org/downloads/)'s installation with version 3.10 or above, and the [pip](https://pypi.org/project/pip/) package installer is available on your Python installation.
+Check whether your system provides a [**Python**](https://www.python.org/downloads/) installation with version 3.10 or above, and the [pip](https://pypi.org/project/pip/) package installer is available on your Python installation.
 
 It is generally recommended to install **ScholarPy** and its dependencies in a virtual environment to avoid modifying the system state. Several options for creating a virtual environment are available, including:
 
-* [**venv**](https://docs.python.org/3/library/venv.html): a Python module for creating lightweight virtual environments, each with their own independent set of packages installed in their site directory. Since **venv** is part of Python's standard library, no installation is required.
+* [**venv**](https://docs.python.org/3/library/venv.html): a Python module for creating lightweight virtual environments, each with their own independent set of packages installed in their site directory. Since **venv** is part of the Python standard library, no installation is required.
 
 * [**conda**](https://anaconda.org/anaconda/conda): an open source package management system and environment management system for installing multiple versions of software packages and their dependencies and switching easily between them. Usually, **conda** needs to be [installed](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) previously.
 
-There are two methods to install and use **ScholarPy** described below.
+Follow these steps to install **ScholarPy**:
 
 **1. Clone the repository:**
 
@@ -107,7 +107,7 @@ conda env create -f environment.yml
 conda activate virtual
 ```
 
-Skip this step for installing **ScholarPy** and its dependencies directly on top of the base Python's installation.
+> Skip this step for installing **ScholarPy** and its dependencies directly on top of your base Python installation.
 
 **3. Update the package installation environment:**
 
@@ -170,6 +170,20 @@ Alternatively, execute the tools directly from a command line, for example:
 
 ```bash
 scholarpy collect_data --links_file="links.txt" --output_file="data.txt"
+```
+
+**8. Deactivate the virtual environment:**
+
+* Using **venv**:
+
+```bash
+source virtual/bin/deactivate
+```
+
+* Using **conda**:
+
+```bash
+conda deactivate
 ```
 
 ---
