@@ -104,7 +104,7 @@ source virtual/bin/activate
 
 ```bash
 conda env create -f environment.yml
-conda activate virtual
+conda activate scholarpy
 ```
 
 > **NOTE:** Skip this step for installing **ScholarPy** and its dependencies directly on top of your base Python installation.
@@ -182,7 +182,9 @@ source virtual/bin/deactivate
 conda deactivate
 ```
 
-> **NOTE:** For reactivating the previous virtual environment created for **ScholarPy** (without reinstalling), run from the project's root directory `source virtual/bin/activate` (if using **venv**) or `conda activate virtual` (if using **conda**).
+> **NOTE:** For reactivating the previous virtual environment created for **ScholarPy** (without reinstalling), run from the project's root directory `source virtual/bin/activate` (if using **venv**) or `conda activate scholarpy` (if using **conda**).
+>
+> **NOTE:** For deleting the virtual environment created for **ScholarPy**, deactivate it and then run from the project's root directory `rm -rf virtual` (if using **venv**) or `conda remove –name scholarpy –all` (if using **conda**).
 
 ---
 
