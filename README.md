@@ -107,7 +107,7 @@ conda env create -f environment.yml
 conda activate virtual
 ```
 
-> Skip this step for installing **ScholarPy** and its dependencies directly on top of your base Python installation.
+> **NOTE:** Skip this step for installing **ScholarPy** and its dependencies directly on top of your base Python installation.
 
 **3. Update the package installation environment:**
 
@@ -185,6 +185,8 @@ source virtual/bin/deactivate
 ```bash
 conda deactivate
 ```
+
+> **NOTE:** For reactivating the previous virtual environment created for **ScholarPy** (without reinstalling), run from the project's root directory `source virtual/bin/activate` (if using **venv**) or `conda activate virtual` (if using **conda**).
 
 ---
 
