@@ -176,7 +176,7 @@ Alternatively, execute the tools directly from a command line, for example:
 scholarpy collect_data --links_file="links.txt" --output_file="data.txt"
 ```
 
-### C. Package installation via conda (recommended)**
+### C. Package installation via conda (recommended)
 
 The package and environment management system [conda](https://anaconda.org/anaconda/conda) must be installed before proceeding.
 
