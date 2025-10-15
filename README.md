@@ -152,7 +152,7 @@ To confirm that **ScholarPy** is correctly installed from a terminal or shell:
 python -m scholarpy --help
 ```
 
-Alternatively, from within Python:
+Alternatively, from  a Python program:
 
 ```python
 import scholarpy
@@ -227,7 +227,7 @@ To confirm that **ScholarPy** is correctly installed from a terminal or shell:
 python -m scholarpy --help
 ```
 
-Alternatively, from within Python:
+Alternatively, from within a Python program:
 
 ```python
 import scholarpy
@@ -277,7 +277,7 @@ ScholarPy/
 
 ## Workflow
 
-A typical workflow within ScholarPy is as follows (check the examples):
+A typical workflow  ScholarPy is as follows (check the examples):
 
 1. Run `scholarpy search_links` to collect public scholarly CV links (currently supporting **ORCID** and **CienciaVitae**).
 
